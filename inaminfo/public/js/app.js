@@ -35977,6 +35977,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',
+  data: function data() {
+    return {
+      loading: true
+    };
+  },
   routes: [{
     path: '/',
     name: 'home',
@@ -35985,7 +35990,14 @@ __webpack_require__.r(__webpack_exports__);
     path: '/about',
     name: 'about',
     component: _views_About_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }]
+  }],
+  mounted: function mounted() {
+    var _this = this;
+
+    setTimeout(function () {
+      _this.loading = false;
+    }, 1000);
+  }
 }));
 
 /***/ }),

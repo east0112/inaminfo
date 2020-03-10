@@ -4,6 +4,11 @@ import About from './views/About.vue'
 
 export default new Router({
   mode: 'history',
+  data() {
+    return {
+      loading: true,
+    }
+  },
   routes: [
     {
       path: '/',
@@ -15,5 +20,10 @@ export default new Router({
         name: 'about',
         component: About
       },
-    ]
+    ],
+    mounted() {
+        setTimeout(() => {
+            this.loading = false;
+        }, 1000);
+    }
 });
