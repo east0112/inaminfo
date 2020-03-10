@@ -2,16 +2,16 @@
   <div id="header-nav">
         <div class="header-nav__content" v-bind:class="{ 'active': status }" v-on:click="toggleMenuStatus">
             <div class="header-nav__list">
-                <a href="/">
+                <router-link to="/">
                     <div class="header-nav__item header-nav__item--first">
                         <span>HOME</span>
                     </div>
-                </a>
-                <a href="/about">
+                </router-link>
+                <router-link to="/about">
                     <div class="header-nav__item header-nav__item--second">
                         <span>ABOUT</span>
                     </div>
-                </a>
+                </router-link>
                 <a href="/library">
                     <div class="header-nav__item header-nav__item--third">
                         <span>EVENTS</span>

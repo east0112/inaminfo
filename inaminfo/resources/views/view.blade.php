@@ -19,7 +19,7 @@
 <body>
 <div id="app">
     <header-component></header-component>
-    <example-component></example-component>
+    <router-view></router-view>
     <footer-component></footer-component>
 </div>
 </body>
