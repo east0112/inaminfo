@@ -1,5 +1,5 @@
 <template>
-  <div id="header-nav">
+  <div id="header-nav" class="shadow-l2">
         <div class="header-nav__content" v-bind:class="{ 'active': status }" v-on:click="toggleMenuStatus">
             <div class="header-nav__list">
                 <router-link to="/">
@@ -29,10 +29,13 @@
                 </a>
                 <div class="header-nav__search">
                     <form action="/library" method="GET">
-                        <input class="header-nav__searchBox" name="search" type="text" placeholder="キーワードを入力">
+                        <div class="header-nav__searchBox">
+                            <input name="word" type="text" placeholder="キーワードを入力">
+                            <input type="submit" value="">
+                        </div>
                     </form>
                 </div>
-            </div>
+            </div>  
         </div>
         <i class="material-icons header-nav__button header-nav__button--inactive" v-if="!status" v-bind:class="{ 'active': status }" v-on:click="toggleMenuStatus">menu</i>
         <i class="fas fa-times header-nav__button header-nav__button--active" v-else v-on:click="toggleMenuStatus"></i>
@@ -69,14 +72,52 @@ export default {
     }
     
     .header-nav__searchBox{
-        margin-left:200px;
+        margin-left:250px;
+        margin-top:12px;
+        margin-bottom:12px;
         height:32px;
         border:none;
         box-shadow:inset 0 1px 2px #ccc;
         border-radius: 4px;
-        width:200px;
+        width:250px;
+        font-size: 0.8rem;
+        background-color: #fff;
+        position: relative;
     }
-    @media screen and (min-width:993px) { 
+    .header-nav__searchBox input[type="text"]{
+        border:none;
+        background-color: rgb(0,0,0,0);
+        position: absolute;
+        left: 5px;
+        height: 32px;
+        font-size: 0.9rem;
+        width: 80%;
+    }
+    .header-nav__searchBox input[type="text"]:focus{
+        outline: 0;
+    }
+    .header-nav__searchBox input[type="submit"]{
+        position: absolute;
+        right: 0;
+        height: 32px;
+        background-color: rgb(0,0,0,0);
+        border: none;
+        outline : none;
+        cursor: pointer;
+        width: 20%;
+    }
+    .header-nav__searchBox:before{
+        position: absolute;
+        right: 1rem;
+        top:0.1rem;
+        line-height: 32px;
+        opacity: 0.5;
+        content:'\f002';
+        font-family:'Font Awesome 5 Free';
+        font-weight:900;
+        font-size:0.9rem;
+    }
+    @media screen and (min-width:1143px) { 
         .header-nav__button{
             display:none;
         }    
@@ -88,7 +129,7 @@ export default {
             padding:0 20px;
         }
     }
-    @media screen and (max-width:992px) { 
+    @media screen and (max-width:1142px) { 
         #header-nav{
             position: relative;
         }

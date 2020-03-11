@@ -5,12 +5,13 @@ $black:#000;
 $color-background:#f6f6f4;
 $color-footer:#3e3e3e;
 // メディアクエリ定義
-$sp-width:992px;
+$sp-width:1142px;
+$sub-width:280px;
 
 body{
     position: relative;
-    //background-color:$color-background;
-    background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 60%,#fff),linear-gradient(70deg,#dbedff 32%,#ebfff0);
+    background-color:$color-background;
+    //background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 60%,#fff),linear-gradient(70deg,#dbedff 32%,#ebfff0);
     font-family: -apple-system, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
     font-size:1rem;
     margin:0 0;
@@ -28,6 +29,22 @@ a{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.shadow{
+    &-l1{
+        box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15)
+    }
+    &-l2{
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    }
+    &-l3{
+        box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    }
+    &-l4{
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
 }
 
 .breadcrumbs{
@@ -53,9 +70,11 @@ a{
         }
     }
 }
-
-#container{
+.container{
     background-color:$white;
+    padding: 15px;
+    margin-right:auto;
+    margin-left:auto;
 }
 
 #header-nav{
@@ -104,7 +123,7 @@ a{
     .breadcrumbs{
         width:100%;
     }
-    #container{
+    .container{
         width:100%;
     }
     .wrapper{
@@ -114,12 +133,25 @@ a{
 
 // PCサイズ
 @media screen and (min-width:$sp-width+1) { 
-    .breadcrumbs{
+    .content{
         width:$sp-width;
-        margin-right:auto;
-        margin-left:auto;
+        display: flex;
+        margin: 20px auto 0;
     }
-    #container{
+    .mainparts{
+        width:$sp-width - $sub-width;
+        background-color: $white;
+        
+    }
+    .subparts{
+        margin-left: 20px;
+        width:$sub-width;
+        background-color: $white;
+    }
+
+
+
+    .breadcrumbs{
         width:$sp-width;
         margin-right:auto;
         margin-left:auto;

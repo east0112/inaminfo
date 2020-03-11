@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer shadow-l2">
     <div class="footer__content">
       <div class="footer__footer-desc">
         <p>当サイトは非公式ファンサイトです。</p>
