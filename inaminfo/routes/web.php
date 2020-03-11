@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
+Route::post('/vue/load_api', 'VueApiController@load');
 Route::get('/{any}', function () {
     return view('view');
 })->where('any', '.*');

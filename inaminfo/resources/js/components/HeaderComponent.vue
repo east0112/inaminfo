@@ -29,7 +29,7 @@
                 </a>
                 <div class="header-nav__search">
                     <form action="/library" method="GET">
-                        <input name="search" type="text" class="form-control" placeholder="検索ワードを入力">
+                        <input class="header-nav__searchBox" name="search" type="text" placeholder="キーワードを入力">
                     </form>
                 </div>
             </div>
@@ -57,7 +57,7 @@ export default {
 }
 </script>
 
-<style ang="scss">
+<style>
     #header-nav{
         height:56px;
     }
@@ -68,6 +68,14 @@ export default {
         width:992px;
     }
     
+    .header-nav__searchBox{
+        margin-left:200px;
+        height:32px;
+        border:none;
+        box-shadow:inset 0 1px 2px #ccc;
+        border-radius: 4px;
+        width:200px;
+    }
     @media screen and (min-width:993px) { 
         .header-nav__button{
             display:none;
@@ -151,7 +159,6 @@ export default {
             font-size:1.5rem;
             line-height:5rem;
         }
-
 
         @keyframes fade-in {
             0% {
