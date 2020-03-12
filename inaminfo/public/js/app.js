@@ -2015,6 +2015,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'header-nav',
   data: function data() {
@@ -2033,6 +2036,33 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SideTicketsComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SideTicketsComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {};
+  },
+  created: function created() {//alert('aafa');
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HeaderComponent.vue?vue&type=style&index=0&lang=css&":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HeaderComponent.vue?vue&type=style&index=0&lang=css& ***!
@@ -2045,7 +2075,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#header-nav{\n    height:56px;\n}\n.header-nav__content{\n    font-size:0.9rem;\n    line-height:56px;\n    margin:0 auto;\n    width:992px;\n}\n.header-nav__searchBox{\n    margin-left:200px;\n    height:32px;\n    border:none;\n    box-shadow:inset 0 1px 2px #ccc;\n    border-radius: 4px;\n    width:200px;\n}\n@media screen and (min-width:993px) {\n.header-nav__button{\n        display:none;\n}\n.header-nav__list{\n        display:flex;\n}\n.header-nav__item{\n        color:#fff;\n        padding:0 20px;\n}\n}\n@media screen and (max-width:992px) {\n#header-nav{\n        position: relative;\n}\n.header-nav__content{\n        display:none;\n}\n.header-nav__content.active{\n        display:block;\n        width:100vw;\n        height:100vh;\n        background-color:#fff;\n        position:absolute;\n        animation-duration: 0.5s;\n        animation-name: fade-in;\n        -moz-animation-duration: 0.5s;\n        -moz-animation-name: fade-in;\n        -webkit-animation-duration: 0.5s;\n        -webkit-animation-name: fade-in;\n}\n.header-nav__list{\n        transform:translateY(-50%);\n        margin:50vh auto 0;\n}\n.header-nav__item--first{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0s forwards;\n}\n.header-nav__item--second{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0.05s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0.1s forwards;\n}\n.header-nav__item--third{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0.1s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0.2s forwards;\n}\n.header-nav__item--forth{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0.15s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0.3s forwards;\n}\n.header-nav__item--fifth{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0.20s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0.4s forwards;\n}\n.header-nav__button--inactive{\n        position: absolute;\n        right:0.5rem;\n        color:#fff;\n        line-height:56px;\n        font-size:2rem;\n        cursor:pointer;\n        padding:0 1rem;\n}\n.header-nav__button--active{\n        position: absolute;\n        right:0.8rem;\n        color:#FF5192;\n        line-height:56px;\n        font-size:2rem;\n        cursor:pointer;\n        padding:0 1rem;\n}\n.header-nav__item{\n        color:#FF5192;\n        z-index:2;\n        text-align: right;\n        padding-right: 10vh;\n        font-size:1.5rem;\n        line-height:5rem;\n}\n@keyframes fade-in {\n0% {\n            display: none;\n            opacity: 0;\n}\n1% {\n            display: block;\n            opacity: 0;\n}\n100% {\n            display: block;\n            opacity: 1;\n}\n}\n@-webkit-keyframes fade-in {\n0% {\n            display: none;\n            opacity: 0;\n}\n1% {\n            display: block;\n            opacity: 0;\n}\n100% {\n            display: block;\n            opacity: 1;\n}\n}\n}\n\n", ""]);
+exports.push([module.i, "\n#header-nav{\n    height:56px;\n}\n.header-nav__content{\n    font-size:0.9rem;\n    line-height:56px;\n    margin:0 auto;\n    width:992px;\n}\n.header-nav__searchBox{\n    margin-left:250px;\n    margin-top:12px;\n    margin-bottom:12px;\n    height:32px;\n    border:none;\n    box-shadow:inset 0 1px 2px #ccc;\n    border-radius: 4px;\n    width:250px;\n    font-size: 0.8rem;\n    background-color: #fff;\n    position: relative;\n}\n.header-nav__searchBox input[type=\"text\"]{\n    border:none;\n    background-color: rgb(0,0,0,0);\n    position: absolute;\n    left: 5px;\n    height: 32px;\n    font-size: 0.9rem;\n    width: 80%;\n}\n.header-nav__searchBox input[type=\"text\"]:focus{\n    outline: 0;\n}\n.header-nav__searchBox input[type=\"submit\"]{\n    position: absolute;\n    right: 0;\n    height: 32px;\n    background-color: rgb(0,0,0,0);\n    border: none;\n    outline : none;\n    cursor: pointer;\n    width: 20%;\n}\n.header-nav__searchBox:before{\n    position: absolute;\n    right: 1rem;\n    top:0.1rem;\n    line-height: 32px;\n    opacity: 0.5;\n    content:'\\F002';\n    font-family:'Font Awesome 5 Free';\n    font-weight:900;\n    font-size:0.9rem;\n}\n@media screen and (min-width:1143px) {\n.header-nav__button{\n        display:none;\n}\n.header-nav__list{\n        display:flex;\n}\n.header-nav__item{\n        color:#fff;\n        padding:0 20px;\n}\n}\n@media screen and (max-width:1142px) {\n#header-nav{\n        position: relative;\n}\n.header-nav__content{\n        display:none;\n}\n.header-nav__content.active{\n        display:block;\n        width:100vw;\n        height:100vh;\n        background-color:#fff;\n        position:absolute;\n        animation-duration: 0.5s;\n        animation-name: fade-in;\n        -moz-animation-duration: 0.5s;\n        -moz-animation-name: fade-in;\n        -webkit-animation-duration: 0.5s;\n        -webkit-animation-name: fade-in;\n}\n.header-nav__list{\n        transform:translateY(-50%);\n        margin:50vh auto 0;\n}\n.header-nav__item--first{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0s forwards;\n}\n.header-nav__item--second{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0.05s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0.1s forwards;\n}\n.header-nav__item--third{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0.1s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0.2s forwards;\n}\n.header-nav__item--forth{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0.15s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0.3s forwards;\n}\n.header-nav__item--fifth{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0.20s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0.4s forwards;\n}\n.header-nav__button--inactive{\n        position: absolute;\n        right:0.5rem;\n        color:#fff;\n        line-height:56px;\n        font-size:2rem;\n        cursor:pointer;\n        padding:0 1rem;\n}\n.header-nav__button--active{\n        position: absolute;\n        right:0.8rem;\n        color:#FF5192;\n        line-height:56px;\n        font-size:2rem;\n        cursor:pointer;\n        padding:0 1rem;\n}\n.header-nav__item{\n        color:#FF5192;\n        z-index:2;\n        text-align: right;\n        padding-right: 10vh;\n        font-size:1.5rem;\n        line-height:5rem;\n}\n@keyframes fade-in {\n0% {\n            display: none;\n            opacity: 0;\n}\n1% {\n            display: block;\n            opacity: 0;\n}\n100% {\n            display: block;\n            opacity: 1;\n}\n}\n@-webkit-keyframes fade-in {\n0% {\n            display: none;\n            opacity: 0;\n}\n1% {\n            display: block;\n            opacity: 0;\n}\n100% {\n            display: block;\n            opacity: 1;\n}\n}\n}\n\n", ""]);
 
 // exports
 
@@ -20331,7 +20361,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "footer" }, [
+    return _c("div", { staticClass: "footer shadow-l2" }, [
       _c("div", { staticClass: "footer__content" }, [
         _c("div", { staticClass: "footer__footer-desc" }, [
           _c("p", [_vm._v("当サイトは非公式ファンサイトです。")]),
@@ -20400,7 +20430,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "header-nav" } }, [
+  return _c("div", { staticClass: "shadow-l2", attrs: { id: "header-nav" } }, [
     _c(
       "div",
       {
@@ -20497,15 +20527,51 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "header-nav__search" }, [
       _c("form", { attrs: { action: "/library", method: "GET" } }, [
-        _c("input", {
-          staticClass: "header-nav__searchBox",
-          attrs: {
-            name: "search",
-            type: "text",
-            placeholder: "キーワードを入力"
-          }
-        })
+        _c("div", { staticClass: "header-nav__searchBox" }, [
+          _c("input", {
+            attrs: {
+              name: "word",
+              type: "text",
+              placeholder: "キーワードを入力"
+            }
+          }),
+          _vm._v(" "),
+          _c("input", { attrs: { type: "submit", value: "" } })
+        ])
       ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SideTicketsComponent.vue?vue&type=template&id=79a1afb8&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SideTicketsComponent.vue?vue&type=template&id=79a1afb8& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "subparts shadow-l1" }, [
+      _c("div", { staticClass: "container" }, [_vm._v("\n\t\tsuba\n\t")])
     ])
   }
 ]
@@ -20554,9 +20620,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Home Page")])
+  return _c(
+    "div",
+    { staticClass: "content" },
+    [_vm._m(0), _vm._v(" "), _c("side-tickets-component")],
+    1
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mainparts shadow-l1" }, [
+      _c("div", { staticClass: "container" }, [_vm._v("\n\t\t\tmain\n\t\t")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -35663,13 +35743,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
  //Load for router
@@ -35690,6 +35773,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('header-component', __webpack_require__(/*! ./components/HeaderComponent.vue */ "./resources/js/components/HeaderComponent.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('footer-component', __webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('side-tickets-component', __webpack_require__(/*! ./components/SideTicketsComponent.vue */ "./resources/js/components/SideTicketsComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -35698,7 +35782,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('footer-component', __webpa
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
-  router: _router__WEBPACK_IMPORTED_MODULE_2__["default"]
+  router: _router__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 
 /***/ }),
@@ -35955,6 +36039,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_153bfd55___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_153bfd55___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/SideTicketsComponent.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/SideTicketsComponent.vue ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SideTicketsComponent_vue_vue_type_template_id_79a1afb8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SideTicketsComponent.vue?vue&type=template&id=79a1afb8& */ "./resources/js/components/SideTicketsComponent.vue?vue&type=template&id=79a1afb8&");
+/* harmony import */ var _SideTicketsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SideTicketsComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/SideTicketsComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SideTicketsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SideTicketsComponent_vue_vue_type_template_id_79a1afb8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SideTicketsComponent_vue_vue_type_template_id_79a1afb8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/SideTicketsComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/SideTicketsComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/SideTicketsComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SideTicketsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SideTicketsComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SideTicketsComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SideTicketsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/SideTicketsComponent.vue?vue&type=template&id=79a1afb8&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/SideTicketsComponent.vue?vue&type=template&id=79a1afb8& ***!
+  \*****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SideTicketsComponent_vue_vue_type_template_id_79a1afb8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./SideTicketsComponent.vue?vue&type=template&id=79a1afb8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SideTicketsComponent.vue?vue&type=template&id=79a1afb8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SideTicketsComponent_vue_vue_type_template_id_79a1afb8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SideTicketsComponent_vue_vue_type_template_id_79a1afb8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

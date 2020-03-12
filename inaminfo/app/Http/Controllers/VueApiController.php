@@ -13,5 +13,9 @@ class VueApiController extends Controller
      * @return Response
      */
     public static function load(Request $request){
+      if(!$request->ajax()) return redirect('/');
+
+      $param = array('test' => 'afafa');
+      return response()->json($param);
       }
   }
