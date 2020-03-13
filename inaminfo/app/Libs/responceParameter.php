@@ -4,9 +4,11 @@ namespace App\Libs;
 class responceParameter
 {
     private $param;
+    private $responce_code;
 
     function __construct(){
         $this->param = array();
+        $this->responce_code = config('const.RESPONCE_SUCCESS_CODE');
     }
 
     public function setParam($key,$value){
@@ -17,18 +19,19 @@ class responceParameter
         return (isset($this->param[$key])) ? $this->param[$key]  :false;
     }
 
+    public function setResponceCode($value){
+        $this->responce_code = $value;
+    }
+
+    public function getResponceCode($value){
+        return $this->responce_code;
+    }
+
     public function getReturnData(){
-        return $this->param;
+        $returnParam = $this->param;
+        $returnParam['status_code'] = $this->responce_code;
+
+        return $returnParam;
     }
 
-    /*
-    public function getJsonData($generate = false){
-        if($generate) $this->generateJsonData();
-        return $this->json_data;
-    }
-
-    protected function generateJsonData(){
-        $this->json_data = json_encode($this->param);
-    }
-    */
 }
