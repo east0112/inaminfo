@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Libs\requestParameter;
 
 class VueApiController extends Controller
 {
@@ -12,10 +13,37 @@ class VueApiController extends Controller
      * @param Request $request
      * @return Response
      */
-    public static function load(Request $request){
-      if(!$request->ajax()) return redirect('/');
 
-      $param = array('test' => 'afafa');
-      return response()->json($param);
+     public static function load(Request $request){
+      // ajax通信の判定処理
+      //if(!$request->ajax()) return redirect('/');
+      $requestParameter = new requestParameter($request->input('mode'));
+      // mode判定
+      if(!$requestParameter->getMode()) return redirect('/');
+
+      switch($requestParameter->getMode()){
+          case 'event':
+            $requestParameter->setParam('word','銀河鉄道');
+            $returnData = LoadController::loadEvent($requestParameter);
+            break;
+
+          case 'eventLists':
+
+            break;
+
+          case 'tickets':
+
+            break;
+
+          case 'calendar':
+
+            break;
+
+          default:
+            return redirect('/');
+            break;
       }
+
+      return response()->json($returnData);
+      }      
   }
