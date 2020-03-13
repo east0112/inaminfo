@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Libs\requestParameter;
 use App\Libs\responceParameter;
+use App\Http\Models\eventLoader;
 
 class LoadController extends Controller
 {
@@ -16,8 +17,8 @@ class LoadController extends Controller
      */
     public static function loadEvent($requestParameter){
         $responceParameter = new responceParameter();
-        $responceParameter->setParam('word',$requestParameter->getParam('word'));
-        $responceParameter->setParam('xxx','afafa');
+        $eventLoader = new eventLoader();
+        $responceParameter->setParam('event',$eventLoader->getDetail($requestParameter->getParam('event_id')));
 
         return $responceParameter->getReturnData();
     }

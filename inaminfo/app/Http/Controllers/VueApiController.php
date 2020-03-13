@@ -23,7 +23,7 @@ class VueApiController extends Controller
 
       switch($requestParameter->getMode()){
           case 'event':
-            $requestParameter->setParam('word','銀河鉄道');
+            $requestParameter->setParam('event_id',$request->input('event_id'));
             $returnData = LoadController::loadEvent($requestParameter);
             break;
 
