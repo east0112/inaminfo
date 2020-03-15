@@ -29,6 +29,8 @@ class responceParameter
 
     public function getReturnData(){
         $returnParam = $this->param;
+        //返却するJSONデータパラメーターが空の場合はエラーコードを設定する。
+        if(empty($returnParam)) $this->responce_code = config('const.RESPONCE_ERROR_CODE');
         $returnParam['status_code'] = $this->responce_code;
 
         return $returnParam;

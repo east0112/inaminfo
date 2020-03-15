@@ -30,7 +30,7 @@
                 <div class="header-nav__search">
                     <form action="/library" method="GET">
                         <div class="header-nav__searchBox">
-                            <input name="word" type="text" placeholder="キーワードを入力">
+                            <input name="search_word" type="text" placeholder="キーワードを入力">
                             <input type="submit" value="">
                         </div>
                     </form>

@@ -16,6 +16,7 @@ class VueApiController extends Controller
 
      public static function load(Request $request){
       // ajax通信の判定処理
+      //リリース時にコメントは消すこと
       //if(!$request->ajax()) return redirect('/');
       $requestParameter = new requestParameter($request->input('mode'));
       // mode判定
@@ -24,15 +25,23 @@ class VueApiController extends Controller
       switch($requestParameter->getMode()){
           case 'event':
             $requestParameter->setParam('event_id',$request->input('event_id'));
-            $returnData = LoadController::loadEvent($requestParameter);
+
+            $returnData = LoadEventController::loadEvent($requestParameter);
             break;
 
           case 'eventLists':
+            $requestParameter->setParam('search_word',$request->input('search_word'));
+            $requestParameter->setParam('type',$request->input('type'));
+            $requestParameter->setParam('order',$request->input('order'));
+            $requestParameter->setParam('from',$request->input('from'));
+            $requestParameter->setParam('to',$request->input('to'));
+            $requestParameter->setParam('page',$request->input('page'));
 
+            $returnData = LoadEventListsController::loadEventLists($requestParameter);
             break;
 
           case 'tickets':
-
+            $returnData = LoadTicketsController::loadTickets($requestParameter);
             break;
 
           case 'calendar':
@@ -44,6 +53,8 @@ class VueApiController extends Controller
             break;
       }
 
-      return response()->json($returnData);
+      //テスト用
+      return json_encode($returnData,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+      //return response()->json($returnData);
       }      
   }
