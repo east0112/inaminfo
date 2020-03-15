@@ -51,7 +51,6 @@ export default {
 	let self = this;
 	const currentDate = dayjs().format('YYYY-MM-DD');
 	const endDate = dayjs().endOf('month').format('YYYY-MM-DD');
-	console.log(endDate);
 	axios.post(this.url,{mode : 'eventLists', from : currentDate, to : endDate, order :1})
           .then(function(res){
 			const responce = res.data;

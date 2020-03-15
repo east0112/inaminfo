@@ -9,7 +9,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr v-for="event in eventLists" :key="event" class="eventLists__row">
+				<tr v-for="(event,index) in eventLists" :key="index" class="eventLists__row">
 					<td>{{event.date}}</td>
 					<td>{{event.type_name}}</td>
 					<td><router-link v-bind:to='"/events/detail?event_id=" + event.event_id'>{{event.event_name}}</router-link></td>
@@ -40,8 +40,11 @@ export default {
 	border-collapse:collapse;
 }
 .eventLists__row{
-	line-height: 3em;
+	line-height: 2em;
 	border-bottom: 1px solid #ccc;
+}
+.eventLists__row td{
+	padding: 0.5em 0;
 }
 .eventLists__col--1{
 	width:20%;

@@ -4,7 +4,7 @@
 				<h4 class="heading">応募期間中のチケット</h4>
 				<div class="body__subtext" v-if="!loading">
 					<div v-if="ticketLists.length">
-						<div v-for=" ticket in ticketLists" :key="ticket" class="subpartsTicket">
+						<div v-for=" (ticket,index) in ticketLists" :key="index" class="subpartsTicket">
 							<p class="subpartsTicket__title">{{ticket.ticket_name}}</p>
 							<p class="subpartsTicket__date">応募開始：{{ticket.start_time}}</p>
 							<p class="subpartsTicket__date">応募終了：{{ticket.end_time}}</p>
