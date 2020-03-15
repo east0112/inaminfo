@@ -20573,8 +20573,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "subparts shadow-l1" }, [
-    _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "subparts" }, [
+    _c("div", { staticClass: "container shadow-l1" }, [
       _c("h5", { staticClass: "heading" }, [_vm._v("応募期間中のチケット")]),
       _vm._v(" "),
       !_vm.loading
@@ -20732,8 +20732,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mainparts shadow-l1" }, [
-      _c("div", { staticClass: "container" }, [
+    return _c("div", { staticClass: "mainparts" }, [
+      _c("div", { staticClass: "container shadow-l1" }, [
         _c("h2", { staticClass: "heading" }, [_vm._v("InaminTown")]),
         _vm._v(" "),
         _c("div", { staticClass: "body__text" }, [

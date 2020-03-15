@@ -69,6 +69,7 @@ a:hover {
   padding: 15px;
   margin-right: auto;
   margin-left: auto;
+  background-color: #fff;
 }
 
 .heading {
@@ -165,18 +166,12 @@ border .subpartsTicket__title {
     margin: 15px;
   }
 
-  .allparts {
-    background-color: #fff;
-  }
-
   .mainparts {
     margin-top: 20px;
-    background-color: #fff;
   }
 
   .subparts {
     margin-top: 20px;
-    background-color: #fff;
   }
 }
 
@@ -189,18 +184,15 @@ border .subpartsTicket__title {
 
   .allparts {
     width: 100%;
-    background-color: #fff;
   }
 
   .mainparts {
     width: 862px;
-    background-color: #fff;
   }
 
   .subparts {
     margin-left: 20px;
     width: 280px;
-    background-color: #fff;
   }
 
   .breadcrumbs {

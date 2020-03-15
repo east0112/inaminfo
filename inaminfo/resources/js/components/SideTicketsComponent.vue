@@ -1,6 +1,6 @@
 <template>
-		<div class="subparts shadow-l1">
-			<div class="container">
+		<div class="subparts">
+			<div class="container shadow-l1">
 				<h5 class="heading">応募期間中のチケット</h5>
 				<div class="body__subtext" v-if="!loading">
 					<div v-if="ticketLists.length">

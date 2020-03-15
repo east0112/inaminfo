@@ -77,6 +77,7 @@ a{
     padding: 15px;
     margin-right:auto;
     margin-left:auto;
+    background-color: $white;
 }
 
 .heading{
@@ -156,7 +157,7 @@ a{
         }
         &__date{
             margin:0.5em 0;
-            font-size:1em;
+            font-size:1em;  
         }
         &__link{
             font-size:1em;
@@ -176,17 +177,12 @@ a{
         margin:15px;
     }
 
-    .allparts{
-        background-color: $white;
-    }
     .mainparts{
         margin-top: 20px;
-        background-color: $white;
         
     }
     .subparts{
         margin-top: 20px;
-        background-color: $white;
     }
 
 
@@ -201,17 +197,13 @@ a{
     }
     .allparts{
         width: 100%;
-        background-color: $white;
     }
     .mainparts{
         width:$sp-width - $sub-width;
-        background-color: $white;
-        
     }
     .subparts{
         margin-left: 20px;
         width:$sub-width;
-        background-color: $white;
     }
 
 
