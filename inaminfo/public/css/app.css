@@ -65,10 +65,25 @@ a:hover {
 }
 
 .container {
-  background-color: #fff;
   padding: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.heading {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+  border-left: 5px solid #FF5192;
+  padding: 0.5em;
+}
+
+.body__text {
+  line-height: 2em;
+}
+
+.body__subtext {
+  font-size: 0.8em;
+  line-height: 1.6em;
 }
 
 #header-nav {
@@ -119,12 +134,22 @@ a:hover {
     width: 100%;
   }
 
-  .container {
-    width: 100%;
-  }
-
   .wrapper {
     margin: 15px;
+  }
+
+  .allparts {
+    background-color: #fff;
+  }
+
+  .mainparts {
+    margin-top: 20px;
+    background-color: #fff;
+  }
+
+  .subparts {
+    margin-top: 20px;
+    background-color: #fff;
   }
 }
 
@@ -133,6 +158,11 @@ a:hover {
     width: 1142px;
     display: flex;
     margin: 20px auto 0;
+  }
+
+  .allparts {
+    width: 100%;
+    background-color: #fff;
   }
 
   .mainparts {

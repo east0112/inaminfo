@@ -2021,6 +2021,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2030,12 +2032,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     var self = this;
-    axios.post(this.url).then(function (res) {
+    axios.post(this.url, {
+      mode: 'tickets'
+    }).then(function (res) {
       //vueにバインドされている値を書き換えると表示に反映される
-      // = res.data
       var responce = res.data;
-      console.log(responce.test);
-      self.result = responce.test;
+      self.result = responce.ticketLists[0].ticket_name; //self.result = responce.test;
     });
   }
 });
@@ -20462,7 +20464,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "header-nav__searchBox" }, [
           _c("input", {
             attrs: {
-              name: "word",
+              name: "search_word",
               type: "text",
               placeholder: "キーワードを入力"
             }
@@ -20497,7 +20499,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "subparts shadow-l1" }, [
     _c("div", { staticClass: "container" }, [
-      _vm._v("\n\t\tsuba\n\t\t" + _vm._s(_vm.result) + "\n\t")
+      _c("h5", { staticClass: "heading" }, [_vm._v("応募期間中のチケット")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "body__subtext" }, [
+        _vm._v("\n\t\t" + _vm._s(_vm.result) + "\n\t\t")
+      ])
     ])
   ])
 }
@@ -20523,9 +20529,43 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("About Page")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "content" }, [
+      _c("div", { staticClass: "allparts shadow-l1" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("h2", { staticClass: "heading" }, [_vm._v("当サイトについて")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "body__text" }, [
+            _vm._v(
+              "\n\t\t\t\tinaminfoは、声優・舞台女優として活躍する伊波杏樹さんの出演情報をまとめた非公式ファンサイトです。\n\t\t\t\t"
+            ),
+            _c("br"),
+            _vm._v("\n\t\t\t\t炎の四皇\n\t\t\t\t"),
+            _c("br"),
+            _vm._v("\n\t\t\t\t帝国の話どうにかしろ\n\t\t\t\t"),
+            _c("br"),
+            _vm._v("\n\t\t\t\tてすと\t\t\t\t\n\t\t\t")
+          ]),
+          _vm._v(" "),
+          _c("h2", { staticClass: "heading" }, [
+            _vm._v("プライバシーポリシー")
+          ]),
+          _vm._v("\n\t\t\tアクセス解析ツールについて\n\t\t\t"),
+          _c("br"),
+          _vm._v("\n\t\t\t免責事項\n\t\t\t"),
+          _c("br"),
+          _vm._v("\n\t\t\tチケットは一人一枚\n\t\t")
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -20560,7 +20600,17 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "mainparts shadow-l1" }, [
-      _c("div", { staticClass: "container" }, [_vm._v("\n\t\t\tmain\n\t\t")])
+      _c("div", { staticClass: "container" }, [
+        _c("h2", { staticClass: "heading" }, [_vm._v("InaminTown")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "body__text" }, [
+          _vm._v(
+            "\n\t\t\t\tinaminfoは、声優・舞台女優として活躍する伊波杏樹さんの出演情報をまとめた非公式ファンサイトです。\n\t\t\t"
+          )
+        ]),
+        _vm._v(" "),
+        _c("h2", { staticClass: "heading" }, [_vm._v("今月のイベント")])
+      ])
     ])
   }
 ]

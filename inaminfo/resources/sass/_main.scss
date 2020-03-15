@@ -71,10 +71,26 @@ a{
     }
 }
 .container{
-    background-color:$white;
     padding: 15px;
     margin-right:auto;
     margin-left:auto;
+}
+
+.heading{
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    border-left: 5px solid $color-main;
+    padding: 0.5em;
+}
+
+.body{
+    &__text{
+        line-height: 2em;
+    }
+    &__subtext{
+        font-size: 0.8em;
+        line-height: 1.6em;
+    }
 }
 
 #header-nav{
@@ -123,12 +139,24 @@ a{
     .breadcrumbs{
         width:100%;
     }
-    .container{
-        width:100%;
-    }
     .wrapper{
         margin:15px;
     }
+
+    .allparts{
+        background-color: $white;
+    }
+    .mainparts{
+        margin-top: 20px;
+        background-color: $white;
+        
+    }
+    .subparts{
+        margin-top: 20px;
+        background-color: $white;
+    }
+
+
 }
 
 // PCサイズ
@@ -137,6 +165,10 @@ a{
         width:$sp-width;
         display: flex;
         margin: 20px auto 0;
+    }
+    .allparts{
+        width: 100%;
+        background-color: $white;
     }
     .mainparts{
         width:$sp-width - $sub-width;

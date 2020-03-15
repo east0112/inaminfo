@@ -1,8 +1,10 @@
 <template>
 		<div class="subparts shadow-l1">
 			<div class="container">
-				suba
+				<h5 class="heading">応募期間中のチケット</h5>
+				<div class="body__subtext">
 				{{ result }}
+				</div>
 			</div>
 		</div>
 </template>
@@ -17,13 +19,12 @@ export default {
   },
   created: function () {
 	let self = this
-	axios.post(this.url)
+	axios.post(this.url,{mode : 'tickets'})
           .then(function(res){
             //vueにバインドされている値を書き換えると表示に反映される
-			// = res.data
 			const responce = res.data;
-			console.log(responce.test);
-			self.result = responce.test;
+			self.result = responce.ticketLists[0].ticket_name;
+			//self.result = responce.test;
 
           })
   }
