@@ -12,21 +12,21 @@
                         <span>ABOUT</span>
                     </div>
                 </router-link>
-                <a href="/events">
+                <router-link to="/events">
                     <div class="header-nav__item header-nav__item--third">
                         <span>EVENTS</span>
                     </div>
-                </a>
-                <a href="/calendar">
+                </router-link>
+                <router-link to="/calendar">
                     <div class="header-nav__item header-nav__item--fifth">
                         <span>CALENDAR</span>
                     </div>
-                </a>
-                <a href="/tickets">
+                </router-link>
+                <router-link to="/tickets">
                     <div class="header-nav__item header-nav__item--forth">
                         <span>TICKETS</span>
                     </div>
-                </a>
+                </router-link>
                 <div class="header-nav__search">
                     <form action="/library" method="GET">
                         <div class="header-nav__searchBox">
@@ -69,6 +69,7 @@ export default {
         line-height:56px;
         margin:0 auto;
         width:992px;
+        z-index: 10;
     }
     
     .header-nav__searchBox{
@@ -182,6 +183,7 @@ export default {
             font-size:2rem;
             cursor:pointer;
             padding:0 1rem;
+            z-index: 11;
         }
         .header-nav__button--active{
             position: absolute;
@@ -191,6 +193,7 @@ export default {
             font-size:2rem;
             cursor:pointer;
             padding:0 1rem;
+            z-index: 11;
         }
         .header-nav__item{
             color:#FF5192;
