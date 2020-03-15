@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import dayjs from 'dayjs'
+dayjs.locale('ja');
 export default {
   data: function(){
     return{
@@ -29,8 +31,11 @@ export default {
         }
   },
   mounted: function () {
-	let self = this
-	axios.post(this.url,{mode : 'eventLists', from : '2020-03-15', to : '2020-03-31'})
+	let self = this;
+	let currentDate = dayjs().format('YYYY-MM-DD');
+	let endDate = dayjs().endOf('month').format('YYYY-MM-DD');
+	console.log(endDate);
+	axios.post(this.url,{mode : 'eventLists', from : currentDate, to : endDate})
           .then(function(res){
 			const responce = res.data;
 			self.eventLists = responce.eventLists;
