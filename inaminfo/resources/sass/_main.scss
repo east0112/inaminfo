@@ -13,9 +13,7 @@ $sub-width:280px;
 body{
     position: relative;
     background-color:$color-background;
-    //background-image:linear-gradient(180deg,hsla(0,0%,100%,0) 60%,#fff),linear-gradient(70deg,#dbedff 32%,#ebfff0);
     font-family: -apple-system, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
-    font-size:1rem;
     margin:0 0;
     text-decoration-line: none;
 }
@@ -96,7 +94,8 @@ a{
 
 .body{
     &__text{
-        line-height: 2em;
+        font-size: 0.9em;
+        line-height: 1.8em;
     }
     &__subtext{
         font-size: 0.8em;
@@ -114,6 +113,7 @@ a{
     height:168px;
     color:$white;
     padding-top:20px;
+    font-size: 0.9rem;
     &__content{
         display:flex;
     }
@@ -165,7 +165,48 @@ a{
     }
 }
 
-
+.contentLinks{
+	display: flex;
+    margin: 40px 20px;
+    flex-wrap: wrap;
+    &__Item{
+        margin:10px 0px;
+        line-height: 2em;
+        &--icon{
+            font-size: 2em;
+        }
+        &Text{
+            color: $color-link;
+            position: relative;
+            padding-left: 2em;
+            &--event:before{
+                position: absolute;
+                content:'\f002';
+                font-family:'Font Awesome 5 Free';
+                font-weight:900;
+                font-size:2em;
+                left:-0.3em;
+            }
+            &--calendar:before{
+                position: absolute;
+                content:'\f073';
+                font-family:'Font Awesome 5 Free';
+                font-weight:900;
+                font-size:2em;
+                left:-0.3em;
+            }
+            
+            &--ticket:before{
+                position: absolute;
+                content:'\f3ff';
+                font-family:'Font Awesome 5 Free';
+                font-weight:900;
+                font-size:2em;
+                left:-0.3em;
+            }
+        }
+    }
+}
 
 
 // SPサイズ
@@ -184,8 +225,13 @@ a{
     .subparts{
         margin-top: 20px;
     }
-
-
+    .contentLinks__Item{
+        width: 50%;
+    }
+    .contentLinks{
+        margin: 40px 5px 40px 20px;
+        font-size: 0.9rem;
+    }    
 }
 
 // PCサイズ
@@ -205,9 +251,9 @@ a{
         margin-left: 20px;
         width:$sub-width;
     }
-
-
-
+    .contentLinks__Item{
+        width: 33.3%;
+    }
     .breadcrumbs{
         width:$sp-width;
         margin-right:auto;

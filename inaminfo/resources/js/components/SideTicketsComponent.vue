@@ -1,7 +1,7 @@
 <template>
 		<div class="subparts">
 			<div class="container shadow-l1">
-				<h5 class="heading">応募期間中のチケット</h5>
+				<h4 class="heading">応募期間中のチケット</h4>
 				<div class="body__subtext" v-if="!loading">
 					<div v-if="ticketLists.length">
 						<div v-for=" ticket in ticketLists" :key="ticket" class="subpartsTicket">

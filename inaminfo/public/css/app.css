@@ -4,7 +4,6 @@ body {
   position: relative;
   background-color: #f6f6f4;
   font-family: -apple-system, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
-  font-size: 1rem;
   margin: 0 0;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
@@ -87,7 +86,8 @@ a:hover {
 }
 
 .body__text {
-  line-height: 2em;
+  font-size: 0.9em;
+  line-height: 1.8em;
 }
 
 .body__subtext {
@@ -105,6 +105,7 @@ a:hover {
   height: 168px;
   color: #fff;
   padding-top: 20px;
+  font-size: 0.9rem;
 }
 
 .footer__content {
@@ -157,6 +158,54 @@ border .subpartsTicket__title {
   font-size: 1em;
 }
 
+.contentLinks {
+  display: flex;
+  margin: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.contentLinks__Item {
+  margin: 10px 0px;
+  line-height: 2em;
+}
+
+.contentLinks__Item--icon {
+  font-size: 2em;
+}
+
+.contentLinks__ItemText {
+  color: #0366D6;
+  position: relative;
+  padding-left: 2em;
+}
+
+.contentLinks__ItemText--event:before {
+  position: absolute;
+  content: "\F002";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 2em;
+  left: -0.3em;
+}
+
+.contentLinks__ItemText--calendar:before {
+  position: absolute;
+  content: "\F073";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 2em;
+  left: -0.3em;
+}
+
+.contentLinks__ItemText--ticket:before {
+  position: absolute;
+  content: "\F3FF";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 2em;
+  left: -0.3em;
+}
+
 @media screen and (max-width: 1142px) {
   .breadcrumbs {
     width: 100%;
@@ -172,6 +221,15 @@ border .subpartsTicket__title {
 
   .subparts {
     margin-top: 20px;
+  }
+
+  .contentLinks__Item {
+    width: 50%;
+  }
+
+  .contentLinks {
+    margin: 40px 5px 40px 20px;
+    font-size: 0.9rem;
   }
 }
 
@@ -193,6 +251,10 @@ border .subpartsTicket__title {
   .subparts {
     margin-left: 20px;
     width: 280px;
+  }
+
+  .contentLinks__Item {
+    width: 33.3%;
   }
 
   .breadcrumbs {

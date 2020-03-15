@@ -12,19 +12,19 @@
                         <span>ABOUT</span>
                     </div>
                 </router-link>
-                <a href="/library">
+                <a href="/events">
                     <div class="header-nav__item header-nav__item--third">
                         <span>EVENTS</span>
-                    </div>
-                </a>
-                <a href="/tickets">
-                    <div class="header-nav__item header-nav__item--forth">
-                        <span>TICKETS</span>
                     </div>
                 </a>
                 <a href="/calendar">
                     <div class="header-nav__item header-nav__item--fifth">
                         <span>CALENDAR</span>
+                    </div>
+                </a>
+                <a href="/tickets">
+                    <div class="header-nav__item header-nav__item--forth">
+                        <span>TICKETS</span>
                     </div>
                 </a>
                 <div class="header-nav__search">

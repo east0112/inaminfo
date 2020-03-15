@@ -25,7 +25,7 @@ class eventLoader
                                 $page = false){
 
     $param = array();
-    $sql = "SELECT events.*  FROM events WHERE 1 = 1 ";
+    $sql = "SELECT events.* ,event_type.type_name FROM events INNER JOIN event_type ON events.event_type = event_type.type_id WHERE 1 = 1 ";
     if($search_word){
       $sql .= " AND (EXISTS(
                     SELECT * FROM (
