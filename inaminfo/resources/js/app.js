@@ -26,6 +26,7 @@ Vue.component('footer-component', require('./components/FooterComponent.vue').de
 Vue.component('side-tickets-component', require('./components/SideTicketsComponent.vue').default);
 
 Vue.component('loading-component', require('./components/LoadingComponent.vue').default);
+Vue.component('event-lists-component', require('./components/EventListsComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

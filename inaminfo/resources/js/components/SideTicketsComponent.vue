@@ -20,7 +20,7 @@
 					</div>
 				</div>
 				<div v-else>
-				<loading-component :loading="loading" :height="300"></loading-component>
+				<loading-component :loading="loading"></loading-component>
 				</div>
 			</div>
 		</div>
