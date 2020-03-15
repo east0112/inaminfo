@@ -25,6 +25,8 @@ Vue.component('header-component', require('./components/HeaderComponent.vue').de
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('side-tickets-component', require('./components/SideTicketsComponent.vue').default);
 
+Vue.component('loading-component', require('./components/LoadingComponent.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

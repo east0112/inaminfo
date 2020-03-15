@@ -4,6 +4,8 @@ $white:#fff;
 $black:#000;
 $color-background:#f6f6f4;
 $color-footer:#3e3e3e;
+$color-border:#ccc;
+$color-link:#0366D6;
 // メディアクエリ定義
 $sp-width:1142px;
 $sub-width:280px;
@@ -20,6 +22,7 @@ body{
 
 a{
     text-decoration: none;
+    color:$color-link;
     &:hover{
         text-decoration: none;
     }
@@ -83,6 +86,13 @@ a{
     padding: 0.5em;
 }
 
+.loadingBox{
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 .body{
     &__text{
         line-height: 2em;
@@ -134,6 +144,29 @@ a{
         }
     }
 }
+
+.subparts{
+    &Ticket{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-top:1px solid $color-border;
+        border
+        &__title{
+            font-size:1em;
+        }
+        &__date{
+            margin:0.5em 0;
+            font-size:1em;
+        }
+        &__link{
+            font-size:1em;
+        }
+    }
+}
+
+
+
+
 // SPサイズ
 @media screen and (max-width:$sp-width) { 
     .breadcrumbs{

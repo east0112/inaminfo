@@ -12,6 +12,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #0366D6;
 }
 
 a:hover {
@@ -77,6 +78,13 @@ a:hover {
   padding: 0.5em;
 }
 
+.loadingBox {
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .body__text {
   line-height: 2em;
 }
@@ -127,6 +135,25 @@ a:hover {
   font-weight: 900;
   font-size: 1em;
   margin-left: 20px;
+}
+
+.subpartsTicket {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px solid #ccc;
+}
+
+border .subpartsTicket__title {
+  font-size: 1em;
+}
+
+.subpartsTicket__date {
+  margin: 0.5em 0;
+  font-size: 1em;
+}
+
+.subpartsTicket__link {
+  font-size: 1em;
 }
 
 @media screen and (max-width: 1142px) {

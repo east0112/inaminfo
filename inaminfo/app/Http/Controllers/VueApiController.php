@@ -52,7 +52,7 @@ class VueApiController extends Controller
             return redirect('/');
             break;
       }
-
+      sleep(3);
       //テスト用
       return json_encode($returnData,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
       //return response()->json($returnData);
