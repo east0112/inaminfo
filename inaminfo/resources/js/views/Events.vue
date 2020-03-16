@@ -9,12 +9,16 @@
 				<form @submit.prevent="searchEventLists">
 					<div class="searchArea">
 						<div class="searchArea__searchWord">
-						<input v-model="searchWord" type="text" placeholder="検索キーワードを入力してください	">
+						<vue-suggest-input v-model="searchWord" :items="items"/>
 						</div>
 						<div class="searchArea__searchType">
 							<div class="searchArea__searchTypeEl">
 								<input type="checkbox" id="checkEvent" v-model="type" value="1"/>
 								<label for="checkEvent">イベント</label>
+							</div>
+							<div class="searchArea__searchTypeEl">
+								<input type="checkbox" id="checkStage" v-model="type" value="5"/>
+								<label for="checkStage">舞台</label>
 							</div>
 							<div class="searchArea__searchTypeEl">
 								<input type="checkbox" id="checkRadio" v-model="type" value="2"/>
@@ -23,10 +27,6 @@
 							<div class="searchArea__searchTypeEl">
 								<input type="checkbox" id="checkMagazine" v-model="type" value="3"/>
 								<label for="checkMagazine">雑誌</label>
-							</div>
-							<div class="searchArea__searchTypeEl">
-								<input type="checkbox" id="checkStage" v-model="type" value="5"/>
-								<label for="checkStage">舞台</label>
 							</div>
 							<div class="searchArea__searchTypeEl">
 								<input type="checkbox" id="checkProgram" v-model="type" value="4"/>
@@ -52,15 +52,20 @@
 
 <script>
 import dayjs from 'dayjs'
+import VueSuggestInput from 'vue-suggest-input'
 dayjs.locale('ja');
 export default {
+  components:{
+	  VueSuggestInput
+	},
   data: function(){
     return{
 		 url:"/vue/load_api",
 		 eventLists:[],
 		 loading:true,
 		 searchWord:"",
-		 type:[1,2,3,4,5]
+		 type:[1,2,3,4,5],
+		 items:['cake','cache']
         }
   },
   mounted: function () {
@@ -99,6 +104,7 @@ export default {
 .searchArea__searchWord{
 	margin: 20px 0;
 	text-align: left;
+	width: 90%;
 }
 .searchArea__searchType{
 	padding: 20px 0;
@@ -110,7 +116,7 @@ export default {
 	padding-bottom: 0.5em;
 }
 .searchArea__searchWord input[type="text"]{
-	width: 90%;
+	width: 100%;
 	border-top: none;
 	border-right: none;
 	border-left: none;
