@@ -35,7 +35,7 @@ export default {
 <style>
 .eventLists{
 	width:100%;
-	margin: 20px auto;
+	margin: 40px auto;
 	text-align: left;
 	border-collapse:collapse;
 }

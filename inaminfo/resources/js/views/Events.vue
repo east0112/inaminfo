@@ -6,14 +6,38 @@
 				<div class="body__text">
 					イベントや舞台、ラジオ等の情報を検索できます。
 				</div>
-				<div class="searchArea">
-					<div class="searchArea__searchWord">
-					<input v-model="searchWord" type="text" placeholder="検索キーワードを入力してください	">
+				<form @submit.prevent="searchEventLists">
+					<div class="searchArea">
+						<div class="searchArea__searchWord">
+						<input v-model="searchWord" type="text" placeholder="検索キーワードを入力してください	">
+						</div>
+						<div class="searchArea__searchType">
+							<div class="searchArea__searchTypeEl">
+								<input type="checkbox" id="checkEvent" v-model="type" value="1"/>
+								<label for="checkEvent">イベント</label>
+							</div>
+							<div class="searchArea__searchTypeEl">
+								<input type="checkbox" id="checkRadio" v-model="type" value="2"/>
+								<label for="checkRadio">ラジオ</label>
+							</div>
+							<div class="searchArea__searchTypeEl">
+								<input type="checkbox" id="checkMagazine" v-model="type" value="3"/>
+								<label for="checkMagazine">雑誌</label>
+							</div>
+							<div class="searchArea__searchTypeEl">
+								<input type="checkbox" id="checkStage" v-model="type" value="5"/>
+								<label for="checkStage">舞台</label>
+							</div>
+							<div class="searchArea__searchTypeEl">
+								<input type="checkbox" id="checkProgram" v-model="type" value="4"/>
+								<label for="checkProgram">番組出演</label>
+							</div>
+						</div>
+						<div class="searchArea__searchButton">
+							<button class="shadow-l1" type="submit">検索</button>
+						</div>
 					</div>
-					<div class="searchArea__searchButton">
-						<button class="shadow-l1" v-on:click="searchEventLists">検索</button>
-					</div>
-				</div>
+				</form>
 				<div class="body__subtext" v-if="!loading">
 					<event-lists-component :eventLists="eventLists"></event-lists-component>
 					</div>
@@ -35,7 +59,8 @@ export default {
 		 url:"/vue/load_api",
 		 eventLists:[],
 		 loading:true,
-		 searchWord:""
+		 searchWord:"",
+		 type:[1,2,3,4,5]
         }
   },
   mounted: function () {
@@ -56,8 +81,9 @@ export default {
   methods: {
     searchEventLists: function (event) {
 		let self = this;
+		if(this.loading) return false;
 		this.loading = true;
-		axios.post(this.url,{mode : 'eventLists', search_word : this.searchWord})
+		axios.post(this.url,{mode : 'eventLists', search_word : this.searchWord, type : this.type.join()})
 			.then(function(res){
 				const responce = res.data;
 				self.eventLists = responce.eventLists;
@@ -73,6 +99,15 @@ export default {
 .searchArea__searchWord{
 	margin: 20px 0;
 	text-align: left;
+}
+.searchArea__searchType{
+	padding: 20px 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+.searchArea__searchTypeEl{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
 }
 .searchArea__searchWord input[type="text"]{
 	width: 90%;
@@ -105,10 +140,18 @@ export default {
 	.searchArea{
 		margin: 10px 5px;
 	}
+	.searchArea__searchTypeEl{
+		width: 46%;
+		padding: 10px 0 10px 4%;
+	}
 }
 @media screen and (min-width:1143px) { 
 	.searchArea{
 		margin: 20px;
+	}
+	.searchArea__searchTypeEl{
+		width: 16%;
+		padding: 10px 2%;
 	}
 }
 </style>

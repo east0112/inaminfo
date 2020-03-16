@@ -2171,6 +2171,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 dayjs__WEBPACK_IMPORTED_MODULE_0___default.a.locale('ja');
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2179,7 +2203,8 @@ dayjs__WEBPACK_IMPORTED_MODULE_0___default.a.locale('ja');
       url: "/vue/load_api",
       eventLists: [],
       loading: true,
-      searchWord: ""
+      searchWord: "",
+      type: [1, 2, 3, 4, 5]
     };
   },
   mounted: function mounted() {
@@ -2206,10 +2231,12 @@ dayjs__WEBPACK_IMPORTED_MODULE_0___default.a.locale('ja');
   methods: {
     searchEventLists: function searchEventLists(event) {
       var self = this;
+      if (this.loading) return false;
       this.loading = true;
       axios.post(this.url, {
         mode: 'eventLists',
-        search_word: this.searchWord
+        search_word: this.searchWord,
+        type: this.type.join()
       }).then(function (res) {
         var responce = res.data;
         self.eventLists = responce.eventLists; // ローディング表示終了
@@ -2313,7 +2340,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.eventLists{\n\twidth:100%;\n\tmargin: 20px auto;\n\ttext-align: left;\n\tborder-collapse:collapse;\n}\n.eventLists__row{\n\tline-height: 2em;\n\tborder-bottom: 1px solid #ccc;\n}\n.eventLists__row td{\n\tpadding: 0.5em 0;\n}\n.eventLists__col--1{\n\twidth:20%;\n}\n.eventLists__col--2{\n\twidth:15%;\n}\n.eventLists__col--3{\n\twidth:65%;\n}\n", ""]);
+exports.push([module.i, "\n.eventLists{\n\twidth:100%;\n\tmargin: 40px auto;\n\ttext-align: left;\n\tborder-collapse:collapse;\n}\n.eventLists__row{\n\tline-height: 2em;\n\tborder-bottom: 1px solid #ccc;\n}\n.eventLists__row td{\n\tpadding: 0.5em 0;\n}\n.eventLists__col--1{\n\twidth:20%;\n}\n.eventLists__col--2{\n\twidth:15%;\n}\n.eventLists__col--3{\n\twidth:65%;\n}\n", ""]);
 
 // exports
 
@@ -2351,7 +2378,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.searchArea__searchWord{\n\tmargin: 20px 0;\n\ttext-align: left;\n}\n.searchArea__searchWord input[type=\"text\"]{\n\twidth: 90%;\n\tborder-top: none;\n\tborder-right: none;\n\tborder-left: none;\n\toutline: none;\n\tfont-size: 16px;\n\tpadding: 0.5em;\n}\n.searchArea__searchButton{\n\tmargin: 20px 0;\n\ttext-align: left;\n}\n.searchArea__searchButton button{\n\tpadding: 0.5em 2em;\n\tfont-size: 0.8em;\n\tborder: none;\n\tbackground-color: #FF5192;\n\tcolor: #fff;\n\tborder-radius: 5px;\n\tcursor: pointer;\n\toutline: none;\n}\n.searchArea__searchButton button:hover{\n\topacity: 0.5;\n\ttransition-duration: 0.3s;\n}\n@media screen and (max-width:1142px) {\n.searchArea{\n\t\tmargin: 10px 5px;\n}\n}\n@media screen and (min-width:1143px) {\n.searchArea{\n\t\tmargin: 20px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.searchArea__searchWord{\n\tmargin: 20px 0;\n\ttext-align: left;\n}\n.searchArea__searchType{\n\tpadding: 20px 0;\n\tdisplay: flex;\n\tflex-wrap: wrap;\n}\n.searchArea__searchTypeEl{\n\tpadding-top: 0.5em;\n\tpadding-bottom: 0.5em;\n}\n.searchArea__searchWord input[type=\"text\"]{\n\twidth: 90%;\n\tborder-top: none;\n\tborder-right: none;\n\tborder-left: none;\n\toutline: none;\n\tfont-size: 16px;\n\tpadding: 0.5em;\n}\n.searchArea__searchButton{\n\tmargin: 20px 0;\n\ttext-align: left;\n}\n.searchArea__searchButton button{\n\tpadding: 0.5em 2em;\n\tfont-size: 0.8em;\n\tborder: none;\n\tbackground-color: #FF5192;\n\tcolor: #fff;\n\tborder-radius: 5px;\n\tcursor: pointer;\n\toutline: none;\n}\n.searchArea__searchButton button:hover{\n\topacity: 0.5;\n\ttransition-duration: 0.3s;\n}\n@media screen and (max-width:1142px) {\n.searchArea{\n\t\tmargin: 10px 5px;\n}\n.searchArea__searchTypeEl{\n\t\twidth: 46%;\n\t\tpadding: 10px 0 10px 4%;\n}\n}\n@media screen and (min-width:1143px) {\n.searchArea{\n\t\tmargin: 20px;\n}\n.searchArea__searchTypeEl{\n\t\twidth: 16%;\n\t\tpadding: 10px 2%;\n}\n}\n", ""]);
 
 // exports
 
@@ -21057,23 +21084,68 @@ var staticRenderFns = [
               "\n\t\t\t\tinaminfoは、声優・舞台女優として活躍する伊波杏樹さんの出演情報をまとめた非公式ファンサイトです。\n\t\t\t\t"
             ),
             _c("br"),
-            _vm._v("\n\t\t\t\t炎の四皇\n\t\t\t\t"),
+            _vm._v(
+              "\n\t\t\t\t多岐に渡る伊波杏樹さんのこれまでの、これからの活動を誰でも追える、知ることができるデータベースサイトを目指し開設しました。\n\t\t\t\t"
+            ),
             _c("br"),
-            _vm._v("\n\t\t\t\t帝国の話どうにかしろ\n\t\t\t\t"),
+            _vm._v(
+              "\n\t\t\t\t数名のファン有志によって本サイトを開発・運営しております。\n\t\t\t\t"
+            ),
             _c("br"),
-            _vm._v("\n\t\t\t\tてすと\t\t\t\t\n\t\t\t")
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("br")
+          ]),
+          _vm._v(" "),
+          _c("h4", { staticClass: "heading" }, [_vm._v("免責事項")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "body__text" }, [
+            _vm._v(
+              "\n\t\t\t\t当サイトの情報につきまして、可能な限り正確な情報を掲載するよう努めておりますが、誤情報が入り込んだり、情報が古くなっていることもございます。\n\t\t\t\t"
+            ),
+            _c("br"),
+            _vm._v(
+              "\n\t\t\t\t当サイトに掲載された内容によって生じた損害等については、一切の責任を負いかねますのでご了承ください。\n\t\t\t\t"
+            ),
+            _c("br"),
+            _vm._v(
+              "\n\t\t\t\tまた当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。\n\t\t\t\t"
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("br")
           ]),
           _vm._v(" "),
           _c("h4", { staticClass: "heading" }, [
-            _vm._v("プライバシーポリシー")
+            _vm._v("アクセス解析ツールについて")
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "body__text" }, [
-            _vm._v("\n\t\t\t\tアクセス解析ツールについて\n\t\t\t\t"),
+            _vm._v(
+              "\n\t\t\t\t当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。\n\t\t\t\t"
+            ),
             _c("br"),
-            _vm._v("\n\t\t\t\t免責事項\n\t\t\t\t"),
+            _vm._v(
+              "\n\t\t\t\tこのGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、\n\t\t\t\t"
+            ),
             _c("br"),
-            _vm._v("\n\t\t\t\tチケットは一人一枚\n\t\t\t")
+            _vm._v("\n\t\t\t\t個人を特定するものではありません。\n\t\t\t\t"),
+            _c("br"),
+            _vm._v(
+              "\n\t\t\t\tこの機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。\n\t\t\t\t"
+            ),
+            _c("br"),
+            _vm._v(
+              "\n\t\t\t\tこの規約に関して、詳しくは下記URLをご参照ください。\n\t\t\t\t"
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("br")
           ])
         ])
       ])
@@ -21115,44 +21187,278 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "searchArea" }, [
-            _c("div", { staticClass: "searchArea__searchWord" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.searchWord,
-                    expression: "searchWord"
-                  }
-                ],
-                attrs: {
-                  type: "text",
-                  placeholder: "検索キーワードを入力してください\t"
-                },
-                domProps: { value: _vm.searchWord },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.searchWord = $event.target.value
-                  }
+          _c(
+            "form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.searchEventLists($event)
                 }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "searchArea__searchButton" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "shadow-l1",
-                  on: { click: _vm.searchEventLists }
-                },
-                [_vm._v("検索")]
-              )
-            ])
-          ]),
+              }
+            },
+            [
+              _c("div", { staticClass: "searchArea" }, [
+                _c("div", { staticClass: "searchArea__searchWord" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.searchWord,
+                        expression: "searchWord"
+                      }
+                    ],
+                    attrs: {
+                      type: "text",
+                      placeholder: "検索キーワードを入力してください\t"
+                    },
+                    domProps: { value: _vm.searchWord },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.searchWord = $event.target.value
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "searchArea__searchType" }, [
+                  _c("div", { staticClass: "searchArea__searchTypeEl" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.type,
+                          expression: "type"
+                        }
+                      ],
+                      attrs: { type: "checkbox", id: "checkEvent", value: "1" },
+                      domProps: {
+                        checked: Array.isArray(_vm.type)
+                          ? _vm._i(_vm.type, "1") > -1
+                          : _vm.type
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.type,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "1",
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.type = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.type = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.type = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "checkEvent" } }, [
+                      _vm._v("イベント")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "searchArea__searchTypeEl" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.type,
+                          expression: "type"
+                        }
+                      ],
+                      attrs: { type: "checkbox", id: "checkRadio", value: "2" },
+                      domProps: {
+                        checked: Array.isArray(_vm.type)
+                          ? _vm._i(_vm.type, "2") > -1
+                          : _vm.type
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.type,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "2",
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.type = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.type = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.type = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "checkRadio" } }, [
+                      _vm._v("ラジオ")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "searchArea__searchTypeEl" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.type,
+                          expression: "type"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "checkMagazine",
+                        value: "3"
+                      },
+                      domProps: {
+                        checked: Array.isArray(_vm.type)
+                          ? _vm._i(_vm.type, "3") > -1
+                          : _vm.type
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.type,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "3",
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.type = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.type = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.type = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "checkMagazine" } }, [
+                      _vm._v("雑誌")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "searchArea__searchTypeEl" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.type,
+                          expression: "type"
+                        }
+                      ],
+                      attrs: { type: "checkbox", id: "checkStage", value: "5" },
+                      domProps: {
+                        checked: Array.isArray(_vm.type)
+                          ? _vm._i(_vm.type, "5") > -1
+                          : _vm.type
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.type,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "5",
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.type = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.type = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.type = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "checkStage" } }, [
+                      _vm._v("舞台")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "searchArea__searchTypeEl" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.type,
+                          expression: "type"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "checkProgram",
+                        value: "4"
+                      },
+                      domProps: {
+                        checked: Array.isArray(_vm.type)
+                          ? _vm._i(_vm.type, "4") > -1
+                          : _vm.type
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.type,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = "4",
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.type = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.type = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.type = $$c
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "checkProgram" } }, [
+                      _vm._v("番組出演")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
+              ])
+            ]
+          ),
           _vm._v(" "),
           !_vm.loading
             ? _c(
@@ -21178,7 +21484,18 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "searchArea__searchButton" }, [
+      _c("button", { staticClass: "shadow-l1", attrs: { type: "submit" } }, [
+        _vm._v("検索")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -21262,7 +21579,7 @@ var render = function() {
                       staticClass:
                         "contentLinks__ItemText contentLinks__ItemText--ticket"
                     },
-                    [_vm._v("カレンダー検索")]
+                    [_vm._v("チケット検索")]
                   )
                 ])
               ],
