@@ -28,9 +28,9 @@
                     </div>
                 </router-link>
                 <div class="header-nav__search">
-                    <form action="/library" method="GET">
+                    <form @submit.prevent="searchEventLists">
                         <div class="header-nav__searchBox">
-                            <input name="search_word" type="text" placeholder="キーワードを入力">
+                            <input-suggest-component @change="wordUpdate" :searchWord="searchWord"/>
                             <input type="submit" value="">
                         </div>
                     </form>
@@ -47,7 +47,8 @@ export default {
   name: 'header-nav',
   data: function(){
     return{
-        status: false
+        status: false,
+        searchWord:""
         }
   },
   methods: {
@@ -55,7 +56,10 @@ export default {
         if(window.innerWidth <= 992){
             this.status = !this.status;
         }
-    }
+    },
+	wordUpdate(searchWord){
+		this.searchWord = searchWord
+	}
   }
 }
 </script>
@@ -71,52 +75,39 @@ export default {
         width:992px;
         z-index: 10;
     }
-    
-    .header-nav__searchBox{
-        margin-left:250px;
+    .header-nav__search{
+        margin-left: 200px;
+        width: 250px;
+    }
+    .header-nav__search input[type="text"]{
+        width: 100%;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        outline: none;
+        font-size: 16px;
+        padding: 0.4em;
+        border:none;
+        border-radius: 4px;
+        box-shadow:inset 0 1px 2px #ccc;
+    }
+    .rnd-container{
         margin-top:12px;
         margin-bottom:12px;
         height:32px;
-        border:none;
-        box-shadow:inset 0 1px 2px #ccc;
-        border-radius: 4px;
-        width:250px;
-        font-size: 0.8rem;
-        background-color: #fff;
-        position: relative;
+
     }
-    .header-nav__searchBox input[type="text"]{
-        border:none;
-        background-color: rgb(0,0,0,0);
-        position: absolute;
-        left: 5px;
-        height: 32px;
-        font-size: 0.9rem;
-        width: 80%;
+    .rnd-container li{
+        line-height: 1.5em;
     }
-    .header-nav__searchBox input[type="text"]:focus{
-        outline: 0;
+    .rnd-input-container{
+        height:32px;
+    }
+    .rnd-text{
+        line-height: 32px;
     }
     .header-nav__searchBox input[type="submit"]{
-        position: absolute;
-        right: 0;
-        height: 32px;
-        background-color: rgb(0,0,0,0);
-        border: none;
-        outline : none;
-        cursor: pointer;
-        width: 20%;
-    }
-    .header-nav__searchBox:before{
-        position: absolute;
-        right: 1rem;
-        top:0.1rem;
-        line-height: 32px;
-        opacity: 0.5;
-        content:'\f002';
-        font-family:'Font Awesome 5 Free';
-        font-weight:900;
-        font-size:0.9rem;
+        display: none;
     }
     @media screen and (min-width:1143px) { 
         .header-nav__button{
