@@ -27,18 +27,16 @@
                         <span>TICKETS</span>
                     </div>
                 </router-link>
-                <div class="header-nav__search">
-                    <form @submit.prevent="searchEventLists">
-                        <div class="header-nav__searchBox">
-                            <input-suggest-component @change="wordUpdate" :searchWord="searchWord"/>
-                            <input type="submit" value="">
-                        </div>
-                    </form>
-                </div>
             </div>  
+            <div class="header-nav__search">
+                <form @submit.prevent="searchEventLists">
+                    <div class="header-nav__searchBox">
+                        <input-suggest-component @change="wordUpdate" :searchWord="searchWord"/>
+                        <input type="submit" value="">
+                    </div>
+                </form>
+            </div>
         </div>
-        <i class="material-icons header-nav__button header-nav__button--inactive" v-if="!status" v-bind:class="{ 'active': status }" v-on:click="toggleMenuStatus">menu</i>
-        <i class="fas fa-times header-nav__button header-nav__button--active" v-else v-on:click="toggleMenuStatus"></i>
     </div>
 </template>
 
@@ -72,12 +70,7 @@ export default {
         font-size:0.9rem;
         line-height:56px;
         margin:0 auto;
-        width:992px;
         z-index: 10;
-    }
-    .header-nav__search{
-        margin-left: 200px;
-        width: 250px;
     }
     .header-nav__search input[type="text"]{
         width: 100%;
@@ -112,9 +105,14 @@ export default {
         display: none;
     }
     @media screen and (min-width:1143px) { 
-        .header-nav__button{
-            display:none;
-        }    
+        .header-nav__search{
+            margin-left: 200px;
+            width: 250px;
+        }
+        .header-nav__content{
+            display: flex;
+            width:992px;
+        }
         .header-nav__list{
             display:flex;
         }
@@ -124,128 +122,23 @@ export default {
         }
     }
     @media screen and (max-width:1142px) { 
-        #header-nav{
-            position: relative;
-        }
-        .header-nav__content{
-            display:none;
-        }
-        .header-nav__content.active{
-            display:block;
-            width:100vw;
-            height:100vh;
-            background-color:#fff;
-            position:absolute;
-            animation-duration: 0.5s;
-            animation-name: fade-in;
-            -moz-animation-duration: 0.5s;
-            -moz-animation-name: fade-in;
-            -webkit-animation-duration: 0.5s;
-            -webkit-animation-name: fade-in;
+        .header-nav__search{
+            width: 80%;
+            margin-left: 8%;
         }
         .header-nav__list{
-            transform:translateY(-50%);
-            margin:50vh auto 0;
-        }
-        .header-nav__item--first{
-            -webkit-animation: hvr-wobble-vertical 0.8s ease 0s forwards;
-            animation: hvr-wobble-vertical 0.8s ease 0s forwards;
-        }
-        .header-nav__item--second{
-            -webkit-animation: hvr-wobble-vertical 0.8s ease 0.05s forwards;
-            animation: hvr-wobble-vertical 0.8s ease 0.1s forwards;
-        }
-        .header-nav__item--third{
-            -webkit-animation: hvr-wobble-vertical 0.8s ease 0.1s forwards;
-            animation: hvr-wobble-vertical 0.8s ease 0.2s forwards;
-        }
-        .header-nav__item--forth{
-            -webkit-animation: hvr-wobble-vertical 0.8s ease 0.15s forwards;
-            animation: hvr-wobble-vertical 0.8s ease 0.3s forwards;
-        }
-        .header-nav__item--fifth{
-            -webkit-animation: hvr-wobble-vertical 0.8s ease 0.20s forwards;
-            animation: hvr-wobble-vertical 0.8s ease 0.4s forwards;
-        }
-
-        .header-nav__button--inactive{
-            position: absolute;
-            right:0.5rem;
-            color:#fff;
-            line-height:56px;
-            font-size:2rem;
-            cursor:pointer;
-            padding:0 1rem;
-            z-index: 11;
-        }
-        .header-nav__button--active{
-            position: absolute;
-            right:0.8rem;
-            color:#FF5192;
-            line-height:56px;
-            font-size:2rem;
-            cursor:pointer;
-            padding:0 1rem;
-            z-index: 11;
+            position: fixed;
+            display: flex;
+            bottom: 0;
+            background-color: #fff;
+            width: 100%;
+            justify-content: space-between;
+            border: 1px solid #ccc;
         }
         .header-nav__item{
             color:#FF5192;
-            z-index:2;
-            text-align: right;
-            padding-right: 10vh;
-            font-size:1.5rem;
-            line-height:5rem;
-        }
-
-        @keyframes fade-in {
-            0% {
-                display: none;
-                opacity: 0;
-            }
-
-            1% {
-                display: block;
-                opacity: 0;
-            }
-
-            100% {
-                display: block;
-                opacity: 1;
-            }
-        }
-
-        @-moz-keyframes fade-in {
-            0% {
-                display: none;
-                opacity: 0;
-            }
-
-            1% {
-                display: block;
-                opacity: 0;
-            }
-
-            100% {
-                display: block;
-                opacity: 1;
-            }
-        }
-
-        @-webkit-keyframes fade-in {
-            0% {
-                display: none;
-                opacity: 0;
-            }
-
-            1% {
-                display: block;
-                opacity: 0;
-            }
-
-            100% {
-                display: block;
-                opacity: 1;
-            }
+            font-size:10px;
+            padding:0 10px;
         }
 
     }

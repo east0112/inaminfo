@@ -107,6 +107,7 @@ a:hover {
   height: 168px;
   color: #fff;
   padding-top: 20px;
+  padding-bottom: 56px;
   font-size: 0.8rem;
 }
 
@@ -267,12 +268,16 @@ input[type=checkbox]:checked + label:before {
     margin: 15px;
   }
 
+  .allparts {
+    margin: 20px 0;
+  }
+
   .mainparts {
     margin-top: 20px;
   }
 
   .subparts {
-    margin-top: 20px;
+    margin: 20px 0;
   }
 
   .contentLinks__Item {

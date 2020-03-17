@@ -2025,8 +2025,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'header-nav',
   data: function data() {
@@ -2410,7 +2408,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#header-nav{\n    height:56px;\n}\n.header-nav__content{\n    font-size:0.9rem;\n    line-height:56px;\n    margin:0 auto;\n    width:992px;\n    z-index: 10;\n}\n.header-nav__search{\n    margin-left: 200px;\n    width: 250px;\n}\n.header-nav__search input[type=\"text\"]{\n    width: 100%;\n    border-top: none;\n    border-right: none;\n    border-left: none;\n    outline: none;\n    font-size: 16px;\n    padding: 0.4em;\n    border:none;\n    border-radius: 4px;\n    box-shadow:inset 0 1px 2px #ccc;\n    opacity: 0.5;\n}\n.header-nav__search input[type=\"text\"]:focus{\n    opacity: 1.0;\n    transition-duration: 0.3s;\n}\n.rnd-container{\n    margin-top:12px;\n    margin-bottom:12px;\n    height:32px;\n}\n.rnd-input-container{\n    height:32px;\n}\n.rnd-text{\n    line-height: 32px;\n}\n.header-nav__searchBox input[type=\"submit\"]{\n    display: none;\n}\n@media screen and (min-width:1143px) {\n.header-nav__button{\n        display:none;\n}\n.header-nav__list{\n        display:flex;\n}\n.header-nav__item{\n        color:#fff;\n        padding:0 20px;\n}\n}\n@media screen and (max-width:1142px) {\n#header-nav{\n        position: relative;\n}\n.header-nav__content{\n        display:none;\n}\n.header-nav__content.active{\n        display:block;\n        width:100vw;\n        height:100vh;\n        background-color:#fff;\n        position:absolute;\n        animation-duration: 0.5s;\n        animation-name: fade-in;\n        -moz-animation-duration: 0.5s;\n        -moz-animation-name: fade-in;\n        -webkit-animation-duration: 0.5s;\n        -webkit-animation-name: fade-in;\n}\n.header-nav__list{\n        transform:translateY(-50%);\n        margin:50vh auto 0;\n}\n.header-nav__item--first{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0s forwards;\n}\n.header-nav__item--second{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0.05s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0.1s forwards;\n}\n.header-nav__item--third{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0.1s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0.2s forwards;\n}\n.header-nav__item--forth{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0.15s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0.3s forwards;\n}\n.header-nav__item--fifth{\n        -webkit-animation: hvr-wobble-vertical 0.8s ease 0.20s forwards;\n        animation: hvr-wobble-vertical 0.8s ease 0.4s forwards;\n}\n.header-nav__button--inactive{\n        position: absolute;\n        right:0.5rem;\n        color:#fff;\n        line-height:56px;\n        font-size:2rem;\n        cursor:pointer;\n        padding:0 1rem;\n        z-index: 11;\n}\n.header-nav__button--active{\n        position: absolute;\n        right:0.8rem;\n        color:#FF5192;\n        line-height:56px;\n        font-size:2rem;\n        cursor:pointer;\n        padding:0 1rem;\n        z-index: 11;\n}\n.header-nav__item{\n        color:#FF5192;\n        z-index:2;\n        text-align: right;\n        padding-right: 10vh;\n        font-size:1.5rem;\n        line-height:5rem;\n}\n@keyframes fade-in {\n0% {\n            display: none;\n            opacity: 0;\n}\n1% {\n            display: block;\n            opacity: 0;\n}\n100% {\n            display: block;\n            opacity: 1;\n}\n}\n@-webkit-keyframes fade-in {\n0% {\n            display: none;\n            opacity: 0;\n}\n1% {\n            display: block;\n            opacity: 0;\n}\n100% {\n            display: block;\n            opacity: 1;\n}\n}\n}\n\n", ""]);
+exports.push([module.i, "\n#header-nav{\n    height:56px;\n}\n.header-nav__content{\n    font-size:0.9rem;\n    line-height:56px;\n    margin:0 auto;\n    z-index: 10;\n}\n.header-nav__search input[type=\"text\"]{\n    width: 100%;\n    border-top: none;\n    border-right: none;\n    border-left: none;\n    outline: none;\n    font-size: 16px;\n    padding: 0.4em;\n    border:none;\n    border-radius: 4px;\n    box-shadow:inset 0 1px 2px #ccc;\n    opacity: 0.5;\n}\n.header-nav__search input[type=\"text\"]:focus{\n    opacity: 1.0;\n    transition-duration: 0.3s;\n}\n.rnd-container{\n    margin-top:12px;\n    margin-bottom:12px;\n    height:32px;\n}\n.rnd-input-container{\n    height:32px;\n}\n.rnd-text{\n    line-height: 32px;\n}\n.header-nav__searchBox input[type=\"submit\"]{\n    display: none;\n}\n@media screen and (min-width:1143px) {\n.header-nav__search{\n        margin-left: 200px;\n        width: 250px;\n}\n.header-nav__content{\n        display: flex;\n        width:992px;\n}\n.header-nav__list{\n        display:flex;\n}\n.header-nav__item{\n        color:#fff;\n        padding:0 20px;\n}\n}\n@media screen and (max-width:1142px) {\n.header-nav__search{\n        width: 80%;\n        margin-left: 8%;\n}\n.header-nav__list{\n        position: fixed;\n        display: flex;\n        bottom: 0;\n        background-color: #fff;\n        width: 100%;\n        justify-content: space-between;\n        border: 1px solid #ccc;\n}\n.header-nav__item{\n        color:#FF5192;\n        font-size:10px;\n        padding:0 10px;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -20982,58 +20980,41 @@ var render = function() {
                 { staticClass: "header-nav__item header-nav__item--forth" },
                 [_c("span", [_vm._v("TICKETS")])]
               )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "header-nav__search" }, [
-              _c(
-                "form",
-                {
-                  on: {
-                    submit: function($event) {
-                      $event.preventDefault()
-                      return _vm.searchEventLists($event)
-                    }
-                  }
-                },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "header-nav__searchBox" },
-                    [
-                      _c("input-suggest-component", {
-                        attrs: { searchWord: _vm.searchWord },
-                        on: { change: _vm.wordUpdate }
-                      }),
-                      _vm._v(" "),
-                      _c("input", { attrs: { type: "submit", value: "" } })
-                    ],
-                    1
-                  )
-                ]
-              )
             ])
           ],
           1
-        )
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "header-nav__search" }, [
+          _c(
+            "form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.searchEventLists($event)
+                }
+              }
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "header-nav__searchBox" },
+                [
+                  _c("input-suggest-component", {
+                    attrs: { searchWord: _vm.searchWord },
+                    on: { change: _vm.wordUpdate }
+                  }),
+                  _vm._v(" "),
+                  _c("input", { attrs: { type: "submit", value: "" } })
+                ],
+                1
+              )
+            ]
+          )
+        ])
       ]
-    ),
-    _vm._v(" "),
-    !_vm.status
-      ? _c(
-          "i",
-          {
-            staticClass:
-              "material-icons header-nav__button header-nav__button--inactive",
-            class: { active: _vm.status },
-            on: { click: _vm.toggleMenuStatus }
-          },
-          [_vm._v("menu")]
-        )
-      : _c("i", {
-          staticClass:
-            "fas fa-times header-nav__button header-nav__button--active",
-          on: { click: _vm.toggleMenuStatus }
-        })
+    )
   ])
 }
 var staticRenderFns = []
