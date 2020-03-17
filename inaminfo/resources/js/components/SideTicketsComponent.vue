@@ -33,7 +33,6 @@ export default {
     return{
 		 url:"/vue/load_api",
 		 ticketLists:[],
-		 result:"",
 		 loading:true
         }
   },
@@ -43,7 +42,6 @@ export default {
           .then(function(res){
 			const responce = res.data;
 			self.ticketLists = responce.ticketLists;
-			self.result = responce.ticketLists[0].ticket_name;
 			// ローディング表示終了
 			self.loading = false;
           })
