@@ -9,7 +9,7 @@
 				<form @submit.prevent="searchEventLists">
 					<div class="searchArea">
 						<div class="searchArea__searchWord">
-						<vue-suggest-input v-model="searchWord" :items="items"/>
+						<input-suggest-component @change="wordUpdate" :searchWord="searchWord"/>
 						</div>
 						<div class="searchArea__searchType">
 							<div class="searchArea__searchTypeEl">
@@ -63,9 +63,8 @@ export default {
 		 url:"/vue/load_api",
 		 eventLists:[],
 		 loading:true,
-		 searchWord:"",
+		 searchWord:"bb",
 		 type:[1,2,3,4,5],
-		 items:['cake','cache']
         }
   },
   mounted: function () {
@@ -95,7 +94,10 @@ export default {
 				// ローディング表示終了
 				self.loading = false;
 			})
-    }
+	},
+	wordUpdate(searchWord){
+		this.searchWord = searchWord
+	}
   }
 }
 </script>

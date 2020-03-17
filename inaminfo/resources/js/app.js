@@ -27,6 +27,7 @@ Vue.component('side-tickets-component', require('./components/SideTicketsCompone
 
 Vue.component('loading-component', require('./components/LoadingComponent.vue').default);
 Vue.component('event-lists-component', require('./components/EventListsComponent.vue').default);
+Vue.component('input-suggest-component', require('./components/InputSuggestComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
