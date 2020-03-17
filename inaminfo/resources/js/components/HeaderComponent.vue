@@ -4,27 +4,26 @@
             <div class="header-nav__list">
                 <router-link to="/">
                     <div class="header-nav__item header-nav__item--first">
-                        <span>HOME</span>
-                    </div>
-                </router-link>
-                <router-link to="/about">
-                    <div class="header-nav__item header-nav__item--second">
-                        <span>ABOUT</span>
+                        <i class="fas fa-home header-nav__item--icon"></i>
+                        <div class="header-nav__item--text">HOME</div>
                     </div>
                 </router-link>
                 <router-link to="/events">
                     <div class="header-nav__item header-nav__item--third">
-                        <span>EVENTS</span>
+                        <i class="fas fa-search header-nav__item--icon"></i>
+                        <div class="header-nav__item--text">EVENTS</div>
                     </div>
                 </router-link>
                 <router-link to="/calendar">
                     <div class="header-nav__item header-nav__item--fifth">
-                        <span>CALENDAR</span>
+                        <i class="fas fa-calendar-alt header-nav__item--icon"></i>
+                        <div class="header-nav__item--text">CALENDAR</div>
                     </div>
                 </router-link>
                 <router-link to="/tickets">
                     <div class="header-nav__item header-nav__item--forth">
-                        <span>TICKETS</span>
+                        <i class="fas fa-ticket-alt header-nav__item--icon"></i>
+                        <div class="header-nav__item--text">TICKETS</div>
                     </div>
                 </router-link>
             </div>  
@@ -120,6 +119,9 @@ export default {
             color:#fff;
             padding:0 20px;
         }
+        .header-nav__item--icon{
+            display: none;
+        }
     }
     @media screen and (max-width:1142px) { 
         .header-nav__search{
@@ -134,13 +136,28 @@ export default {
             width: 100%;
             justify-content: space-between;
             border: 1px solid #ccc;
+            box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 -1px 3px 1px rgba(60, 64, 67, 0.15);
         }
         .header-nav__item{
             color:#FF5192;
             font-size:10px;
-            padding:0 10px;
+            margin:0 15px 0 10px;
+            position: relative;
+            height: 56px;
+            width:56px;
         }
-
+        .header-nav__item--icon{
+            display: block;
+            font-size: 2rem;
+            padding-top: 5px;
+            text-align: center;
+        }
+        .header-nav__item--text{
+            position: absolute;
+            top: 1.8em;
+            width:100%;
+            text-align: center;
+        }
     }
 
 </style>

@@ -2024,7 +2024,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'header-nav',
   data: function data() {
@@ -2408,7 +2407,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#header-nav{\n    height:56px;\n}\n.header-nav__content{\n    font-size:0.9rem;\n    line-height:56px;\n    margin:0 auto;\n    z-index: 10;\n}\n.header-nav__search input[type=\"text\"]{\n    width: 100%;\n    border-top: none;\n    border-right: none;\n    border-left: none;\n    outline: none;\n    font-size: 16px;\n    padding: 0.4em;\n    border:none;\n    border-radius: 4px;\n    box-shadow:inset 0 1px 2px #ccc;\n    opacity: 0.5;\n}\n.header-nav__search input[type=\"text\"]:focus{\n    opacity: 1.0;\n    transition-duration: 0.3s;\n}\n.rnd-container{\n    margin-top:12px;\n    margin-bottom:12px;\n    height:32px;\n}\n.rnd-input-container{\n    height:32px;\n}\n.rnd-text{\n    line-height: 32px;\n}\n.header-nav__searchBox input[type=\"submit\"]{\n    display: none;\n}\n@media screen and (min-width:1143px) {\n.header-nav__search{\n        margin-left: 200px;\n        width: 250px;\n}\n.header-nav__content{\n        display: flex;\n        width:992px;\n}\n.header-nav__list{\n        display:flex;\n}\n.header-nav__item{\n        color:#fff;\n        padding:0 20px;\n}\n}\n@media screen and (max-width:1142px) {\n.header-nav__search{\n        width: 80%;\n        margin-left: 8%;\n}\n.header-nav__list{\n        position: fixed;\n        display: flex;\n        bottom: 0;\n        background-color: #fff;\n        width: 100%;\n        justify-content: space-between;\n        border: 1px solid #ccc;\n}\n.header-nav__item{\n        color:#FF5192;\n        font-size:10px;\n        padding:0 10px;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n#header-nav{\n    height:56px;\n}\n.header-nav__content{\n    font-size:0.9rem;\n    line-height:56px;\n    margin:0 auto;\n    z-index: 10;\n}\n.header-nav__search input[type=\"text\"]{\n    width: 100%;\n    border-top: none;\n    border-right: none;\n    border-left: none;\n    outline: none;\n    font-size: 16px;\n    padding: 0.4em;\n    border:none;\n    border-radius: 4px;\n    box-shadow:inset 0 1px 2px #ccc;\n    opacity: 0.5;\n}\n.header-nav__search input[type=\"text\"]:focus{\n    opacity: 1.0;\n    transition-duration: 0.3s;\n}\n.rnd-container{\n    margin-top:12px;\n    margin-bottom:12px;\n    height:32px;\n}\n.rnd-input-container{\n    height:32px;\n}\n.rnd-text{\n    line-height: 32px;\n}\n.header-nav__searchBox input[type=\"submit\"]{\n    display: none;\n}\n@media screen and (min-width:1143px) {\n.header-nav__search{\n        margin-left: 200px;\n        width: 250px;\n}\n.header-nav__content{\n        display: flex;\n        width:992px;\n}\n.header-nav__list{\n        display:flex;\n}\n.header-nav__item{\n        color:#fff;\n        padding:0 20px;\n}\n.header-nav__item--icon{\n        display: none;\n}\n}\n@media screen and (max-width:1142px) {\n.header-nav__search{\n        width: 80%;\n        margin-left: 8%;\n}\n.header-nav__list{\n        position: fixed;\n        display: flex;\n        bottom: 0;\n        background-color: #fff;\n        width: 100%;\n        justify-content: space-between;\n        border: 1px solid #ccc;\n        box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 -1px 3px 1px rgba(60, 64, 67, 0.15);\n}\n.header-nav__item{\n        color:#FF5192;\n        font-size:10px;\n        margin:0 15px 0 10px;\n        position: relative;\n        height: 56px;\n        width:56px;\n}\n.header-nav__item--icon{\n        display: block;\n        font-size: 2rem;\n        padding-top: 5px;\n        text-align: center;\n}\n.header-nav__item--text{\n        position: absolute;\n        top: 1.8em;\n        width:100%;\n        text-align: center;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -20946,15 +20945,15 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "header-nav__item header-nav__item--first" },
-                [_c("span", [_vm._v("HOME")])]
-              )
-            ]),
-            _vm._v(" "),
-            _c("router-link", { attrs: { to: "/about" } }, [
-              _c(
-                "div",
-                { staticClass: "header-nav__item header-nav__item--second" },
-                [_c("span", [_vm._v("ABOUT")])]
+                [
+                  _c("i", {
+                    staticClass: "fas fa-home header-nav__item--icon"
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "header-nav__item--text" }, [
+                    _vm._v("HOME")
+                  ])
+                ]
               )
             ]),
             _vm._v(" "),
@@ -20962,7 +20961,15 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "header-nav__item header-nav__item--third" },
-                [_c("span", [_vm._v("EVENTS")])]
+                [
+                  _c("i", {
+                    staticClass: "fas fa-search header-nav__item--icon"
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "header-nav__item--text" }, [
+                    _vm._v("EVENTS")
+                  ])
+                ]
               )
             ]),
             _vm._v(" "),
@@ -20970,7 +20977,15 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "header-nav__item header-nav__item--fifth" },
-                [_c("span", [_vm._v("CALENDAR")])]
+                [
+                  _c("i", {
+                    staticClass: "fas fa-calendar-alt header-nav__item--icon"
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "header-nav__item--text" }, [
+                    _vm._v("CALENDAR")
+                  ])
+                ]
               )
             ]),
             _vm._v(" "),
@@ -20978,7 +20993,15 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "header-nav__item header-nav__item--forth" },
-                [_c("span", [_vm._v("TICKETS")])]
+                [
+                  _c("i", {
+                    staticClass: "fas fa-ticket-alt header-nav__item--icon"
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "header-nav__item--text" }, [
+                    _vm._v("TICKETS")
+                  ])
+                ]
               )
             ])
           ],
@@ -21629,7 +21652,7 @@ var render = function() {
     [
       _c("div", { staticClass: "mainparts" }, [
         _c("div", { staticClass: "container shadow-l1" }, [
-          _c("h4", { staticClass: "heading" }, [_vm._v("InaminTown")]),
+          _c("h4", { staticClass: "heading" }, [_vm._v("Inaminfo")]),
           _vm._v(" "),
           _c("div", { staticClass: "body__text" }, [
             _vm._v(
@@ -42877,8 +42900,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/toshimadaichi/selfwork/inaminfo/inaminfo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/toshimadaichi/selfwork/inaminfo/inaminfo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/toyoshimadaichi/work/inaminfo/inaminfo/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/toyoshimadaichi/work/inaminfo/inaminfo/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
