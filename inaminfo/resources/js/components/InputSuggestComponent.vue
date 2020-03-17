@@ -63,6 +63,7 @@ export default {
 .rnd-table-container li {
   padding: 0.5em;
   list-style: none;
+  line-height: 1.5em;
 }
 .rnd-table-container li.current {
   background-color: #eee;

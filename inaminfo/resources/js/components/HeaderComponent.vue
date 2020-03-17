@@ -90,15 +90,17 @@ export default {
         border:none;
         border-radius: 4px;
         box-shadow:inset 0 1px 2px #ccc;
+        opacity: 0.5;
+    }
+    .header-nav__search input[type="text"]:focus{
+        opacity: 1.0;
+        transition-duration: 0.3s;
     }
     .rnd-container{
         margin-top:12px;
         margin-bottom:12px;
         height:32px;
 
-    }
-    .rnd-container li{
-        line-height: 1.5em;
     }
     .rnd-input-container{
         height:32px;
