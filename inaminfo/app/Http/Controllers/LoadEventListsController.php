@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Libs\requestParameter;
 use App\Libs\responceParameter;
 use App\Libs\paginateCreater;
-use App\Http\Models\eventLoader;
+use App\Http\Models\Event;
 
 class LoadEventListsController extends Controller
 {
@@ -18,7 +18,7 @@ class LoadEventListsController extends Controller
      */
     public static function loadEventLists($requestParameter){
       $responceParameter = new responceParameter();
-      $eventLoader = new eventLoader();
+      $eventLoader = new Event();
 
       // リクエストパラメーターの格納
       $search_word = $requestParameter->getParam('search_word');

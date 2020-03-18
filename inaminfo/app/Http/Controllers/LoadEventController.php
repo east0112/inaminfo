@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Libs\requestParameter;
 use App\Libs\responceParameter;
 use App\Libs\paginateCreater;
-use App\Http\Models\eventLoader;
+use App\Http\Models\Event;
 
 class LoadEventController extends Controller
 {
@@ -18,7 +18,7 @@ class LoadEventController extends Controller
      */
     public static function loadEvent($requestParameter){
         $responceParameter = new responceParameter();
-        $eventLoader = new eventLoader();
+        $eventLoader = new Event();
         if(!$requestParameter->getParam('event_id') || !is_numeric($requestParameter->getParam('event_id'))){
           $responceParameter->setResponceCode(config('const.RESPONCE_ERROR_CODE'));
           return $responceParameter->getReturnData();

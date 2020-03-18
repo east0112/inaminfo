@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Libs\requestParameter;
 use App\Libs\responceParameter;
 use App\Libs\paginateCreater;
-use App\Http\Models\ticketLoader;
+use App\Http\Models\Ticket;
 
 class LoadTicketsController extends Controller
 {
@@ -18,7 +18,7 @@ class LoadTicketsController extends Controller
      */
     public static function loadTickets($requestParameter){
         $responceParameter = new responceParameter();
-        $ticketLoader = new ticketLoader();
+        $ticketLoader = new Ticket();
 
         $ticketLists = $ticketLoader->loadCurrentTicketLists(date("Y-m-d H:i:s"));
 
