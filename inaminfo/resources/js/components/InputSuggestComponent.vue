@@ -1,5 +1,5 @@
 <template>
-	<vue-suggest-input v-model="innerSearchWord" :items="items"/>
+	<vue-suggest-input v-model="innerSearchWord" :items="items" :max-suggest="5" @input="doInput()"/>
 </template>
 
 <script>
@@ -17,13 +17,28 @@ export default {
 	  set (value) {
         this.$emit('change', value)
       }	
-	}
+    }
   },
   data: function(){
-	return{
-		items:['cake','cache']
-	}
+    return{
+      url:"/vue/load_api",
+      items:[]
+    }
+  },
+  mounted: function(){
+    this.doInput()
+  },
+  methods: {
+    doInput: function () {
+      let self = this;
+      axios.post(this.url,{mode : 'suggest_tags',search_word : this.$props.searchWord})
+        .then(function(res){
+          const responce = res.data;
+          self.items = responce.tags;
+        })
+    }
   }
+
 }
 </script>
 

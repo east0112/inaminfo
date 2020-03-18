@@ -25,7 +25,13 @@ class Tag
     if($limit){
       $eloquent->limit($limit);
     }
-    return $eloquent->get();
+    //あとで直す
+    $tmpItems = $eloquent->get();
+    $items = array();
+    foreach($tmpItems as $item){
+      $items[] = $item->tag_name;
+    }
+    return $items;
   }
 
 }

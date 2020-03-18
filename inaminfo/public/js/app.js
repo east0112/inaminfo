@@ -2079,8 +2079,24 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      items: ['cake', 'cache']
+      url: "/vue/load_api",
+      items: []
     };
+  },
+  mounted: function mounted() {
+    this.doInput();
+  },
+  methods: {
+    doInput: function doInput() {
+      var self = this;
+      axios.post(this.url, {
+        mode: 'suggest_tags',
+        search_word: this.$props.searchWord
+      }).then(function (res) {
+        var responce = res.data;
+        self.items = responce.tags;
+      });
+    }
   }
 });
 
@@ -2248,7 +2264,7 @@ dayjs__WEBPACK_IMPORTED_MODULE_0___default.a.locale('ja');
       url: "/vue/load_api",
       eventLists: [],
       loading: true,
-      searchWord: "bb",
+      searchWord: "",
       type: [1, 2, 3, 4, 5]
     };
   },
@@ -21063,7 +21079,12 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("vue-suggest-input", {
-    attrs: { items: _vm.items },
+    attrs: { items: _vm.items, "max-suggest": 5 },
+    on: {
+      input: function($event) {
+        return _vm.doInput()
+      }
+    },
     model: {
       value: _vm.innerSearchWord,
       callback: function($$v) {

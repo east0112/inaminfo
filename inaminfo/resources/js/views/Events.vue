@@ -63,7 +63,7 @@ export default {
 		 url:"/vue/load_api",
 		 eventLists:[],
 		 loading:true,
-		 searchWord:"bb",
+		 searchWord:"",
 		 type:[1,2,3,4,5],
         }
   },
