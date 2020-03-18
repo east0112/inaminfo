@@ -48,6 +48,11 @@ class VueApiController extends Controller
 
             break;
 
+          case 'suggest_tags':
+            $requestParameter->setParam('search_word',$request->input('search_word'));
+            $returnData = LoadSuggestTagsController::loadSuggestTags($requestParameter);
+            break;
+
           default:
             return redirect('/');
             break;
