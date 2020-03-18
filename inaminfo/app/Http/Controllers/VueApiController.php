@@ -45,6 +45,10 @@ class VueApiController extends Controller
             break;
 
           case 'calendar':
+            $requestParameter->setParam('year',$request->input('year'));
+            $requestParameter->setParam('month',$request->input('month'));
+
+            $returnData = LoadCalendarController::loadCalendar($requestParameter);
 
             break;
 
@@ -60,5 +64,5 @@ class VueApiController extends Controller
       //テスト用
       return json_encode($returnData,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
       //return response()->json($returnData);
-      }      
+      }
   }

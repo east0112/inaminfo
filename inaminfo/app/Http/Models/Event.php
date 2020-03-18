@@ -79,5 +79,26 @@ class Event
     return $eventDetail;
   }
 
+  /**
+   * カレンダー表示用データの取得
+   *
+   * @param String $date
+   * @return array $eventDetail
+   */
+  public function loadEventCalendar($date){
+    $param = array($date);
+    $sql = "SELECT date(date) AS 'date',
+              max(CASE WHEN event_type = 1 THEN type_name END) AS event,
+              max(CASE WHEN event_type = 2 THEN type_name END) AS radio,
+              max(CASE WHEN event_type = 3 THEN type_name END) AS magazine,
+              max(CASE WHEN event_type = 4 THEN type_name END) AS program,
+              max(CASE WHEN event_type = 5 THEN type_name END) AS stage
+              FROM events INNER JOIN event_type ON events.event_type = event_type.type_id 
+              WHERE strftime('%Y-%m',date(date)) = strftime('%Y-%m',date(?))
+              GROUP BY date";
 
+
+    $items = DB::select($sql,$param);
+    return (array)$items;
+  }
 }
