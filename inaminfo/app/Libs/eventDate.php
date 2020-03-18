@@ -4,11 +4,13 @@ namespace App\Libs;
 class eventDate
 {
     public $date;
+    public $dd;
     public $current;
     public $type;
 
-    function __construct($date){
+    function __construct($date,$dd){
         $this->date = $date;
+        $this->dd = $dd;
         $this->type = array();
         $this->current = false;
     }

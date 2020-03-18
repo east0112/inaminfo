@@ -2,6 +2,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Events from './views/Events.vue'
+import Calendar from './views/Calendar.vue'
 
 export default new Router({
   mode: 'history',
@@ -25,6 +26,11 @@ export default new Router({
         path: '/events',
         name: 'events',
         component: Events
+      },
+      {
+        path: '/calendar',
+        name: 'calendar',
+        component: Calendar
       },
     ],
     mounted() {

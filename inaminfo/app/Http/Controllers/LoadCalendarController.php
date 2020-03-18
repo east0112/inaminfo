@@ -33,14 +33,10 @@ class LoadCalendarController extends Controller
 
         $calendarCreater = new calendarCreater($year,$month);
         $calendarCreater->setEvents($eventData);
-        //$currentCarendar = $calendarCreater->getCalendarDates();
         $responceParameter->setParam('calendar',$calendarCreater->createEventCalendar());
-
-        //test
-        /*
         $responceParameter->setParam('year',$year);
         $responceParameter->setParam('month',$month);
-        */
+
         return $responceParameter->getReturnData();
     }
 

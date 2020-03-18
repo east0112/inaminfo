@@ -42,7 +42,8 @@ class calendarCreater
 
         for ($i = 0; $i < $count; $i++, $date->addDay()) {
             $tmp_date = $date->format('Y-m-d');
-            $eventDate = new eventDate($tmp_date);
+            $tmp_date_dd = $date->format('j');
+            $eventDate = new eventDate($tmp_date,$tmp_date_dd);
             if($current_month === $date->format('Y-m')) $eventDate->setCurrent(true);
 
             foreach($this->events as $event){
