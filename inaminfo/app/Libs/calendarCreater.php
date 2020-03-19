@@ -27,7 +27,7 @@ class calendarCreater
     }
 
     public function createEventCalendar(){
-        if(!$this->year || !$this->month || !$this->events) return false;
+        if(!$this->year || !$this->month) return false;
 
         $current_date = sprintf('%04d-%02d-01', $this->year, $this->month);
         $current_month = sprintf('%04d-%02d', $this->year, $this->month);
