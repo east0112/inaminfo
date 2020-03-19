@@ -42,6 +42,7 @@ class LoadEventListsController extends Controller
       $responceParameter->setParam('eventLists',$paginateCreater->getDisplayItems());
       $responceParameter->setParam('paginate',$paginateCreater->getPaginate());
       $responceParameter->setParam('current_page',$paginateCreater->getCurrentPage());
+      $responceParameter->setParam('max_page',$paginateCreater->getMaxPage());
 
       return $responceParameter->getReturnData();
     }
