@@ -1928,10 +1928,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['dayItems'],
   data: function data() {
     return {};
+  },
+  methods: {
+    displayDayInfo: function displayDayInfo(date) {
+      alert(date);
+    }
   }
 });
 
@@ -2553,7 +2560,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".calendar {\n  margin-bottom: 40px;\n}\n.calendarContent {\n  display: flex;\n  flex-wrap: wrap;\n}\n.calendarContent__day {\n  width: 14.2%;\n  height: 100px;\n  border-bottom: 1px solid #ccc;\n  box-sizing: border-box;\n  color: #ccc;\n}\n.calendarContent__day.current {\n  color: #000;\n  cursor: pointer;\n}\n.calendarContent__day.header {\n  color: #fff;\n  background-color: #FF5192;\n  height: 2em;\n  line-height: 2em;\n  padding-left: 0.5em;\n}\n.calendarContent__dayItem {\n  display: block;\n  color: #fff;\n  border-radius: 5px;\n  text-align: center;\n}\n.calendarContent__dayItem--Event {\n  background-color: #FF5192;\n}\n.calendarContent__dayItem--Radio {\n  background-color: #FF9933;\n}\n.calendarContent__dayItem--Magazine {\n  background-color: #008080;\n}\n.calendarContent__dayItem--Program {\n  background-color: #FF3300;\n}\n.calendarContent__dayItem--Stage {\n  background-color: #0366D6;\n}\n@media screen and (min-width: 1143px) {\n.calendarContent__dayItem {\n    font-size: 0.7em;\n    width: 50%;\n    margin: 0.2em 0;\n}\n}\n@media screen and (max-width: 1142px) {\n.calendarContent__day {\n    height: 60px;\n    font-size: 10px;\n}\n}", ""]);
+exports.push([module.i, ".calendar {\n  margin-bottom: 40px;\n}\n.calendarContent {\n  display: flex;\n  flex-wrap: wrap;\n}\n.calendarContent__day {\n  width: 14.2%;\n  height: 100px;\n  border-bottom: 1px solid #ccc;\n  box-sizing: border-box;\n  color: #ccc;\n}\n.calendarContent__dayWrap {\n  height: 100%;\n}\n.calendarContent__dayWrap:hover {\n  opacity: 0.5;\n  cursor: pointer;\n}\n.calendarContent__day.current {\n  color: #000;\n  cursor: pointer;\n}\n.calendarContent__day.header {\n  color: #fff;\n  background-color: #FF5192;\n  height: 2em;\n  line-height: 2em;\n  padding-left: 0.5em;\n}\n.calendarContent__dayItem {\n  display: block;\n  color: #fff;\n  border-radius: 5px;\n  text-align: center;\n}\n.calendarContent__dayItem--Event {\n  background-color: #FF5192;\n}\n.calendarContent__dayItem--Radio {\n  background-color: #FF9933;\n}\n.calendarContent__dayItem--Magazine {\n  background-color: #008080;\n}\n.calendarContent__dayItem--Program {\n  background-color: #FF3300;\n}\n.calendarContent__dayItem--Stage {\n  background-color: #0366D6;\n}\n@media screen and (min-width: 1143px) {\n.calendarContent__dayItem {\n    font-size: 0.7em;\n    width: 50%;\n    margin: 0.2em 0;\n}\n}\n@media screen and (max-width: 1142px) {\n.calendarContent__day {\n    height: 60px;\n    font-size: 10px;\n}\n}", ""]);
 
 // exports
 
@@ -21083,64 +21090,77 @@ var render = function() {
             class: { current: dayItem.current }
           },
           [
-            _c("div", { staticClass: "calendarContent__dayTitle" }, [
-              _vm._v(_vm._s(dayItem.dd))
-            ]),
-            _vm._v(" "),
-            dayItem.type["event"]
-              ? _c(
-                  "span",
-                  {
-                    staticClass:
-                      "calendarContent__dayItem calendarContent__dayItem--Event"
-                  },
-                  [_vm._v("イベント")]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            dayItem.type["radio"]
-              ? _c(
-                  "span",
-                  {
-                    staticClass:
-                      "calendarContent__dayItem calendarContent__dayItem--Radio"
-                  },
-                  [_vm._v("ラジオ")]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            dayItem.type["magazine"]
-              ? _c(
-                  "span",
-                  {
-                    staticClass:
-                      "calendarContent__dayItem calendarContent__dayItem--Magazine"
-                  },
-                  [_vm._v("雑誌")]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            dayItem.type["program"]
-              ? _c(
-                  "span",
-                  {
-                    staticClass:
-                      "calendarContent__dayItem calendarContent__dayItem--Program"
-                  },
-                  [_vm._v("番組")]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            dayItem.type["stage"]
-              ? _c(
-                  "span",
-                  {
-                    staticClass:
-                      "calendarContent__dayItem calendarContent__dayItem--Stage"
-                  },
-                  [_vm._v("舞台")]
-                )
-              : _vm._e()
+            _c(
+              "div",
+              {
+                staticClass: "calendarContent__dayWrap",
+                on: {
+                  click: function($event) {
+                    return _vm.displayDayInfo(dayItem.date)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "calendarContent__dayTitle" }, [
+                  _vm._v(_vm._s(dayItem.dd))
+                ]),
+                _vm._v(" "),
+                dayItem.type["event"]
+                  ? _c(
+                      "span",
+                      {
+                        staticClass:
+                          "calendarContent__dayItem calendarContent__dayItem--Event"
+                      },
+                      [_vm._v("イベント")]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                dayItem.type["radio"]
+                  ? _c(
+                      "span",
+                      {
+                        staticClass:
+                          "calendarContent__dayItem calendarContent__dayItem--Radio"
+                      },
+                      [_vm._v("ラジオ")]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                dayItem.type["magazine"]
+                  ? _c(
+                      "span",
+                      {
+                        staticClass:
+                          "calendarContent__dayItem calendarContent__dayItem--Magazine"
+                      },
+                      [_vm._v("雑誌")]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                dayItem.type["program"]
+                  ? _c(
+                      "span",
+                      {
+                        staticClass:
+                          "calendarContent__dayItem calendarContent__dayItem--Program"
+                      },
+                      [_vm._v("番組")]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                dayItem.type["stage"]
+                  ? _c(
+                      "span",
+                      {
+                        staticClass:
+                          "calendarContent__dayItem calendarContent__dayItem--Stage"
+                      },
+                      [_vm._v("舞台")]
+                    )
+                  : _vm._e()
+              ]
+            )
           ]
         )
       })

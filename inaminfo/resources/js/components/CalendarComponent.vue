@@ -8,12 +8,14 @@
 		<div class="calendarContent__day header">Fri</div>
 		<div class="calendarContent__day header">Sut</div>
 		<div v-for="(dayItem,index) in dayItems" :key="index" class="calendarContent__day" v-bind:class="{current:dayItem.current}">
-			<div class="calendarContent__dayTitle">{{dayItem.dd}}</div>
-			<span class="calendarContent__dayItem calendarContent__dayItem--Event" v-if="dayItem.type['event']">イベント</span>
-			<span class="calendarContent__dayItem calendarContent__dayItem--Radio" v-if="dayItem.type['radio']">ラジオ</span>
-			<span class="calendarContent__dayItem calendarContent__dayItem--Magazine" v-if="dayItem.type['magazine']">雑誌</span>
-			<span class="calendarContent__dayItem calendarContent__dayItem--Program" v-if="dayItem.type['program']">番組</span>
-			<span class="calendarContent__dayItem calendarContent__dayItem--Stage" v-if="dayItem.type['stage']">舞台</span>
+			<div class="calendarContent__dayWrap" v-on:click="displayDayInfo(dayItem.date)">
+				<div class="calendarContent__dayTitle">{{dayItem.dd}}</div>
+				<span class="calendarContent__dayItem calendarContent__dayItem--Event" v-if="dayItem.type['event']">イベント</span>
+				<span class="calendarContent__dayItem calendarContent__dayItem--Radio" v-if="dayItem.type['radio']">ラジオ</span>
+				<span class="calendarContent__dayItem calendarContent__dayItem--Magazine" v-if="dayItem.type['magazine']">雑誌</span>
+				<span class="calendarContent__dayItem calendarContent__dayItem--Program" v-if="dayItem.type['program']">番組</span>
+				<span class="calendarContent__dayItem calendarContent__dayItem--Stage" v-if="dayItem.type['stage']">舞台</span>
+			</div>
 		</div>
 	</div>
 </template>
@@ -24,6 +26,11 @@ export default {
   data: function(){
     return{
         }
+  },
+  methods:{
+	  displayDayInfo(date){
+		  alert(date);
+	  }
   }
 }
 </script>
@@ -42,6 +49,13 @@ export default {
 			border-bottom: 1px solid $color-border;
 			box-sizing: border-box;
 			color: $color-disabled;
+			&Wrap{
+				height: 100%;
+				&:hover{
+					opacity: 0.5;
+					cursor: pointer;
+				}
+			}
 			&.current{
 				color: $black;
 				cursor: pointer;
