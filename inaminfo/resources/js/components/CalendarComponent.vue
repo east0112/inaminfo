@@ -63,16 +63,16 @@ export default {
 					background-color: $color-event;
 				}
 				&--Radio{
-					background-color: $color-event;
+					background-color: $color-radio;
 				}
 				&--Magazine{
-					background-color: $color-event;
+					background-color: $color-magazine;
 				}
 				&--Program{
-					background-color: $color-event;
+					background-color: $color-program;
 				}
 				&--Stage{
-					background-color: $color-event;
+					background-color: $color-stage;
 				}
 				
 			}
