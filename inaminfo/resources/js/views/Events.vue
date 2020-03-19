@@ -122,7 +122,6 @@ export default {
 	border-top: none;
 	border-right: none;
 	border-left: none;
-	outline: none;
 	font-size: 16px;
 	padding: 0.5em;
 }
