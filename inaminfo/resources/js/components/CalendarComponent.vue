@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../sass/variables';
+
 .calendar{
 	margin-bottom: 40px;
 	&Content{
@@ -37,50 +39,66 @@ export default {
 		&__day{
 			width: 14.2%;
 			height: 100px;
-			border-bottom: 1px solid #ccc;
+			border-bottom: 1px solid $color-border;
 			box-sizing: border-box;
-			color: #ccc;
+			color: $color-disabled;
 			&.current{
-				color: #000;
+				color: $black;
 				cursor: pointer;
 			}
 			&.header{
 				color: #fff;
-				background-color: #FF5192;
+				background-color: $color-main;
 				height: 2em;
 				line-height: 2em;
 				padding-left: 0.5em;
 			}
-		}		
-	}
-}
-@media screen and (min-width:1143px) { 
-.calendar{
-	&Content{
-		&__day{
 			&Item{
 				display: block;
-				font-size: 0.7em;
-				color: #fff;
-				width: 50%;
+				color: $white;
 				border-radius: 5px;
 				text-align: center;
 
 				&--Event{
-					background-color: #FF5192;
+					background-color: $color-event;
 				}
+				&--Radio{
+					background-color: $color-event;
+				}
+				&--Magazine{
+					background-color: $color-event;
+				}
+				&--Program{
+					background-color: $color-event;
+				}
+				&--Stage{
+					background-color: $color-event;
+				}
+				
+			}
+		}
+	}
+}
+@media screen and (min-width:$pc-width) { 
+.calendar{
+	&Content{
+		&__day{
+			&Item{
+				font-size: 0.7em;
+				width: 50%;
+				margin: 0.2em 0;
 			}
 		}
 	}
 }
 }
-@media screen and (max-width:1142px) { 
+@media screen and (max-width:$sp-width) { 
 	.calendar{
 		&Content{
 			&__day{
 				height: 60px;
 				font-size: 10px;
-			}		
+			}
 		}
 	}
 
