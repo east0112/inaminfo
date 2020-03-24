@@ -6,7 +6,7 @@
 		<div class="calendarContent__day header">Wed</div>
 		<div class="calendarContent__day header">Thu</div>
 		<div class="calendarContent__day header">Fri</div>
-		<div class="calendarContent__day header">Sut</div>
+		<div class="calendarContent__day header">Sat</div>
 		<div v-for="(dayItem,index) in dayItems" :key="index" class="calendarContent__day" v-bind:class="{current:dayItem.current}">
 			<div class="calendarContent__dayWrap" v-on:click="displayDayInfo(dayItem.date)">
 				<div class="calendarContent__dayTitle">{{dayItem.dd}}</div>

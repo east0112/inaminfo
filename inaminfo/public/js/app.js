@@ -21078,7 +21078,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "calendarContent__day header" }, [
-        _vm._v("Sut")
+        _vm._v("Sat")
       ]),
       _vm._v(" "),
       _vm._l(_vm.dayItems, function(dayItem, index) {
