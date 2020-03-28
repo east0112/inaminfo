@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Libs\requestParameter;
 use App\Libs\responceParameter;
-use App\Libs\paginateCreater;
+use App\Libs\ogpLoader;
 use App\Http\Models\Event;
 use App\Http\Models\Song;
 use App\Http\Models\Tweet;
@@ -31,7 +31,16 @@ class LoadEventController extends Controller
 
         // 関連サイト
         $urlLoader = new Url();
-        $responceParameter->setParam('url',$urlLoader->loadUrl($requestParameter->getParam('event_id')));
+        $urls = $urlLoader->loadUrl($requestParameter->getParam('event_id'));
+        $ogpData = array();
+        if(count($urls) > 0){
+          foreach($urls as $url){
+            $ogpLoader = new ogpLoader($url->url);
+            $ogp = $ogpLoader->getOGP();
+            if($ogp) $ogpData[] = $ogp;
+          }
+        }
+        $responceParameter->setParam('url',$ogpData);
 
         // 本人ツイート
         $tweetLoader = new Tweet();
@@ -43,5 +52,6 @@ class LoadEventController extends Controller
 
         return $responceParameter->getReturnData();
     }
+
 
   }

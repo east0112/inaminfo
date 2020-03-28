@@ -12,7 +12,7 @@
 				<tr v-for="(event,index) in eventLists" :key="index" class="eventLists__row">
 					<td>{{event.date}}</td>
 					<td>{{event.type_name}}</td>
-					<td><router-link v-bind:to='"/events/detail?event_id=" + event.event_id'>{{event.event_name}}</router-link></td>
+					<td><router-link v-bind:to='"/events/" + event.event_id'>{{event.event_name}}</router-link></td>
 				</tr>
 			</tbody>
 		</table>
