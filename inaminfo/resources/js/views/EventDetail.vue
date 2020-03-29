@@ -6,11 +6,6 @@
 					<template v-if="event">
 						<h4 class="heading">{{event.event_name}}</h4>
 						<div class="body__text">
-							<template v-if="urls">
-								<div v-for="(url,index) in urls" :key="index" class="eventDetail_Link">
-									<img :src="url.image"/>
-								</div>
-							</template>
 						</div>
 					</template>
 					<template v-else>
@@ -24,6 +19,11 @@
 				<loading-component :loading="loading"></loading-component>
 				</div>
 			</div>
+			<template v-if="urls">
+				<div v-for="(link,index) in urls" :key="index">
+					<link-card-component :link="link"></link-card-component>
+				</div>
+			</template>
 		</div>
 		<side-tickets-component></side-tickets-component>
 	</div>

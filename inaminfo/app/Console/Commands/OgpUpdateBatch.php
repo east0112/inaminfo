@@ -81,7 +81,7 @@ class OgpUpdateBatch extends Command
                 }
         
                 // event_urlデータを取得したOGPおよびS3のファイル名で更新する.
-                $this->updateEventUrl($event_url_id,$ogp,$s3_path);
+                $this->updateEventUrl($event_url_id,$ogp,getenv('AWS_S3_CACHE_BASEURL').$s3_path);
                 $update_count++;
             }
         }

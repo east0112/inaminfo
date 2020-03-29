@@ -31,16 +31,7 @@ class LoadEventController extends Controller
 
         // 関連サイト
         $urlLoader = new Url();
-        $urls = $urlLoader->loadUrl($requestParameter->getParam('event_id'));
-        $ogpData = array();
-        if(count($urls) > 0){
-          foreach($urls as $url){
-            $ogpLoader = new ogpLoader($url->url);
-            $ogp = $ogpLoader->getOGP();
-            if($ogp) $ogpData[] = $ogp;
-          }
-        }
-        $responceParameter->setParam('url',$ogpData);
+        $responceParameter->setParam('url',$urlLoader->loadUrl($requestParameter->getParam('event_id')));
 
         // 本人ツイート
         $tweetLoader = new Tweet();

@@ -26,6 +26,7 @@ Vue.component('footer-component', require('./components/FooterComponent.vue').de
 Vue.component('side-tickets-component', require('./components/SideTicketsComponent.vue').default);
 
 Vue.component('loading-component', require('./components/LoadingComponent.vue').default);
+Vue.component('link-card-component', require('./components/LinkCardComponent.vue').default);
 Vue.component('event-lists-component', require('./components/EventListsComponent.vue').default);
 Vue.component('input-suggest-component', require('./components/InputSuggestComponent.vue').default);
 Vue.component('calendar-component', require('./components/CalendarComponent.vue').default);
