@@ -111,7 +111,10 @@ class OgpUpdateBatch extends Command
 
     private function loadEventUrls(){
         try{
-            return DB::table("event_url")->get();
+            return DB::table("event_url")
+            ->whereNull('og_cache_create_date')
+            ->orwhere('og_cache_create_date','<',date('Y-m-d', strtotime('-2 week', time())))
+            ->get();
         }catch (Exception $e){
             \Log::error($this->log_name.'Database Error. '.$e);
             return false;
