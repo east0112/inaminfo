@@ -25,7 +25,16 @@ class ogpLoader
                 return true;
             }
         }
+        if(preg_match_all("@<title>(.*)</title>@", $html, $titleList )){
+            if (is_array($titleList) && isset($titleList[1])) {
+                $ogpResult = array();
+                $ogpResult['title'] = $titleList[1][0];
+                $this->ogp = $ogpResult;
+                return true;
+            }
+        }else{
             return false;
+        }
     }
 
 }

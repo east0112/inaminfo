@@ -3,9 +3,11 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Libs\ogpLoader;
 use App\Libs\awsS3Uploader;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\DB;
 
 class OgpUpdateBatch extends Command
 {
@@ -23,7 +25,12 @@ class OgpUpdateBatch extends Command
      */
     protected $description = 'Command description';
 
+    /**
+     * The file path in inaminfo server for image cache.
+     */
+
     protected $tmp_file_path = '/tmp/';
+    protected $log_name = 'OGP Update Batch : ';
 
     /**
      * Create a new command instance.
@@ -42,16 +49,49 @@ class OgpUpdateBatch extends Command
      */
     public function handle()
     {
-        $event_url_id = 1; //debug
-        $img_url = 'http://develop-inami.sakura.ne.jp/images/home001.png'; //debug
+        \Log::info($this->log_name.'Start OGP update batch.');
 
-        //$img = file_get_contents($img);
-        //$s3uploader = new awsS3Uploader($event_url_id,$img);
+        $s3uploader = new awsS3Uploader();
 
-        $img_path = $this->saveTmpImage($img_url);
-        $path = Storage::disk('s3')->putFile('/ogp_image',$img_path,'public');
+        $eventUrls = $this->loadEventUrls();
+        if(!$eventUrls) exit();
+
+        $update_count = 0;
+        foreach($eventUrls as $url){
+            $event_url_id = $url->event_url_id;
+            $ogpLoader = new ogpLoader($url->url);
+            // OGP取得
+            $ogp = $ogpLoader->getOGP();
+            if(!isset($ogp['image'])){
+                // OGPが未設定の場合
+                \Log::alert($this->log_name.'Get ogp image failed. event_url_id = '.$event_url_id);
+                $this->updateEventUrlNothingOGP($event_url_id,$ogp);
+                $update_count++;
+            }else{
+                // ローカルサーバのストレージに画像を一時保存する.
+                $tmp_img_path = $this->saveTmpImage($ogp['image']);
+                // 正常に保存できた場合はS3へアップロードする.
+                if($tmp_img_path){
+                    try{
+                        $s3_path = $s3uploader->uploadImage($tmp_img_path);
+                    }catch (Exception $e){
+                        \Log::error($this->log_name.'Upload image file error. '.$e);
+                        continue;
+                    }
+                }
+        
+                // event_urlデータを取得したOGPおよびS3のファイル名で更新する.
+                $this->updateEventUrl($event_url_id,$ogp,$s3_path);
+                $update_count++;
+            }
+        }
+
+        // tmpファイルを削除
+        \File::cleanDirectory(storage_path().$this->tmp_file_path);
+        \Log::info($this->log_name.'Delete local tmp image file.');
+        $max = count($eventUrls);
+        \Log::info($this->log_name.'Finish OGP update batch. updateData '."$update_count / $max");
     }
-
 
     private function saveTmpImage($image_url){
         $tmp_file_name = 'tmp_'.date('YmdHis');
@@ -63,8 +103,44 @@ class OgpUpdateBatch extends Command
               });
             $image->save($file_path);
         }catch (Exception $e){
+            \Log::error($this->log_name.'Save temp image file error. '.$e);
             return false;
         }
         return (file_exists($file_path)) ? $file_path : false;
     }
+
+    private function loadEventUrls(){
+        try{
+            return DB::table("event_url")->get();
+        }catch (Exception $e){
+            \Log::error($this->log_name.'Database Error. '.$e);
+            return false;
+        }
+    }
+
+    private function updateEventUrl($event_url_id,$ogp,$s3url){
+        try{
+            $res = DB::table('event_url')
+            ->where('event_url_id',$event_url_id)
+            ->update(['og_title' => $ogp['title'],
+                      'og_description' => $ogp['description'],
+                      'og_sitename' => $ogp['site_name'],
+                      'og_img_cache_url' => $s3url,
+                      'og_cache_create_date' => date('Y-m-d')]);
+        }catch (Exception $e){
+            \Log::error($this->log_name.'Database Update Error. '.$e);
+        }
+    }
+
+    private function updateEventUrlNothingOGP($event_url_id,$ogp){
+        try{
+            DB::table('event_url')
+            ->where('event_url_id',$event_url_id)
+            ->update(['og_title' => $ogp['title'],
+                      'og_cache_create_date' => date('Y-m-d')]);
+        }catch (Exception $e){
+            \Log::error($this->log_name.'Database Update Error. '.$e);
+        }
+    }
+
 }
