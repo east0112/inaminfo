@@ -53,7 +53,7 @@ export default {
   font-weight: 900;
   opacity: 0.5;
   top: 0;
-  right: 0;
+  right: 5px;
   line-height: 1.5em;
   font-size: 1.5em;
 }

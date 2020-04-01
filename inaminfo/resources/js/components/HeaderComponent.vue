@@ -81,7 +81,7 @@ export default {
         border-right: none;
         border-left: none;
         font-size: 16px;
-        padding: 0.4em;
+        padding: 0.4em 0;
         border:none;
         border-radius: 4px;
         box-shadow:inset 0 1px 2px #ccc;

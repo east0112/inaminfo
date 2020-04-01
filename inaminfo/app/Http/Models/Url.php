@@ -22,6 +22,7 @@ class Url
 
     $eventUrl = DB::table("event_url")
       ->where("event_url.event_id","=",$eventId)
+      ->orderBy('event_url_id','desc')
       ->get();
     return $eventUrl;
   }

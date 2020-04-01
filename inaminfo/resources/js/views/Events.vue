@@ -126,7 +126,7 @@ export default {
 	border-right: none;
 	border-left: none;
 	font-size: 16px;
-	padding: 0.5em;
+	padding: 0.5em 0;
 }
 .searchArea__searchButton{
 	margin: 20px 0;
