@@ -60,7 +60,10 @@ export default {
 	&__text{
 		padding: 5px;
 		&Title{
-			font-size:1em;
+			font-size:0.8rem;
+			line-height: 1rem;
+			height: 1rem;
+			overflow: hidden;
 		}
 		&Desc{
 			font-size: 0.8rem;
@@ -80,8 +83,7 @@ export default {
 }
 @media screen and (min-width:$pc-width) { 
 	.linkCard{
-		width: 30%;
-		margin: 20px 1.6%;
+		margin-top: 20px;
 		height: 240px;
 		background-color: $white;
 	}

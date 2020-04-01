@@ -46,7 +46,10 @@
 				</div>
 			</div>
 		</div>
-		<side-tickets-component></side-tickets-component>
+		<div class="subparts">
+			<side-tickets-component></side-tickets-component>
+			<side-suggest-link-component></side-suggest-link-component>
+		</div>
 	</div>
 </template>
 

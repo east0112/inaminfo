@@ -24,6 +24,7 @@ Vue.use(VueRouter);
 Vue.component('header-component', require('./components/HeaderComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('side-tickets-component', require('./components/SideTicketsComponent.vue').default);
+Vue.component('side-suggest-link-component', require('./components/SideSuggestLinkComponent.vue').default);
 
 Vue.component('loading-component', require('./components/LoadingComponent.vue').default);
 Vue.component('link-card-component', require('./components/LinkCardComponent.vue').default);

@@ -2213,6 +2213,55 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SideSuggestLinkComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SideSuggestLinkComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      url: "/vue/load_api",
+      urls: [],
+      loading: true
+    };
+  },
+  mounted: function mounted() {
+    var self = this;
+    axios.post(this.url, {
+      mode: 'event',
+      event_id: 173
+    }).then(function (res) {
+      var responce = res.data;
+      self.urls = responce.url; // ローディング表示終了
+
+      self.loading = false;
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SideTicketsComponent.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SideTicketsComponent.vue?vue&type=script&lang=js& ***!
@@ -2222,8 +2271,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -2283,6 +2330,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -2439,6 +2489,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2478,6 +2530,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_suggest_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-suggest-input */ "./node_modules/vue-suggest-input/dist/vue-suggest-input.common.js");
 /* harmony import */ var vue_suggest_input__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_suggest_input__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
 //
 //
 //
@@ -2640,6 +2695,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 dayjs__WEBPACK_IMPORTED_MODULE_0___default.a.locale('ja');
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2701,7 +2759,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".linkCard[data-v-26049598] {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n}\n.linkCardInner[data-v-26049598] {\n  width: 100%;\n  height: 100%;\n  cursor: pointer;\n}\n.linkCardInner[data-v-26049598]:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n.linkCard__image[data-v-26049598] {\n  width: 100%;\n  height: 150px;\n  background-color: #ccc;\n}\n.linkCard__imageData[data-v-26049598] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.linkCard__text[data-v-26049598] {\n  padding: 5px;\n}\n.linkCard__textTitle[data-v-26049598] {\n  font-size: 1em;\n}\n.linkCard__textDesc[data-v-26049598] {\n  font-size: 0.8rem;\n  color: #ccc;\n  margin: 0.5em 0;\n  line-height: 1rem;\n  height: 2rem;\n  overflow: hidden;\n}\n.linkCard__textDomain[data-v-26049598] {\n  font-size: 0.7rem;\n  color: #ccc;\n  position: absolute;\n  bottom: 10px;\n}\n@media screen and (min-width: 1143px) {\n.linkCard[data-v-26049598] {\n    width: 30%;\n    margin: 20px 1.6%;\n    height: 240px;\n    background-color: #fff;\n}\n}", ""]);
+exports.push([module.i, ".linkCard[data-v-26049598] {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n}\n.linkCardInner[data-v-26049598] {\n  width: 100%;\n  height: 100%;\n  cursor: pointer;\n}\n.linkCardInner[data-v-26049598]:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n.linkCard__image[data-v-26049598] {\n  width: 100%;\n  height: 150px;\n  background-color: #ccc;\n}\n.linkCard__imageData[data-v-26049598] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.linkCard__text[data-v-26049598] {\n  padding: 5px;\n}\n.linkCard__textTitle[data-v-26049598] {\n  font-size: 0.8rem;\n  line-height: 1rem;\n  height: 1rem;\n  overflow: hidden;\n}\n.linkCard__textDesc[data-v-26049598] {\n  font-size: 0.8rem;\n  color: #ccc;\n  margin: 0.5em 0;\n  line-height: 1rem;\n  height: 2rem;\n  overflow: hidden;\n}\n.linkCard__textDomain[data-v-26049598] {\n  font-size: 0.7rem;\n  color: #ccc;\n  position: absolute;\n  bottom: 10px;\n}\n@media screen and (min-width: 1143px) {\n.linkCard[data-v-26049598] {\n    margin-top: 20px;\n    height: 240px;\n    background-color: #fff;\n}\n}", ""]);
 
 // exports
 
@@ -21789,6 +21847,54 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SideSuggestLinkComponent.vue?vue&type=template&id=64dba161&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SideSuggestLinkComponent.vue?vue&type=template&id=64dba161& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    !_vm.loading
+      ? _c(
+          "div",
+          { staticClass: "body__subtext" },
+          [
+            _vm.urls
+              ? _vm._l(_vm.urls, function(link, index) {
+                  return _c(
+                    "div",
+                    { key: index },
+                    [_c("link-card-component", { attrs: { link: link } })],
+                    1
+                  )
+                })
+              : _vm._e()
+          ],
+          2
+        )
+      : _c(
+          "div",
+          [_c("loading-component", { attrs: { loading: _vm.loading } })],
+          1
+        )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SideTicketsComponent.vue?vue&type=template&id=79a1afb8&":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SideTicketsComponent.vue?vue&type=template&id=79a1afb8& ***!
@@ -21804,67 +21910,61 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "subparts" }, [
-    _c("div", { staticClass: "container shadow-l1" }, [
-      _c("h4", { staticClass: "heading" }, [_vm._v("応募期間中のチケット")]),
-      _vm._v(" "),
-      !_vm.loading
-        ? _c("div", { staticClass: "body__subtext" }, [
-            _vm.ticketLists.length
-              ? _c(
-                  "div",
-                  _vm._l(_vm.ticketLists, function(ticket, index) {
-                    return _c(
-                      "div",
-                      { key: index, staticClass: "subpartsTicket" },
-                      [
-                        _c("p", { staticClass: "subpartsTicket__title" }, [
-                          _vm._v(_vm._s(ticket.ticket_name))
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "subpartsTicket__date" }, [
-                          _vm._v("応募開始：" + _vm._s(ticket.start_time))
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "subpartsTicket__date" }, [
-                          _vm._v("応募終了：" + _vm._s(ticket.end_time))
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          { attrs: { href: ticket.url, target: "_blank" } },
-                          [
-                            _c(
-                              "p",
-                              {
-                                staticClass:
-                                  "subpartsTicket__link link-icon--outside"
-                              },
-                              [
-                                _vm._v(
-                                  "\n\t\t\t\t\t\t詳細はこちら\n\t\t\t\t\t\t"
-                                )
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    )
-                  }),
-                  0
-                )
-              : _c("div", [
-                  _vm._v(
-                    "\n\t\t\t\t現在チケットの抽選および販売はありません。\n\t\t\t"
+  return _c("div", { staticClass: "container shadow-l1" }, [
+    _c("h4", { staticClass: "heading" }, [_vm._v("応募期間中のチケット")]),
+    _vm._v(" "),
+    !_vm.loading
+      ? _c("div", { staticClass: "body__subtext" }, [
+          _vm.ticketLists.length
+            ? _c(
+                "div",
+                _vm._l(_vm.ticketLists, function(ticket, index) {
+                  return _c(
+                    "div",
+                    { key: index, staticClass: "subpartsTicket" },
+                    [
+                      _c("p", { staticClass: "subpartsTicket__title" }, [
+                        _vm._v(_vm._s(ticket.ticket_name))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "subpartsTicket__date" }, [
+                        _vm._v("応募開始：" + _vm._s(ticket.start_time))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "subpartsTicket__date" }, [
+                        _vm._v("応募終了：" + _vm._s(ticket.end_time))
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        { attrs: { href: ticket.url, target: "_blank" } },
+                        [
+                          _c(
+                            "p",
+                            {
+                              staticClass:
+                                "subpartsTicket__link link-icon--outside"
+                            },
+                            [_vm._v("\n\t\t\t\t\t詳細はこちら\n\t\t\t\t\t")]
+                          )
+                        ]
+                      )
+                    ]
                   )
-                ])
-          ])
-        : _c(
-            "div",
-            [_c("loading-component", { attrs: { loading: _vm.loading } })],
-            1
-          )
-    ])
+                }),
+                0
+              )
+            : _c("div", [
+                _vm._v(
+                  "\n\t\t\t現在チケットの抽選および販売はありません。\n\t\t"
+                )
+              ])
+        ])
+      : _c(
+          "div",
+          [_c("loading-component", { attrs: { loading: _vm.loading } })],
+          1
+        )
   ])
 }
 var staticRenderFns = []
@@ -21995,86 +22095,88 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "content" },
-    [
-      _c("div", { staticClass: "mainparts" }, [
-        _c("div", { staticClass: "container shadow-l1" }, [
-          _c("h4", { staticClass: "heading" }, [_vm._v("カレンダー")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "body__text" }, [
-            _vm._v(
-              "\n\t\t\t\tカレンダーからイベントや舞台、ラジオ等の情報を検索できます。\n\t\t\t"
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "calendar" }, [
-            !_vm.loading
-              ? _c("div", [
-                  !_vm.error
-                    ? _c(
-                        "div",
-                        [
-                          _c("div", { staticClass: "calendarOperation" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "calendarOperation__button",
-                                on: { click: _vm.movePrev }
-                              },
-                              [_c("i", { staticClass: "fas fa-angle-left" })]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "calendarOperation__year" },
-                              [
-                                _vm._v(
-                                  _vm._s(_vm.year) + " . " + _vm._s(_vm.month)
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "calendarOperation__button",
-                                on: { click: _vm.moveNext }
-                              },
-                              [_c("i", { staticClass: "fas fa-angle-right" })]
-                            )
-                          ]),
+  return _c("div", { staticClass: "content" }, [
+    _c("div", { staticClass: "mainparts" }, [
+      _c("div", { staticClass: "container shadow-l1" }, [
+        _c("h4", { staticClass: "heading" }, [_vm._v("カレンダー")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "body__text" }, [
+          _vm._v(
+            "\n\t\t\t\tカレンダーからイベントや舞台、ラジオ等の情報を検索できます。\n\t\t\t"
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "calendar" }, [
+          !_vm.loading
+            ? _c("div", [
+                !_vm.error
+                  ? _c(
+                      "div",
+                      [
+                        _c("div", { staticClass: "calendarOperation" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "calendarOperation__button",
+                              on: { click: _vm.movePrev }
+                            },
+                            [_c("i", { staticClass: "fas fa-angle-left" })]
+                          ),
                           _vm._v(" "),
-                          _c("calendar-component", {
-                            attrs: { dayItems: _vm.dayItems }
-                          })
-                        ],
-                        1
-                      )
-                    : _c("div", [
-                        _c("div", { staticClass: "body__text" }, [
-                          _vm._v(
-                            "\n\t\t\t\t\t\tエラーが発生しました。もう１度お試しください。\n\t\t\t\t\t\t"
+                          _c(
+                            "div",
+                            { staticClass: "calendarOperation__year" },
+                            [
+                              _vm._v(
+                                _vm._s(_vm.year) + " . " + _vm._s(_vm.month)
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "calendarOperation__button",
+                              on: { click: _vm.moveNext }
+                            },
+                            [_c("i", { staticClass: "fas fa-angle-right" })]
                           )
-                        ])
+                        ]),
+                        _vm._v(" "),
+                        _c("calendar-component", {
+                          attrs: { dayItems: _vm.dayItems }
+                        })
+                      ],
+                      1
+                    )
+                  : _c("div", [
+                      _c("div", { staticClass: "body__text" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\tエラーが発生しました。もう１度お試しください。\n\t\t\t\t\t\t"
+                        )
                       ])
-                ])
-              : _c(
-                  "div",
-                  [
-                    _c("loading-component", { attrs: { loading: _vm.loading } })
-                  ],
-                  1
-                )
-          ])
+                    ])
+              ])
+            : _c(
+                "div",
+                [_c("loading-component", { attrs: { loading: _vm.loading } })],
+                1
+              )
         ])
-      ]),
-      _vm._v(" "),
-      _c("side-tickets-component")
-    ],
-    1
-  )
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "subparts" },
+      [
+        _c("side-tickets-component"),
+        _vm._v(" "),
+        _c("side-suggest-link-component")
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22098,130 +22200,121 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "content" },
-    [
-      _c(
-        "div",
-        { staticClass: "mainparts" },
-        [
-          _c("div", { staticClass: "container shadow-l1" }, [
-            !_vm.loading
-              ? _c(
-                  "div",
-                  [
-                    _vm.event
-                      ? [
-                          _c("h4", { staticClass: "heading" }, [
-                            _vm._v(_vm._s(_vm.event.event_name))
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "body__text" }, [
-                            _c("table", { staticClass: "eventDetail" }, [
-                              _vm.event.date
-                                ? _c("tr", [
-                                    _c(
-                                      "th",
-                                      { staticClass: "eventDetail__itemName" },
-                                      [_vm._v("日時")]
-                                    ),
-                                    _c(
-                                      "td",
-                                      { staticClass: "eventDetail__itemData" },
-                                      [_vm._v(_vm._s(_vm.event.date))]
-                                    )
-                                  ])
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.event.type_name
-                                ? _c("tr", [
-                                    _c(
-                                      "th",
-                                      { staticClass: "eventDetail__itemName" },
-                                      [_vm._v("種類")]
-                                    ),
-                                    _c(
-                                      "td",
-                                      { staticClass: "eventDetail__itemData" },
-                                      [_vm._v(_vm._s(_vm.event.type_name))]
-                                    )
-                                  ])
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.event.place_name
-                                ? _c("tr", [
-                                    _c(
-                                      "th",
-                                      { staticClass: "eventDetail__itemName" },
-                                      [_vm._v("会場")]
-                                    ),
-                                    _c(
-                                      "td",
-                                      { staticClass: "eventDetail__itemData" },
-                                      [_vm._v(_vm._s(_vm.event.place_name))]
-                                    )
-                                  ])
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.event.act_name
-                                ? _c("tr", [
-                                    _c(
-                                      "th",
-                                      { staticClass: "eventDetail__itemName" },
-                                      [_vm._v("役名")]
-                                    ),
-                                    _c(
-                                      "td",
-                                      { staticClass: "eventDetail__itemData" },
-                                      [_vm._v(_vm._s(_vm.event.act_name))]
-                                    )
-                                  ])
-                                : _vm._e()
-                            ])
+  return _c("div", { staticClass: "content" }, [
+    _c(
+      "div",
+      { staticClass: "mainparts" },
+      [
+        _c("div", { staticClass: "container shadow-l1" }, [
+          !_vm.loading
+            ? _c(
+                "div",
+                [
+                  _vm.event
+                    ? [
+                        _c("h4", { staticClass: "heading" }, [
+                          _vm._v(_vm._s(_vm.event.event_name))
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "body__text" }, [
+                          _c("table", { staticClass: "eventDetail" }, [
+                            _vm.event.date
+                              ? _c("tr", [
+                                  _c(
+                                    "th",
+                                    { staticClass: "eventDetail__itemName" },
+                                    [_vm._v("日時")]
+                                  ),
+                                  _c(
+                                    "td",
+                                    { staticClass: "eventDetail__itemData" },
+                                    [_vm._v(_vm._s(_vm.event.date))]
+                                  )
+                                ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.event.type_name
+                              ? _c("tr", [
+                                  _c(
+                                    "th",
+                                    { staticClass: "eventDetail__itemName" },
+                                    [_vm._v("種類")]
+                                  ),
+                                  _c(
+                                    "td",
+                                    { staticClass: "eventDetail__itemData" },
+                                    [_vm._v(_vm._s(_vm.event.type_name))]
+                                  )
+                                ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.event.place_name
+                              ? _c("tr", [
+                                  _c(
+                                    "th",
+                                    { staticClass: "eventDetail__itemName" },
+                                    [_vm._v("会場")]
+                                  ),
+                                  _c(
+                                    "td",
+                                    { staticClass: "eventDetail__itemData" },
+                                    [_vm._v(_vm._s(_vm.event.place_name))]
+                                  )
+                                ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.event.act_name
+                              ? _c("tr", [
+                                  _c(
+                                    "th",
+                                    { staticClass: "eventDetail__itemName" },
+                                    [_vm._v("役名")]
+                                  ),
+                                  _c(
+                                    "td",
+                                    { staticClass: "eventDetail__itemData" },
+                                    [_vm._v(_vm._s(_vm.event.act_name))]
+                                  )
+                                ])
+                              : _vm._e()
                           ])
-                        ]
-                      : [
-                          _c("h4", { staticClass: "heading" }, [
-                            _vm._v("Error")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "body__text" }, [
-                            _vm._v(
-                              "\n\t\t\t\t\t\t該当するイベントが見つかりませんでした。\n\t\t\t\t\t"
-                            )
-                          ])
-                        ]
-                  ],
-                  2
-                )
-              : _c(
-                  "div",
-                  [
-                    _c("loading-component", { attrs: { loading: _vm.loading } })
-                  ],
-                  1
-                )
-          ]),
-          _vm._v(" "),
-          _vm.urls
-            ? _vm._l(_vm.urls, function(link, index) {
-                return _c(
-                  "div",
-                  { key: index },
-                  [_c("link-card-component", { attrs: { link: link } })],
-                  1
-                )
-              })
-            : _vm._e()
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c("side-tickets-component")
-    ],
-    1
-  )
+                        ])
+                      ]
+                    : [
+                        _c("h4", { staticClass: "heading" }, [_vm._v("Error")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "body__text" }, [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t該当するイベントが見つかりませんでした。\n\t\t\t\t\t"
+                          )
+                        ])
+                      ]
+                ],
+                2
+              )
+            : _c(
+                "div",
+                [_c("loading-component", { attrs: { loading: _vm.loading } })],
+                1
+              )
+        ]),
+        _vm._v(" "),
+        _vm.urls
+          ? _vm._l(_vm.urls, function(link, index) {
+              return _c(
+                "div",
+                { key: index },
+                [_c("link-card-component", { attrs: { link: link } })],
+                1
+              )
+            })
+          : _vm._e()
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "subparts" }, [_c("side-tickets-component")], 1)
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22245,302 +22338,302 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "content" },
-    [
-      _c("div", { staticClass: "mainparts" }, [
-        _c("div", { staticClass: "container shadow-l1" }, [
-          _c("h4", { staticClass: "heading" }, [_vm._v("イベント検索")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "body__text" }, [
-            _vm._v(
-              "\n\t\t\t\tイベントや舞台、ラジオ等の情報を検索できます。\n\t\t\t"
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "form",
-            {
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.searchEventLists($event)
-                }
+  return _c("div", { staticClass: "content" }, [
+    _c("div", { staticClass: "mainparts" }, [
+      _c("div", { staticClass: "container shadow-l1" }, [
+        _c("h4", { staticClass: "heading" }, [_vm._v("イベント検索")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "body__text" }, [
+          _vm._v(
+            "\n\t\t\t\tイベントや舞台、ラジオ等の情報を検索できます。\n\t\t\t"
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.searchEventLists($event)
               }
-            },
-            [
-              _c("div", { staticClass: "searchArea" }, [
-                _c(
-                  "div",
-                  { staticClass: "searchArea__searchWord" },
-                  [
-                    _c("input-suggest-component", {
-                      attrs: { searchWord: _vm.searchWord },
-                      on: { change: _vm.wordUpdate }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "searchArea__searchType" }, [
-                  _c("div", { staticClass: "searchArea__searchTypeEl" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.type,
-                          expression: "type"
-                        }
-                      ],
-                      attrs: { type: "checkbox", id: "checkEvent", value: "1" },
-                      domProps: {
-                        checked: Array.isArray(_vm.type)
-                          ? _vm._i(_vm.type, "1") > -1
-                          : _vm.type
-                      },
-                      on: {
-                        change: function($event) {
-                          var $$a = _vm.type,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = "1",
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 && (_vm.type = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.type = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.type = $$c
-                          }
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("label", { attrs: { for: "checkEvent" } }, [
-                      _vm._v("イベント")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "searchArea__searchTypeEl" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.type,
-                          expression: "type"
-                        }
-                      ],
-                      attrs: { type: "checkbox", id: "checkStage", value: "5" },
-                      domProps: {
-                        checked: Array.isArray(_vm.type)
-                          ? _vm._i(_vm.type, "5") > -1
-                          : _vm.type
-                      },
-                      on: {
-                        change: function($event) {
-                          var $$a = _vm.type,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = "5",
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 && (_vm.type = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.type = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.type = $$c
-                          }
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("label", { attrs: { for: "checkStage" } }, [
-                      _vm._v("舞台")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "searchArea__searchTypeEl" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.type,
-                          expression: "type"
-                        }
-                      ],
-                      attrs: { type: "checkbox", id: "checkRadio", value: "2" },
-                      domProps: {
-                        checked: Array.isArray(_vm.type)
-                          ? _vm._i(_vm.type, "2") > -1
-                          : _vm.type
-                      },
-                      on: {
-                        change: function($event) {
-                          var $$a = _vm.type,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = "2",
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 && (_vm.type = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.type = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.type = $$c
-                          }
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("label", { attrs: { for: "checkRadio" } }, [
-                      _vm._v("ラジオ")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "searchArea__searchTypeEl" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.type,
-                          expression: "type"
-                        }
-                      ],
-                      attrs: {
-                        type: "checkbox",
-                        id: "checkMagazine",
-                        value: "3"
-                      },
-                      domProps: {
-                        checked: Array.isArray(_vm.type)
-                          ? _vm._i(_vm.type, "3") > -1
-                          : _vm.type
-                      },
-                      on: {
-                        change: function($event) {
-                          var $$a = _vm.type,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = "3",
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 && (_vm.type = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.type = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.type = $$c
-                          }
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("label", { attrs: { for: "checkMagazine" } }, [
-                      _vm._v("雑誌")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "searchArea__searchTypeEl" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.type,
-                          expression: "type"
-                        }
-                      ],
-                      attrs: {
-                        type: "checkbox",
-                        id: "checkProgram",
-                        value: "4"
-                      },
-                      domProps: {
-                        checked: Array.isArray(_vm.type)
-                          ? _vm._i(_vm.type, "4") > -1
-                          : _vm.type
-                      },
-                      on: {
-                        change: function($event) {
-                          var $$a = _vm.type,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = "4",
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 && (_vm.type = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.type = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.type = $$c
-                          }
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("label", { attrs: { for: "checkProgram" } }, [
-                      _vm._v("番組出演")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _vm._m(0)
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          !_vm.loading
-            ? _c(
+            }
+          },
+          [
+            _c("div", { staticClass: "searchArea" }, [
+              _c(
                 "div",
-                { staticClass: "body__subtext" },
+                { staticClass: "searchArea__searchWord" },
                 [
-                  _c("event-lists-component", {
-                    attrs: { eventLists: _vm.eventLists }
+                  _c("input-suggest-component", {
+                    attrs: { searchWord: _vm.searchWord },
+                    on: { change: _vm.wordUpdate }
                   })
                 ],
                 1
-              )
-            : _c(
-                "div",
-                [_c("loading-component", { attrs: { loading: _vm.loading } })],
-                1
-              )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("side-tickets-component")
-    ],
-    1
-  )
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "searchArea__searchType" }, [
+                _c("div", { staticClass: "searchArea__searchTypeEl" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.type,
+                        expression: "type"
+                      }
+                    ],
+                    attrs: { type: "checkbox", id: "checkEvent", value: "1" },
+                    domProps: {
+                      checked: Array.isArray(_vm.type)
+                        ? _vm._i(_vm.type, "1") > -1
+                        : _vm.type
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.type,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = "1",
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.type = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.type = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.type = $$c
+                        }
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "checkEvent" } }, [
+                    _vm._v("イベント")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "searchArea__searchTypeEl" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.type,
+                        expression: "type"
+                      }
+                    ],
+                    attrs: { type: "checkbox", id: "checkStage", value: "5" },
+                    domProps: {
+                      checked: Array.isArray(_vm.type)
+                        ? _vm._i(_vm.type, "5") > -1
+                        : _vm.type
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.type,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = "5",
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.type = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.type = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.type = $$c
+                        }
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "checkStage" } }, [
+                    _vm._v("舞台")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "searchArea__searchTypeEl" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.type,
+                        expression: "type"
+                      }
+                    ],
+                    attrs: { type: "checkbox", id: "checkRadio", value: "2" },
+                    domProps: {
+                      checked: Array.isArray(_vm.type)
+                        ? _vm._i(_vm.type, "2") > -1
+                        : _vm.type
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.type,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = "2",
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.type = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.type = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.type = $$c
+                        }
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "checkRadio" } }, [
+                    _vm._v("ラジオ")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "searchArea__searchTypeEl" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.type,
+                        expression: "type"
+                      }
+                    ],
+                    attrs: {
+                      type: "checkbox",
+                      id: "checkMagazine",
+                      value: "3"
+                    },
+                    domProps: {
+                      checked: Array.isArray(_vm.type)
+                        ? _vm._i(_vm.type, "3") > -1
+                        : _vm.type
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.type,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = "3",
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.type = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.type = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.type = $$c
+                        }
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "checkMagazine" } }, [
+                    _vm._v("雑誌")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "searchArea__searchTypeEl" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.type,
+                        expression: "type"
+                      }
+                    ],
+                    attrs: { type: "checkbox", id: "checkProgram", value: "4" },
+                    domProps: {
+                      checked: Array.isArray(_vm.type)
+                        ? _vm._i(_vm.type, "4") > -1
+                        : _vm.type
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.type,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = "4",
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.type = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.type = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.type = $$c
+                        }
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "checkProgram" } }, [
+                    _vm._v("番組出演")
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(0)
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        !_vm.loading
+          ? _c(
+              "div",
+              { staticClass: "body__subtext" },
+              [
+                _c("event-lists-component", {
+                  attrs: { eventLists: _vm.eventLists }
+                })
+              ],
+              1
+            )
+          : _c(
+              "div",
+              [_c("loading-component", { attrs: { loading: _vm.loading } })],
+              1
+            )
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "subparts" },
+      [
+        _c("side-tickets-component"),
+        _vm._v(" "),
+        _c("side-suggest-link-component")
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -22575,103 +22668,107 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "content" },
-    [
-      _c("div", { staticClass: "mainparts" }, [
-        _c("div", { staticClass: "container shadow-l1" }, [
-          _c("h4", { staticClass: "heading" }, [_vm._v("Inaminfo")]),
+  return _c("div", { staticClass: "content" }, [
+    _c("div", { staticClass: "mainparts" }, [
+      _c("div", { staticClass: "container shadow-l1" }, [
+        _c("h4", { staticClass: "heading" }, [_vm._v("Inaminfo")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "body__text" }, [
+          _vm._v(
+            "\n\t\t\t\tinaminfoは、声優・舞台女優として活躍する伊波杏樹さんの出演情報をまとめた非公式ファンサイトです。\n\t\t\t"
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "contentLinks" }, [
+          _c(
+            "div",
+            { staticClass: "contentLinks__Item" },
+            [
+              _c("router-link", { attrs: { to: "/events" } }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "contentLinks__ItemText contentLinks__ItemText--event"
+                  },
+                  [_vm._v("イベント検索")]
+                )
+              ])
+            ],
+            1
+          ),
           _vm._v(" "),
-          _c("div", { staticClass: "body__text" }, [
-            _vm._v(
-              "\n\t\t\t\tinaminfoは、声優・舞台女優として活躍する伊波杏樹さんの出演情報をまとめた非公式ファンサイトです。\n\t\t\t"
+          _c(
+            "div",
+            { staticClass: "contentLinks__Item" },
+            [
+              _c("router-link", { attrs: { to: "/calendar" } }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "contentLinks__ItemText contentLinks__ItemText--calendar"
+                  },
+                  [_vm._v("カレンダー検索")]
+                )
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "contentLinks__Item" },
+            [
+              _c("router-link", { attrs: { to: "/tickets" } }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "contentLinks__ItemText contentLinks__ItemText--ticket"
+                  },
+                  [_vm._v("チケット検索")]
+                )
+              ])
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _c("h4", { staticClass: "heading" }, [
+          _vm._v("今月の開催予定イベント")
+        ]),
+        _vm._v(" "),
+        !_vm.loading
+          ? _c(
+              "div",
+              { staticClass: "body__subtext" },
+              [
+                _c("event-lists-component", {
+                  attrs: { eventLists: _vm.eventLists }
+                })
+              ],
+              1
             )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "contentLinks" }, [
-            _c(
+          : _c(
               "div",
-              { staticClass: "contentLinks__Item" },
-              [
-                _c("router-link", { attrs: { to: "/events" } }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "contentLinks__ItemText contentLinks__ItemText--event"
-                    },
-                    [_vm._v("イベント検索")]
-                  )
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "contentLinks__Item" },
-              [
-                _c("router-link", { attrs: { to: "/calendar" } }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "contentLinks__ItemText contentLinks__ItemText--calendar"
-                    },
-                    [_vm._v("カレンダー検索")]
-                  )
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "contentLinks__Item" },
-              [
-                _c("router-link", { attrs: { to: "/tickets" } }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "contentLinks__ItemText contentLinks__ItemText--ticket"
-                    },
-                    [_vm._v("チケット検索")]
-                  )
-                ])
-              ],
+              [_c("loading-component", { attrs: { loading: _vm.loading } })],
               1
             )
-          ]),
-          _vm._v(" "),
-          _c("h4", { staticClass: "heading" }, [
-            _vm._v("今月の開催予定イベント")
-          ]),
-          _vm._v(" "),
-          !_vm.loading
-            ? _c(
-                "div",
-                { staticClass: "body__subtext" },
-                [
-                  _c("event-lists-component", {
-                    attrs: { eventLists: _vm.eventLists }
-                  })
-                ],
-                1
-              )
-            : _c(
-                "div",
-                [_c("loading-component", { attrs: { loading: _vm.loading } })],
-                1
-              )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("side-tickets-component")
-    ],
-    1
-  )
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "subparts" },
+      [
+        _c("side-tickets-component"),
+        _vm._v(" "),
+        _c("side-suggest-link-component")
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -43038,6 +43135,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('header-component', __webpack_require__(/*! ./components/HeaderComponent.vue */ "./resources/js/components/HeaderComponent.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('footer-component', __webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('side-tickets-component', __webpack_require__(/*! ./components/SideTicketsComponent.vue */ "./resources/js/components/SideTicketsComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('side-suggest-link-component', __webpack_require__(/*! ./components/SideSuggestLinkComponent.vue */ "./resources/js/components/SideSuggestLinkComponent.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('loading-component', __webpack_require__(/*! ./components/LoadingComponent.vue */ "./resources/js/components/LoadingComponent.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('link-card-component', __webpack_require__(/*! ./components/LinkCardComponent.vue */ "./resources/js/components/LinkCardComponent.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('event-lists-component', __webpack_require__(/*! ./components/EventListsComponent.vue */ "./resources/js/components/EventListsComponent.vue")["default"]);
@@ -43661,6 +43759,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/SideSuggestLinkComponent.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/SideSuggestLinkComponent.vue ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SideSuggestLinkComponent_vue_vue_type_template_id_64dba161___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SideSuggestLinkComponent.vue?vue&type=template&id=64dba161& */ "./resources/js/components/SideSuggestLinkComponent.vue?vue&type=template&id=64dba161&");
+/* harmony import */ var _SideSuggestLinkComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SideSuggestLinkComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/SideSuggestLinkComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SideSuggestLinkComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SideSuggestLinkComponent_vue_vue_type_template_id_64dba161___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SideSuggestLinkComponent_vue_vue_type_template_id_64dba161___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/SideSuggestLinkComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/SideSuggestLinkComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/SideSuggestLinkComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SideSuggestLinkComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SideSuggestLinkComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SideSuggestLinkComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SideSuggestLinkComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/SideSuggestLinkComponent.vue?vue&type=template&id=64dba161&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/SideSuggestLinkComponent.vue?vue&type=template&id=64dba161& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SideSuggestLinkComponent_vue_vue_type_template_id_64dba161___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./SideSuggestLinkComponent.vue?vue&type=template&id=64dba161& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SideSuggestLinkComponent.vue?vue&type=template&id=64dba161&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SideSuggestLinkComponent_vue_vue_type_template_id_64dba161___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SideSuggestLinkComponent_vue_vue_type_template_id_64dba161___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/SideTicketsComponent.vue":
 /*!**********************************************************!*\
   !*** ./resources/js/components/SideTicketsComponent.vue ***!
@@ -44191,8 +44358,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/toyoshimadaichi/work/inaminfo/inaminfo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/toyoshimadaichi/work/inaminfo/inaminfo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/toshimadaichi/selfwork/inaminfo/inaminfo/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/toshimadaichi/selfwork/inaminfo/inaminfo/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

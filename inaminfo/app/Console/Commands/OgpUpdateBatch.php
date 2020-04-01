@@ -125,9 +125,9 @@ class OgpUpdateBatch extends Command
         try{
             $res = DB::table('event_url')
             ->where('event_url_id',$event_url_id)
-            ->update(['og_title' => $ogp['title'],
-                      'og_description' => $ogp['description'],
-                      'og_sitename' => $ogp['site_name'],
+            ->update(['og_title' => isset($ogp['title']) ? $ogp['title'] : '',
+                      'og_description' => isset($ogp['description']) ? $ogp['description'] : '',
+                      'og_sitename' => isset($ogp['site_name']) ? $ogp['site_name'] : '',
                       'og_img_cache_url' => $s3url,
                       'og_cache_create_date' => date('Y-m-d')]);
         }catch (Exception $e){

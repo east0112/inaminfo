@@ -39,7 +39,9 @@
 				</div>
 			</template>
 		</div>
-		<side-tickets-component></side-tickets-component>
+		<div class="subparts">
+			<side-tickets-component></side-tickets-component>
+		</div>
 	</div>
 </template>
 
