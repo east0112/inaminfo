@@ -1,5 +1,5 @@
 <template>
-	<div class="linkCard">
+	<div class="linkCard shadow-l1">
 		<div class="linkCardInner">
 			<div class="linkCard__image">
 				<img :src="link.og_img_cache_url" class="linkCard__imageData" />
@@ -35,8 +35,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../sass/variables';
 .linkCard{
-	border: 1px solid $color-border;
-	border-radius: 10px;
+	display: inline-block;
 	overflow:hidden;
 	position: relative;
 	&Inner{

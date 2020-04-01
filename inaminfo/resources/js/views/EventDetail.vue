@@ -6,6 +6,20 @@
 					<template v-if="event">
 						<h4 class="heading">{{event.event_name}}</h4>
 						<div class="body__text">
+							<table class="eventDetail">
+									<tr v-if="event.date">
+										<th class="eventDetail__itemName">日時</th><td class="eventDetail__itemData">{{event.date}}</td>
+									</tr>
+									<tr v-if="event.type_name">
+										<th class="eventDetail__itemName">種類</th><td class="eventDetail__itemData">{{event.type_name}}</td>
+									</tr>
+									<tr v-if="event.place_name">
+										<th class="eventDetail__itemName">会場</th><td class="eventDetail__itemData">{{event.place_name}}</td>
+									</tr>
+									<tr v-if="event.act_name">
+										<th class="eventDetail__itemName">役名</th><td class="eventDetail__itemData">{{event.act_name}}</td>
+									</tr>
+							</table>
 						</div>
 					</template>
 					<template v-else>
@@ -54,4 +68,42 @@ export default {
 </script>
 
 <style  lang="scss" scoped>
+@import '../../sass/variables';
+.event{
+	&Detail{
+		width: 100%;
+		text-align: left;
+	}
+}
+
+@media screen and (min-width:$pc-width) { 
+	.event{
+		&Detail{
+			&__item{
+				&Name{
+					width: 10%;
+					padding:5px 0;
+				}
+				&Data{
+					width: 90%;
+					padding:5px 0;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width:$sp-width) { 
+	.event{
+		&Detail{
+			&__item{
+				&Name{
+					width: 20%;
+				}
+				&Data{
+					width: 80%;
+				}
+			}
+		}
+	}
+}
 </style>

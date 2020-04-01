@@ -64,6 +64,10 @@ export default {
 <style>
     #header-nav{
         height:56px;
+        position: fixed;
+        top:0;
+        z-index:11;
+        width:100%;
     }
     .header-nav__content{
         font-size:0.9rem;
