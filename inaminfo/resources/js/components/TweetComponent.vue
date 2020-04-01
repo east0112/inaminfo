@@ -1,7 +1,7 @@
 <template>
-	<div>
-		<div class="eventTweet" v-show="!loading">
-			<div v-bind:id="tweet.tweet_id" class="shadow-l1"></div>
+	<div class="eventTweet shadow-l1">
+		<div v-show="!loading">
+			<div v-bind:id="tweet.tweet_id"></div>
 		</div>
 		<div v-show="loading">
 			<loading-component :loading="loading"></loading-component>
@@ -42,5 +42,6 @@ export default {
 @import '../../sass/variables';
 .eventTweet{
 	background-color: $white;
+	margin-bottom: 20px;
 }
 </style>

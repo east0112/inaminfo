@@ -1,6 +1,6 @@
 <template>
   <div class="loadingBox" v-if="loading" v-bind:style="{height:height}">
-  <img id="animation" src="images/ajax-loader.gif" alt="">
+  <img id="animation" src="/images/ajax-loader.gif" alt="">
   </div>
 </template>
 

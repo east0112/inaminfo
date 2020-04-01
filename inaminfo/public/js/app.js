@@ -2853,7 +2853,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".eventTweet[data-v-17a36ab7] {\n  background-color: #fff;\n}", ""]);
+exports.push([module.i, ".eventTweet[data-v-17a36ab7] {\n  background-color: #fff;\n  margin-bottom: 20px;\n}", ""]);
 
 // exports
 
@@ -21957,7 +21957,7 @@ var render = function() {
   return _vm.loading
     ? _c("div", { staticClass: "loadingBox", style: { height: _vm.height } }, [
         _c("img", {
-          attrs: { id: "animation", src: "images/ajax-loader.gif", alt: "" }
+          attrs: { id: "animation", src: "/images/ajax-loader.gif", alt: "" }
         })
       ])
     : _vm._e()
@@ -22111,7 +22111,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "eventTweet shadow-l1" }, [
     _c(
       "div",
       {
@@ -22122,15 +22122,9 @@ var render = function() {
             value: !_vm.loading,
             expression: "!loading"
           }
-        ],
-        staticClass: "eventTweet"
+        ]
       },
-      [
-        _c("div", {
-          staticClass: "shadow-l1",
-          attrs: { id: _vm.tweet.tweet_id }
-        })
-      ]
+      [_c("div", { attrs: { id: _vm.tweet.tweet_id } })]
     ),
     _vm._v(" "),
     _c(
