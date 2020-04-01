@@ -90,7 +90,7 @@ export default {
 		margin-top: 20px;
 		height: 240px;
 		background-color: $white;
-		display: inline-block;
+		display: block;
 	}
 }
 @media screen and (max-width:$sp-width) { 

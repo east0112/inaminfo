@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover.css">
 <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
-
+<script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>inaminfo</title>

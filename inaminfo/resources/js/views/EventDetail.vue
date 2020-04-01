@@ -40,6 +40,11 @@
 			</template>
 		</div>
 		<div class="subparts">
+			<template v-if="tweets">
+				<div v-for="(tweet,index) in tweets" :key="index">
+					<tweet-component :tweet="tweet"></tweet-component>
+				</div>
+			</template>
 			<side-tickets-component></side-tickets-component>
 		</div>
 	</div>
@@ -52,6 +57,7 @@ export default {
 		 url:"/vue/load_api",
 		 event:[],
 		 urls:[],
+		 tweets:[],
 		 loading:true
         }
   },
@@ -62,6 +68,7 @@ export default {
 			const responce = res.data;
 			self.event = responce.event;
 			self.urls = responce.url;
+			self.tweets = responce.tweet;
 			// ローディング表示終了
 			self.loading = false;
           })
