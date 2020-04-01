@@ -166,6 +166,9 @@ export default {
             width:100%;
             text-align: center;
         }
+        a:hover{
+            opacity:1.0;
+        }
     }
 
 </style>
