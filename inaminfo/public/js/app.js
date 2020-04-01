@@ -2184,6 +2184,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     this.link["og_domain"] = this.link["url"].match(/^https?:\/{2,}(.*?)(?:\/|\?|#|$)/)[1];
+  },
+  methods: {
+    moveLinkPage: function moveLinkPage(url) {
+      open(url, "_blank");
+    }
   }
 });
 
@@ -2759,7 +2764,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".linkCard[data-v-26049598] {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n}\n.linkCardInner[data-v-26049598] {\n  width: 100%;\n  height: 100%;\n  cursor: pointer;\n}\n.linkCardInner[data-v-26049598]:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n.linkCard__image[data-v-26049598] {\n  width: 100%;\n  height: 150px;\n  background-color: #ccc;\n}\n.linkCard__imageData[data-v-26049598] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.linkCard__text[data-v-26049598] {\n  padding: 5px;\n}\n.linkCard__textTitle[data-v-26049598] {\n  font-size: 0.8rem;\n  line-height: 1rem;\n  height: 1rem;\n  overflow: hidden;\n}\n.linkCard__textDesc[data-v-26049598] {\n  font-size: 0.8rem;\n  color: #ccc;\n  margin: 0.5em 0;\n  line-height: 1rem;\n  height: 2rem;\n  overflow: hidden;\n}\n.linkCard__textDomain[data-v-26049598] {\n  font-size: 0.7rem;\n  color: #ccc;\n  position: absolute;\n  bottom: 10px;\n}\n@media screen and (min-width: 1143px) {\n.linkCard[data-v-26049598] {\n    margin-top: 20px;\n    height: 240px;\n    background-color: #fff;\n}\n}", ""]);
+exports.push([module.i, ".linkCard[data-v-26049598] {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n}\n.linkCardInner[data-v-26049598] {\n  width: 100%;\n  height: 100%;\n  cursor: pointer;\n}\n.linkCardInner[data-v-26049598]:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n.linkCard__image[data-v-26049598] {\n  width: 100%;\n  height: 150px;\n  background-color: #ccc;\n}\n.linkCard__imageData[data-v-26049598] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.linkCard__text[data-v-26049598] {\n  padding: 5px;\n}\n.linkCard__textTitle[data-v-26049598] {\n  font-size: 0.7rem;\n  line-height: 1rem;\n  height: 1rem;\n  overflow: hidden;\n}\n.linkCard__textDesc[data-v-26049598] {\n  font-size: 0.8rem;\n  color: #ccc;\n  margin: 0.5em 0;\n  line-height: 1rem;\n  height: 2rem;\n  overflow: hidden;\n}\n.linkCard__textDomain[data-v-26049598] {\n  font-size: 0.7rem;\n  color: #ccc;\n  position: absolute;\n  bottom: 10px;\n}\n@media screen and (min-width: 1143px) {\n.linkCard[data-v-26049598] {\n    margin-top: 20px;\n    height: 240px;\n    background-color: #fff;\n}\n}", ""]);
 
 // exports
 
@@ -21786,28 +21791,39 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "linkCard shadow-l1" }, [
-    _c("div", { staticClass: "linkCardInner" }, [
-      _c("div", { staticClass: "linkCard__image" }, [
-        _c("img", {
-          staticClass: "linkCard__imageData",
-          attrs: { src: _vm.link.og_img_cache_url }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "linkCard__text" }, [
-        _c("div", { staticClass: "linkCard__textTitle" }, [
-          _vm._v("\n\t\t\t\t" + _vm._s(_vm.link.og_title) + "\n\t\t\t")
+    _c(
+      "div",
+      {
+        staticClass: "linkCardInner",
+        on: {
+          click: function($event) {
+            return _vm.moveLinkPage(_vm.link.url)
+          }
+        }
+      },
+      [
+        _c("div", { staticClass: "linkCard__image" }, [
+          _c("img", {
+            staticClass: "linkCard__imageData",
+            attrs: { src: _vm.link.og_img_cache_url }
+          })
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "linkCard__textDesc" }, [
-          _vm._v("\n\t\t\t\t" + _vm._s(_vm.link.og_description) + "\n\t\t\t")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "linkCard__textDomain" }, [
-          _vm._v("\n\t\t\t\t" + _vm._s(_vm.link.og_domain) + "\n\t\t\t")
+        _c("div", { staticClass: "linkCard__text" }, [
+          _c("div", { staticClass: "linkCard__textTitle" }, [
+            _vm._v("\n\t\t\t\t" + _vm._s(_vm.link.og_title) + "\n\t\t\t")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "linkCard__textDesc" }, [
+            _vm._v("\n\t\t\t\t" + _vm._s(_vm.link.og_description) + "\n\t\t\t")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "linkCard__textDomain" }, [
+            _vm._v("\n\t\t\t\t" + _vm._s(_vm.link.og_domain) + "\n\t\t\t")
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = []

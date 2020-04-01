@@ -104,7 +104,6 @@ a{
     height:168px;
     color:$white;
     padding-top:20px;
-    padding-bottom: 56px;
     font-size: 0.8rem;
     &__content{
         display:flex;
@@ -250,6 +249,9 @@ input[type="checkbox"]:checked + label:before {
 
 // SPサイズ
 @media screen and (max-width:$sp-width) { 
+    .footer{
+        padding-bottom: 56px;
+    }
     .breadcrumbs{
         width:100%;
     }
@@ -279,7 +281,7 @@ input[type="checkbox"]:checked + label:before {
     .content{
         width:$sp-width;
         display: flex;
-        margin: 20px auto 20px;
+        margin: 20px auto 200px;
     }
     .allparts{
         width: 100%;
