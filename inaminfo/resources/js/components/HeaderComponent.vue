@@ -3,25 +3,25 @@
         <div class="header-nav__content" v-bind:class="{ 'active': status }" v-on:click="toggleMenuStatus">
             <div class="header-nav__list">
                 <router-link to="/">
-                    <div class="header-nav__item header-nav__item--first">
+                    <div class="header-nav__item" v-bind:class="(this.$route.path === '/') ? 'active' : ''">
                         <i class="fas fa-home header-nav__item--icon"></i>
                         <div class="header-nav__item--text">HOME</div>
                     </div>
                 </router-link>
                 <router-link to="/events">
-                    <div class="header-nav__item header-nav__item--third">
+                    <div class="header-nav__item" v-bind:class="(this.$route.path === '/events') ? 'active' : ''">
                         <i class="fas fa-search header-nav__item--icon"></i>
                         <div class="header-nav__item--text">EVENTS</div>
                     </div>
                 </router-link>
                 <router-link to="/calendar">
-                    <div class="header-nav__item header-nav__item--fifth">
+                    <div class="header-nav__item" v-bind:class="(this.$route.path === '/calendar') ? 'active' : ''">
                         <i class="fas fa-calendar-alt header-nav__item--icon"></i>
                         <div class="header-nav__item--text">CALENDAR</div>
                     </div>
                 </router-link>
                 <router-link to="/tickets">
-                    <div class="header-nav__item header-nav__item--forth">
+                    <div class="header-nav__item" v-bind:class="(this.$route.path === '/tickets') ? 'active' : ''">
                         <i class="fas fa-ticket-alt header-nav__item--icon"></i>
                         <div class="header-nav__item--text">TICKETS</div>
                     </div>
@@ -61,7 +61,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '../../sass/variables';
     #header-nav{
         height:56px;
         position: fixed;
@@ -148,6 +149,10 @@ export default {
             position: relative;
             height: 56px;
             width:56px;
+            opacity: 0.5;
+            &.active{
+                opacity: 1.0;
+            }
         }
         .header-nav__item--icon{
             display: block;
