@@ -154,6 +154,10 @@ export default {
 		width: 46%;
 		padding: 10px 0 10px 4%;
 	}
+	.searchArea__searchWord{
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 @media screen and (min-width:1143px) { 
 	.searchArea{

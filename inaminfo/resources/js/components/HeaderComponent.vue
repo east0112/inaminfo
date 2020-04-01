@@ -129,7 +129,7 @@ export default {
     @media screen and (max-width:1142px) { 
         .header-nav__search{
             width: 80%;
-            margin-left: 8%;
+            margin: 0 auto;
         }
         .header-nav__list{
             position: fixed;
