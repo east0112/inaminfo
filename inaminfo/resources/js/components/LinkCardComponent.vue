@@ -40,7 +40,6 @@ export default {
 <style lang="scss" scoped>
 @import '../../sass/variables';
 .linkCard{
-	display: inline-block;
 	overflow:hidden;
 	position: relative;
 	&Inner{
@@ -91,8 +90,15 @@ export default {
 		margin-top: 20px;
 		height: 240px;
 		background-color: $white;
+		display: inline-block;
 	}
 }
 @media screen and (max-width:$sp-width) { 
+	.linkCard{
+		margin-top: 20px;
+		height: 240px;
+		background-color: $white;
+		display: block;
+	}
 }
 </style>
