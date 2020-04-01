@@ -9,19 +9,19 @@
                     </div>
                 </router-link>
                 <router-link to="/events">
-                    <div class="header-nav__item" v-bind:class="(this.$route.path === '/events') ? 'active' : ''">
+                    <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/events')) ? 'active' : ''">
                         <i class="fas fa-search header-nav__item--icon"></i>
                         <div class="header-nav__item--text">EVENTS</div>
                     </div>
                 </router-link>
                 <router-link to="/calendar">
-                    <div class="header-nav__item" v-bind:class="(this.$route.path === '/calendar') ? 'active' : ''">
+                    <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/calendar')) ? 'active' : ''">
                         <i class="fas fa-calendar-alt header-nav__item--icon"></i>
                         <div class="header-nav__item--text">CALENDAR</div>
                     </div>
                 </router-link>
                 <router-link to="/tickets">
-                    <div class="header-nav__item" v-bind:class="(this.$route.path === '/tickets') ? 'active' : ''">
+                    <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/tickets')) ? 'active' : ''">
                         <i class="fas fa-ticket-alt header-nav__item--icon"></i>
                         <div class="header-nav__item--text">TICKETS</div>
                     </div>

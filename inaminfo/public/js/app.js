@@ -21649,7 +21649,7 @@ var render = function() {
                 "div",
                 {
                   staticClass: "header-nav__item",
-                  class: this.$route.path === "/events" ? "active" : ""
+                  class: this.$route.path.includes("/events") ? "active" : ""
                 },
                 [
                   _c("i", {
@@ -21668,7 +21668,7 @@ var render = function() {
                 "div",
                 {
                   staticClass: "header-nav__item",
-                  class: this.$route.path === "/calendar" ? "active" : ""
+                  class: this.$route.path.includes("/calendar") ? "active" : ""
                 },
                 [
                   _c("i", {
@@ -21687,7 +21687,7 @@ var render = function() {
                 "div",
                 {
                   staticClass: "header-nav__item",
-                  class: this.$route.path === "/tickets" ? "active" : ""
+                  class: this.$route.path.includes("/tickets") ? "active" : ""
                 },
                 [
                   _c("i", {
