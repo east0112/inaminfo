@@ -21542,58 +21542,52 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "footer shadow-l2" }, [
+    _c("div", { staticClass: "footer__content" }, [
+      _c(
+        "div",
+        { staticClass: "footer__footer-desc" },
+        [
+          _c("router-link", { attrs: { to: "/about" } }, [
+            _c("p", [_vm._v("当サイトについて")])
+          ]),
+          _vm._v(" "),
+          _c("i", { staticClass: "fab fa-twitter link-icon--twitter" })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _vm._m(0)
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "footer shadow-l2" }, [
-      _c("div", { staticClass: "footer__content" }, [
-        _c("div", { staticClass: "footer__footer-desc" }, [
-          _c("p", [_vm._v("当サイトは非公式ファンサイトです。")]),
-          _vm._v(" "),
-          _c("i", { staticClass: "fab fa-twitter link-icon--twitter" })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "footer__footer-link" }, [
-          _c(
-            "a",
-            { attrs: { href: "http://smavoice.jp/", target: "_blank" } },
-            [
-              _c("p", { staticClass: "link-icon--outside" }, [
-                _vm._v("SMA VOICE")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            { attrs: { href: "https://anjuinami.com/", target: "_blank" } },
-            [
-              _c("p", { staticClass: "link-icon--outside" }, [
-                _vm._v("伊波杏樹 Official Site")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              attrs: {
-                href: "https://lineblog.me/anju_inami/",
-                target: "_blank"
-              }
-            },
-            [
-              _c("p", { staticClass: "link-icon--outside" }, [
-                _vm._v("伊波杏樹 公式ブログ")
-              ])
-            ]
-          )
+    return _c("div", { staticClass: "footer__footer-link" }, [
+      _c("a", { attrs: { href: "http://smavoice.jp/", target: "_blank" } }, [
+        _c("p", { staticClass: "link-icon--outside" }, [_vm._v("SMA VOICE")])
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "https://anjuinami.com/", target: "_blank" } }, [
+        _c("p", { staticClass: "link-icon--outside" }, [
+          _vm._v("伊波杏樹 Official Site")
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          attrs: { href: "https://lineblog.me/anju_inami/", target: "_blank" }
+        },
+        [
+          _c("p", { staticClass: "link-icon--outside" }, [
+            _vm._v("伊波杏樹 公式ブログ")
+          ])
+        ]
+      )
     ])
   }
 ]
@@ -43962,6 +43956,16 @@ __webpack_require__.r(__webpack_exports__);
     name: 'calendar',
     component: _views_Calendar_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   }],
+  scrollBehavior: function scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return {
+        x: 0,
+        y: 0
+      };
+    }
+  },
   mounted: function mounted() {
     var _this = this;
 

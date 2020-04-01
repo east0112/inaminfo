@@ -39,6 +39,13 @@ export default new Router({
         component: Calendar
       },
     ],
+    scrollBehavior (to, from, savedPosition) {
+      if (savedPosition) {
+         return savedPosition
+      } else {
+         return { x: 0, y: 0 }
+      }
+    },
     mounted() {
         setTimeout(() => {
             this.loading = false;

@@ -2,7 +2,7 @@
   <div class="footer shadow-l2">
     <div class="footer__content">
       <div class="footer__footer-desc">
-        <p>当サイトは非公式ファンサイトです。</p>
+        <router-link to="/about"><p>当サイトについて</p></router-link>
         <i class="fab fa-twitter link-icon--twitter"></i>
       </div>
       <div class="footer__footer-link">
