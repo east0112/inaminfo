@@ -49,7 +49,6 @@ class VueApiController extends Controller
             $requestParameter->setParam('month',$request->input('month'));
 
             $returnData = LoadCalendarController::loadCalendar($requestParameter);
-
             break;
 
           case 'suggest_tags':

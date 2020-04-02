@@ -2427,6 +2427,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2468,6 +2470,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     loadCalendar: function loadCalendar() {
       var self = this;
+      self.loading = true;
       axios.post(this.url, {
         mode: 'calendar',
         year: this.year,
@@ -2941,7 +2944,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".calendarOperation {\n  margin: 40px auto 20px;\n  display: flex;\n  justify-content: space-between;\n  line-height: 3em;\n  color: #FF5192;\n}\n.calendarOperation__year {\n  font-size: 2em;\n}\n.calendarOperation__button {\n  font-size: 3em;\n  cursor: pointer;\n}\n.calendarOperation__button:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n@media screen and (min-width: 1143px) {\n.calendarOperation {\n    width: 60%;\n}\n}\n@media screen and (max-width: 1142px) {\n.calendarOperation {\n    width: 80%;\n    font-size: 14px;\n}\n}", ""]);
+exports.push([module.i, ".fade-enter-active, .fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter, .fade-leave-to {\n  transition: opacity 0.5s;\n}\n.calendarOperation {\n  margin: 40px auto 20px;\n  display: flex;\n  justify-content: space-between;\n  line-height: 3em;\n  color: #FF5192;\n}\n.calendarOperation__year {\n  font-size: 2em;\n}\n.calendarOperation__button {\n  font-size: 3em;\n  cursor: pointer;\n}\n.calendarOperation__button:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n@media screen and (min-width: 1143px) {\n.calendarOperation {\n    width: 60%;\n}\n}\n@media screen and (max-width: 1142px) {\n.calendarOperation {\n    width: 80%;\n    font-size: 14px;\n}\n}", ""]);
 
 // exports
 
@@ -22355,63 +22358,76 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "calendar" }, [
-          !_vm.loading
-            ? _c("div", [
-                !_vm.error
-                  ? _c(
-                      "div",
-                      [
-                        _c("div", { staticClass: "calendarOperation" }, [
-                          _c(
-                            "div",
-                            {
-                              staticClass: "calendarOperation__button",
-                              on: { click: _vm.movePrev }
-                            },
-                            [_c("i", { staticClass: "fas fa-angle-left" })]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "calendarOperation__year" },
-                            [
-                              _vm._v(
-                                _vm._s(_vm.year) + " . " + _vm._s(_vm.month)
+        _c(
+          "div",
+          { staticClass: "calendar" },
+          [
+            _c("transition", { attrs: { name: "fade" } }, [
+              !_vm.loading
+                ? _c("div", [
+                    !_vm.error
+                      ? _c(
+                          "div",
+                          [
+                            _c("div", { staticClass: "calendarOperation" }, [
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "calendarOperation__button",
+                                  on: { click: _vm.movePrev }
+                                },
+                                [_c("i", { staticClass: "fas fa-angle-left" })]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "calendarOperation__year" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.year) + " . " + _vm._s(_vm.month)
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "calendarOperation__button",
+                                  on: { click: _vm.moveNext }
+                                },
+                                [_c("i", { staticClass: "fas fa-angle-right" })]
                               )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "calendarOperation__button",
-                              on: { click: _vm.moveNext }
-                            },
-                            [_c("i", { staticClass: "fas fa-angle-right" })]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("calendar-component", {
-                          attrs: { dayItems: _vm.dayItems }
-                        })
-                      ],
-                      1
-                    )
-                  : _c("div", [
-                      _c("div", { staticClass: "body__text" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\tエラーが発生しました。もう１度お試しください。\n\t\t\t\t\t\t"
+                            ]),
+                            _vm._v(" "),
+                            _c("calendar-component", {
+                              attrs: { dayItems: _vm.dayItems }
+                            })
+                          ],
+                          1
                         )
-                      ])
-                    ])
-              ])
-            : _c(
-                "div",
-                [_c("loading-component", { attrs: { loading: _vm.loading } })],
-                1
-              )
-        ])
+                      : _c("div", [
+                          _c("div", { staticClass: "body__text" }, [
+                            _vm._v(
+                              "\n\t\t\t\t\t\t\tエラーが発生しました。もう１度お試しください。\n\t\t\t\t\t\t\t"
+                            )
+                          ])
+                        ])
+                  ])
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _vm.loading
+              ? _c(
+                  "div",
+                  [
+                    _c("loading-component", { attrs: { loading: _vm.loading } })
+                  ],
+                  1
+                )
+              : _vm._e()
+          ],
+          1
+        )
       ])
     ]),
     _vm._v(" "),

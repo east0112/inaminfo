@@ -7,28 +7,30 @@
 					カレンダーからイベントや舞台、ラジオ等の情報を検索できます。
 				</div>
 				<div class="calendar">
-					<div v-if="!loading">
-						<div v-if="!error">
-						<div class="calendarOperation">
-							<div class="calendarOperation__button" v-on:click="movePrev">
-								<i class="fas fa-angle-left"></i>
+					<transition name="fade">
+						<div v-if="!loading">
+							<div v-if="!error">
+							<div class="calendarOperation">
+								<div class="calendarOperation__button" v-on:click="movePrev">
+									<i class="fas fa-angle-left"></i>
+								</div>
+								<div class="calendarOperation__year">{{year}} . {{month}}</div>
+								<div class="calendarOperation__button" v-on:click="moveNext">
+									<i class="fas fa-angle-right"></i>
+								</div>
 							</div>
-							<div class="calendarOperation__year">{{year}} . {{month}}</div>
-							<div class="calendarOperation__button" v-on:click="moveNext">
-								<i class="fas fa-angle-right"></i>
+								<calendar-component :dayItems="dayItems"></calendar-component>
+							</div>
+							<div v-else>
+								<div class="body__text">
+								エラーが発生しました。もう１度お試しください。
+								</div>
 							</div>
 						</div>
-							<calendar-component :dayItems="dayItems"></calendar-component>
+					</transition>
+						<div v-if="loading">
+						<loading-component :loading="loading"></loading-component>
 						</div>
-						<div v-else>
-							<div class="body__text">
-							エラーが発生しました。もう１度お試しください。
-							</div>
-						</div>
-					</div>
-					<div v-else>
-					<loading-component :loading="loading"></loading-component>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -78,7 +80,8 @@ data: function(){
 		this.loadCalendar();
 	},
 	loadCalendar :function () {
-	let self = this
+	let self = this;
+	self.loading = true;
 	axios.post(this.url,{mode : 'calendar', year : this.year , month : this.month})
           .then(function(res){
 			const responce = res.data;
@@ -97,6 +100,12 @@ data: function(){
 </script>
 
 <style lang="scss">
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to{
+  transition: opacity .5s;
+}
 .calendar{
 	&Operation{
 		margin: 40px auto 20px;
@@ -132,5 +141,4 @@ data: function(){
 		}
 	}
 }
-
 </style>
