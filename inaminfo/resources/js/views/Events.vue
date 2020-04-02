@@ -70,9 +70,12 @@ export default {
 		 type:[1,2,3,4,5],
         }
   },
+  created: function (){
+	  this.searchWord = this.$route.query.searchWord;
+  },
   mounted: function () {
 	let self = this;
-	const searchWord = this.$route.query.search_word;
+	const searchWord = this.$route.query.searchWord;
 	const type = this.$route.query.type;
 	const order = this.$route.query.order;
 	const from = this.$route.query.from;

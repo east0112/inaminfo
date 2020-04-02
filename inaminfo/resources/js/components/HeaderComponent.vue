@@ -2,30 +2,22 @@
   <div id="header-nav" class="shadow-l2">
         <div class="header-nav__content" v-bind:class="{ 'active': status }" v-on:click="toggleMenuStatus">
             <div class="header-nav__list">
-                <router-link to="/">
-                    <div class="header-nav__item" v-bind:class="(this.$route.path === '/') ? 'active' : ''">
-                        <i class="fas fa-home header-nav__item--icon"></i>
-                        <div class="header-nav__item--text">HOME</div>
-                    </div>
-                </router-link>
-                <router-link to="/events">
-                    <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/events')) ? 'active' : ''">
-                        <i class="fas fa-search header-nav__item--icon"></i>
-                        <div class="header-nav__item--text">EVENTS</div>
-                    </div>
-                </router-link>
-                <router-link to="/calendar">
-                    <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/calendar')) ? 'active' : ''">
-                        <i class="fas fa-calendar-alt header-nav__item--icon"></i>
-                        <div class="header-nav__item--text">CALENDAR</div>
-                    </div>
-                </router-link>
-                <router-link to="/tickets">
-                    <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/tickets')) ? 'active' : ''">
-                        <i class="fas fa-ticket-alt header-nav__item--icon"></i>
-                        <div class="header-nav__item--text">TICKETS</div>
-                    </div>
-                </router-link>
+                <div class="header-nav__item" v-bind:class="(this.$route.path === '/') ? 'active' : ''" v-on:click="movePage('/')">
+                    <i class="fas fa-home header-nav__item--icon"></i>
+                    <div class="header-nav__item--text">HOME</div>
+                </div>
+                <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/events')) ? 'active' : ''" v-on:click="movePage('/events')">
+                    <i class="fas fa-search header-nav__item--icon"></i>
+                    <div class="header-nav__item--text">EVENTS</div>
+                </div>
+                <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/calendar')) ? 'active' : ''" v-on:click="movePage('/calendar')">
+                    <i class="fas fa-calendar-alt header-nav__item--icon"></i>
+                    <div class="header-nav__item--text">CALENDAR</div>
+                </div>
+                <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/tickets')) ? 'active' : ''" v-on:click="movePage('/tickets')">
+                    <i class="fas fa-ticket-alt header-nav__item--icon"></i>
+                    <div class="header-nav__item--text">TICKETS</div>
+                </div>
             </div>  
             <div class="header-nav__search">
                 <form @submit.prevent="searchEventLists">
@@ -55,8 +47,16 @@ export default {
         }
     },
 	wordUpdate(searchWord){
-		this.searchWord = searchWord
-	}
+		this.searchWord = searchWord;
+    },
+    searchEventLists: function (event) {
+        this.$router.push({ path: 'search', query: { searchWord : this.searchWord } },() =>{});
+        this.searchWord = "";
+    },
+    movePage: function (link){
+        this.$router.push({ path: link},() => {});
+        this.searchWord = "";
+    }
   }
 }
 </script>
@@ -122,6 +122,11 @@ export default {
         .header-nav__item{
             color:#fff;
             padding:0 20px;
+            cursor: pointer;
+        }
+        .header-nav__item:hover{
+            opacity: 0.5;
+            transition-duration: 0.3s;
         }
         .header-nav__item--icon{
             display: none;

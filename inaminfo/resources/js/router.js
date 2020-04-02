@@ -4,6 +4,7 @@ import About from './views/About.vue'
 import Events from './views/Events.vue'
 import EventDetail from './views/EventDetail.vue'
 import Calendar from './views/Calendar.vue'
+import Search from './views/Search.vue'
 
 export default new Router({
   mode: 'history',
@@ -37,6 +38,11 @@ export default new Router({
         path: '/calendar',
         name: 'calendar',
         component: Calendar
+      },
+      {
+        path: '/search',
+        name: 'search',
+        component: Search
       },
     ],
     scrollBehavior (to, from, savedPosition) {
