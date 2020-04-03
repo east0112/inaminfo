@@ -2172,6 +2172,8 @@ __webpack_require__.r(__webpack_exports__);
       this.searchWord = searchWord;
     },
     searchEventLists: function searchEventLists(event) {
+      document.activeElement.blur();
+
       if (this.$route.path.includes('/search')) {
         this.$router.replace({
           path: 'search',

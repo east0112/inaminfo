@@ -50,6 +50,7 @@ export default {
 		this.searchWord = searchWord;
     },
     searchEventLists: function (event) {
+		document.activeElement.blur();
         if(this.$route.path.includes('/search')){
             this.$router.replace({ path: 'search', query: { searchWord : this.searchWord } },() =>{});
         }else{
