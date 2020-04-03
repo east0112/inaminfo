@@ -44,6 +44,11 @@ export default new Router({
         name: 'search',
         component: Search
       },
+      {
+        path: '/search',
+        name: 'search',
+        component: Search
+      }
     ],
     scrollBehavior (to, from, savedPosition) {
       if (savedPosition) {

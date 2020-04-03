@@ -17,7 +17,7 @@
     <meta charset="UTF-8">
     <title>inaminfo</title>
 </head>
-<body>
+<body id="body">
 <div id="app">
     <header-component></header-component>
     <router-view></router-view>
