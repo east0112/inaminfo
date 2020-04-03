@@ -32,16 +32,26 @@ export default {
         }
   },
   mounted: function () {
-	let self = this;
-	const searchWord = this.$route.query.searchWord;
-	axios.post(this.url,{mode : 'eventLists', search_word : searchWord})
-          .then(function(res){
-			const responce = res.data;
-			self.eventLists = responce.eventLists;
-			self.totalCount = (responce.totalCount) ?responce.totalCount: 0;
-			// ローディング表示終了
-			self.loading = false;
-          })
+	  this.searchLists();
+  },
+  watch : {
+	  '$route' (to, from){
+		  this.searchLists();
+	  }
+  },
+  methods: {
+	  searchLists: function (){
+		let self = this;
+		const searchWord = this.$route.query.searchWord;
+		axios.post(this.url,{mode : 'eventLists', search_word : searchWord})
+			.then(function(res){
+				const responce = res.data;
+				self.eventLists = responce.eventLists;
+				self.totalCount = (responce.totalCount) ?responce.totalCount: 0;
+				// ローディング表示終了
+				self.loading = false;
+			})
+	  }
   }
 }
 </script>

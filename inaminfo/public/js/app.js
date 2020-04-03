@@ -2172,12 +2172,22 @@ __webpack_require__.r(__webpack_exports__);
       this.searchWord = searchWord;
     },
     searchEventLists: function searchEventLists(event) {
-      this.$router.push({
-        path: 'search',
-        query: {
-          searchWord: this.searchWord
-        }
-      }, function () {});
+      if (this.$route.path.includes('/search')) {
+        this.$router.replace({
+          path: 'search',
+          query: {
+            searchWord: this.searchWord
+          }
+        }, function () {});
+      } else {
+        this.$router.push({
+          path: 'search',
+          query: {
+            searchWord: this.searchWord
+          }
+        }, function () {});
+      }
+
       this.searchWord = "";
     },
     movePage: function movePage(link) {
@@ -2933,18 +2943,28 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    var self = this;
-    var searchWord = this.$route.query.searchWord;
-    axios.post(this.url, {
-      mode: 'eventLists',
-      search_word: searchWord
-    }).then(function (res) {
-      var responce = res.data;
-      self.eventLists = responce.eventLists;
-      self.totalCount = responce.totalCount ? responce.totalCount : 0; // ローディング表示終了
+    this.searchLists();
+  },
+  watch: {
+    '$route': function $route(to, from) {
+      this.searchLists();
+    }
+  },
+  methods: {
+    searchLists: function searchLists() {
+      var self = this;
+      var searchWord = this.$route.query.searchWord;
+      axios.post(this.url, {
+        mode: 'eventLists',
+        search_word: searchWord
+      }).then(function (res) {
+        var responce = res.data;
+        self.eventLists = responce.eventLists;
+        self.totalCount = responce.totalCount ? responce.totalCount : 0; // ローディング表示終了
 
-      self.loading = false;
-    });
+        self.loading = false;
+      });
+    }
   }
 });
 
