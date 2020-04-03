@@ -1997,10 +1997,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['event'],
+  props: ['date'],
   data: function data() {
-    return {};
+    return {
+      url: "/vue/load_api",
+      eventLists: [],
+      loading: true
+    };
+  },
+  mounted: function mounted() {
+    var self = this;
+    axios.post(this.url, {
+      mode: 'eventLists',
+      from: this.date,
+      to: this.date
+    }).then(function (res) {
+      var responce = res.data;
+      self.eventLists = responce.eventLists; // ローディング表示終了
+
+      self.loading = false;
+    });
+  },
+  methods: {
+    closeModal: function closeModal() {
+      this.$parent.closeModal();
+    }
   }
 });
 
@@ -2949,7 +2980,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".calendarModal[data-v-1d019ce1] {\n  width: 600px;\n  height: 450px;\n  background-color: #fff;\n  z-index: 21;\n}", ""]);
+exports.push([module.i, ".dateContent[data-v-1d019ce1] {\n  background-color: #fff;\n  z-index: 22;\n  position: relative;\n  border-radius: 5px;\n  text-align: right;\n}\n.dateContent__closeButton[data-v-1d019ce1] {\n  display: inline-block;\n  font-size: 1.5rem;\n  padding-right: 1.5rem;\n  color: #0366D6;\n  cursor: pointer;\n}\n.dateContent__closeButton[data-v-1d019ce1]:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n@media screen and (min-width: 1143px) {\n.dateContent[data-v-1d019ce1] {\n    width: 800px;\n    padding: 25px;\n}\n}\n@media screen and (max-width: 1142px) {\n.dateContent[data-v-1d019ce1] {\n    width: 100vw;\n    padding: 25px 0;\n}\n}", ""]);
 
 // exports
 
@@ -21787,7 +21818,37 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "calendarModal" })
+  return _c("div", { staticClass: "dateContent shadow-l4" }, [
+    !_vm.loading
+      ? _c(
+          "div",
+          { staticClass: "body__subtext" },
+          [
+            _c("event-lists-component", {
+              attrs: { eventLists: _vm.eventLists }
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "dateContent__closeButton",
+                on: {
+                  click: function($event) {
+                    return _vm.closeModal()
+                  }
+                }
+              },
+              [_c("i", { staticClass: "fas fa-times" })]
+            )
+          ],
+          1
+        )
+      : _c(
+          "div",
+          [_c("loading-component", { attrs: { loading: _vm.loading } })],
+          1
+        )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

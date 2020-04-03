@@ -186,17 +186,17 @@ export default {
 	}
 }
 @media screen and (min-width:$pc-width) { 
-.calendar{
-	&Content{
-		&__day{
-			&Item{
-				font-size: 0.7em;
-				width: 50%;
-				margin: 0.2em 0;
+	.calendar{
+		&Content{
+			&__day{
+				&Item{
+					font-size: 0.7em;
+					width: 50%;
+					margin: 0.2em 0;
+				}
 			}
 		}
 	}
-}
 }
 @media screen and (max-width:$sp-width) { 
 	.calendar{
@@ -207,6 +207,5 @@ export default {
 			}
 		}
 	}
-
 }
 </style>
