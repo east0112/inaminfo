@@ -2770,7 +2770,6 @@ dayjs__WEBPACK_IMPORTED_MODULE_0___default.a.locale('ja');
     var order = this.$route.query.order;
     var from = this.$route.query.from;
     var to = this.$route.query.to;
-    document.activeElement.blur();
     axios.post(this.url, {
       mode: 'eventLists',
       search_word: searchWord,
@@ -2790,6 +2789,7 @@ dayjs__WEBPACK_IMPORTED_MODULE_0___default.a.locale('ja');
       var self = this;
       if (this.loading) return false;
       this.loading = true;
+      document.activeElement.blur();
       axios.post(this.url, {
         mode: 'eventLists',
         search_word: this.searchWord,

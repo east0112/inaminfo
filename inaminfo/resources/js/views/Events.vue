@@ -80,7 +80,6 @@ export default {
 	const order = this.$route.query.order;
 	const from = this.$route.query.from;
 	const to = this.$route.query.to;
-	document.activeElement.blur();
 	axios.post(this.url,{mode : 'eventLists', search_word : searchWord , type : type , from : from, to : to, order :order})
           .then(function(res){
 			const responce = res.data;
@@ -94,6 +93,7 @@ export default {
 		let self = this;
 		if(this.loading) return false;
 		this.loading = true;
+		document.activeElement.blur();
 		axios.post(this.url,{mode : 'eventLists', search_word : this.searchWord, type : this.type.join()})
 			.then(function(res){
 				const responce = res.data;
