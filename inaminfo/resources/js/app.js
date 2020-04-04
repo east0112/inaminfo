@@ -29,6 +29,7 @@ Vue.component('side-suggest-link-component', require('./components/SideSuggestLi
 Vue.component('loading-component', require('./components/LoadingComponent.vue').default);
 Vue.component('link-card-component', require('./components/LinkCardComponent.vue').default);
 Vue.component('date-event-modal-component', require('./components/DateEventModalComponent.vue').default);
+Vue.component('pagination-component', require('./components/PaginationComponent.vue').default);
 Vue.component('tweet-component', require('./components/TweetComponent.vue').default);
 Vue.component('event-lists-component', require('./components/EventListsComponent.vue').default);
 Vue.component('input-suggest-component', require('./components/InputSuggestComponent.vue').default);

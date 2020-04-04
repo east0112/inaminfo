@@ -39,6 +39,7 @@
 					</div>
 				</form>
 				<div class="body__subtext" v-if="!loading">
+					<pagination-component :paginate="paginate"></pagination-component>
 					<event-lists-component :eventLists="eventLists"></event-lists-component>
 					</div>
 				<div v-else>
@@ -65,39 +66,44 @@ export default {
     return{
 		 url:"/vue/load_api",
 		 eventLists:[],
+		 paginate:[],
 		 loading:true,
 		 searchWord:"",
 		 type:[1,2,3,4,5],
+		 page:""
         }
   },
   created: function (){
 	  this.searchWord = this.$route.query.searchWord;
   },
   mounted: function () {
-	let self = this;
-	const searchWord = this.$route.query.searchWord;
-	const type = this.$route.query.type;
-	const order = this.$route.query.order;
-	const from = this.$route.query.from;
-	const to = this.$route.query.to;
-	axios.post(this.url,{mode : 'eventLists', search_word : searchWord , type : type , from : from, to : to, order :order})
-          .then(function(res){
-			const responce = res.data;
-			self.eventLists = responce.eventLists;
-			// ローディング表示終了
-			self.loading = false;
-          })
+		  this.setParams();
+		  this.searchEventLists();
+  },
+  watch : {
+	  '$route' (to, from){
+		  this.setParams();
+		  this.searchEventLists();
+	  }
   },
   methods: {
-    searchEventLists: function (event) {
+	setParams: function(){
+		this.searchWord = this.$route.query.searchWord;
+		if(this.$route.query.type){
+			this.type = this.$route.query.type.split(',');
+		}
+		this.page = this.$route.query.page;
+
+	},
+    searchEventLists: function () {
 		let self = this;
-		if(this.loading) return false;
 		this.loading = true;
 		document.activeElement.blur();
-		axios.post(this.url,{mode : 'eventLists', search_word : this.searchWord, type : this.type.join()})
+		axios.post(this.url,{mode : 'eventLists', search_word : this.searchWord, type : this.type.join(), page : this.page})
 			.then(function(res){
 				const responce = res.data;
 				self.eventLists = responce.eventLists;
+				self.paginate = responce.paginate;
 				// ローディング表示終了
 				self.loading = false;
 			})

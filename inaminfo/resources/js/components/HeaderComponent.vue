@@ -14,9 +14,9 @@
                     <i class="fas fa-calendar-alt header-nav__item--icon"></i>
                     <div class="header-nav__item--text">CALENDAR</div>
                 </div>
-                <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/tickets')) ? 'active' : ''" v-on:click="movePage('/tickets')">
-                    <i class="fas fa-ticket-alt header-nav__item--icon"></i>
-                    <div class="header-nav__item--text">TICKETS</div>
+                <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/profile')) ? 'active' : ''" v-on:click="movePage('/profile')">
+                    <i class="fas fa-user-circle header-nav__item--icon"></i>
+                    <div class="header-nav__item--text">PROFILE</div>
                 </div>
             </div>  
             <div class="header-nav__search">

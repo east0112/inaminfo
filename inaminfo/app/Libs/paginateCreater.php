@@ -4,14 +4,15 @@ namespace App\Libs;
 class paginateCreater
 {
     private $items;
-    private $displayItems;
-    private $limit;
     private $offset;
-    private $max_page;
-    private $total_count;
+    private $limit;
+    private $displayItems;
     private $show_pages;
-    private $paginate;
-    private $current_page;
+    public $max_page;
+    public $total_count;
+    public $paginate;
+    public $current_page;
+    public $paginateParam;
 
     function __construct($items){
         $this->items = $items;
@@ -56,13 +57,14 @@ class paginateCreater
         return $this->total_count;
     }
 
-    public function createPaginate($current_page){
+    public function createPaginate($current_page,$paginateParam){
         if(!is_numeric($current_page)) return false;
 
         // 表示項目の生成
         $this->offset = $this->limit * ($current_page - 1);
         $this->displayItems = array_slice($this->items,$this->offset,$this->limit);
         $this->current_page = $current_page;
+        $this->paginateParam = $paginateParam;
         $this->total_count = count($this->items);
 
         // オフセット結果が空の場合は1ページ目として処理する。

@@ -34,21 +34,17 @@ class LoadEventListsController extends Controller
       // ページネーション処理
       $paginateCreater = new paginateCreater($eventLists);
       $current_page = ($page) ?: 1;
-      if(!$paginateCreater->createPaginate($current_page)){
+
+      $paginateParam = array();
+      if($search_word) $paginateParam['searchWord'] = $search_word;
+      if($type) $paginateParam['type'] = $type;
+
+      if(!$paginateCreater->createPaginate($current_page,$paginateParam)){
         $responceParameter->setResponceCode(config('const.RESPONCE_ERROR_CODE'));
         return $responceParameter->getReturnData();
       }
-
       $responceParameter->setParam('eventLists',$paginateCreater->getDisplayItems());
-      $responceParameter->setParam('paginate',$paginateCreater->getPaginate());
-      $responceParameter->setParam('currentPage',$paginateCreater->getCurrentPage());
-      $responceParameter->setParam('maxPage',$paginateCreater->getMaxPage());
-      $responceParameter->setParam('totalCount',$paginateCreater->getTotalCount());
-      $responceParameter->setParam('paginateParam',array('searchWord' => $search_word,
-                                                          'type' => $type,
-                                                          'order' => $order,
-                                                          'from' => $from,
-                                                          'to' =>$to));
+      $responceParameter->setParam('paginate',$paginateCreater);
 
       return $responceParameter->getReturnData();
     }
