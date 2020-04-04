@@ -36,7 +36,7 @@ class LoadEventListsController extends Controller
       $current_page = ($page) ?: 1;
 
       $paginateParam = array();
-      if($search_word) $paginateParam['searchWord'] = $search_word;
+      if($search_word) $paginateParam['search_word'] = $search_word;
       if($type) $paginateParam['type'] = $type;
 
       if(!$paginateCreater->createPaginate($current_page,$paginateParam)){

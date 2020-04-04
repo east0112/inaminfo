@@ -6,7 +6,7 @@
 				<div class="body__text">
 					イベントや舞台、ラジオ等の情報を検索できます。
 				</div>
-				<form @submit.prevent="searchEventLists">
+				<form @submit.prevent="submitSearch">
 					<div class="searchArea">
 						<div class="searchArea__searchWord">
 						<input-suggest-component @change="wordUpdate" :searchWord="searchWord"/>
@@ -77,23 +77,26 @@ export default {
 	  this.searchWord = this.$route.query.searchWord;
   },
   mounted: function () {
-		  this.setParams();
+		  this.setUrlParams();
 		  this.searchEventLists();
   },
   watch : {
 	  '$route' (to, from){
-		  this.setParams();
+		  this.setUrlParams();
 		  this.searchEventLists();
 	  }
   },
   methods: {
-	setParams: function(){
-		this.searchWord = this.$route.query.searchWord;
+	setUrlParams: function(){
+		this.searchWord = this.$route.query.search_word;
 		if(this.$route.query.type){
 			this.type = this.$route.query.type.split(',');
 		}
 		this.page = this.$route.query.page;
 
+	},
+	submitSearch: function(){
+		this.$router.replace({ path: '/events', query: { search_word : this.searchWord, type : this.type.join() } },() =>{});
 	},
     searchEventLists: function () {
 		let self = this;

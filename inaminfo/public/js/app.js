@@ -2831,24 +2831,33 @@ dayjs__WEBPACK_IMPORTED_MODULE_0___default.a.locale('ja');
     this.searchWord = this.$route.query.searchWord;
   },
   mounted: function mounted() {
-    this.setParams();
+    this.setUrlParams();
     this.searchEventLists();
   },
   watch: {
     '$route': function $route(to, from) {
-      this.setParams();
+      this.setUrlParams();
       this.searchEventLists();
     }
   },
   methods: {
-    setParams: function setParams() {
-      this.searchWord = this.$route.query.searchWord;
+    setUrlParams: function setUrlParams() {
+      this.searchWord = this.$route.query.search_word;
 
       if (this.$route.query.type) {
         this.type = this.$route.query.type.split(',');
       }
 
       this.page = this.$route.query.page;
+    },
+    submitSearch: function submitSearch() {
+      this.$router.replace({
+        path: '/events',
+        query: {
+          search_word: this.searchWord,
+          type: this.type.join()
+        }
+      }, function () {});
     },
     searchEventLists: function searchEventLists() {
       var self = this;
@@ -23136,7 +23145,7 @@ var render = function() {
             on: {
               submit: function($event) {
                 $event.preventDefault()
-                return _vm.searchEventLists($event)
+                return _vm.submitSearch($event)
               }
             }
           },
