@@ -1,6 +1,6 @@
 <template>
 	<div class="paginate" v-if="paginate.total_count > 0">
-		{{paginate.total_count}}件見つかりました。
+		{{paginate.total_count}}件が見つかりました。
 		<ul class="paginateControl" v-if="paginate.max_page > 1">
 			<li class="paginateControl__Box" v-if="paginate.current_page != 1" v-on:click="movePage(paginate.current_page - 1)" style="font-size:0.9em"><i class="fas fa-angle-double-left"></i></li>
 			<li class="paginateControl__Box" v-for="(page,index) in paginate.paginate" :key="index"  v-on:click="movePage(page)" :class='[page == paginate.current_page ? "active" : "inactive"]'>{{page}}</li>

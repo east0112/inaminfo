@@ -12,7 +12,7 @@
 				<tr v-for="(event,index) in eventLists" :key="index" class="eventLists__row">
 					<td>{{event.date}}</td>
 					<td>{{event.type_name}}</td>
-					<td><router-link v-bind:to='"/events/" + event.event_id'>{{event.event_name}}</router-link></td>
+					<td v-on:click="routerLink(event.event_id)" class="eventLists__link">{{event.event_name}}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -28,31 +28,47 @@ export default {
   data: function(){
     return{
 	}
+  },
+  methods:{
+	  routerLink : function(event_id){
+		  this.$router.push({ path: `/events/${event_id}`});
+	  }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '../../sass/variables';
 .eventLists{
 	width:100%;
 	margin: 40px auto;
 	text-align: left;
 	border-collapse:collapse;
-}
-.eventLists__row{
+	&__link{
+		color: $color-link;
+		cursor: pointer;
+		&:hover{
+			opacity: 0.5;
+			transition-duration: 0.3s;
+		}
+	}
+	&__row{
 	line-height: 2em;
 	border-bottom: 1px solid #ccc;
-}
-.eventLists__row td{
-	padding: 0.5em 0;
-}
-.eventLists__col--1{
-	width:20%;
-}
-.eventLists__col--2{
-	width:15%;
-}
-.eventLists__col--3{
-	width:65%;
+	}
+	&__row td{
+		padding: 0.5em 0;
+	}
+	&__col{
+		&--1{
+			width:20%;
+		}
+		&--2{
+			width:15%;
+		}
+		&--3{
+			width:65%;
+		}
+	}
 }
 </style>
