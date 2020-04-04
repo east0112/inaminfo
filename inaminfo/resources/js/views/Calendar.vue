@@ -101,10 +101,10 @@ data: function(){
 
 <style lang="scss">
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity .5s
 }
-.fade-enter, .fade-leave-to{
-  transition: opacity .5s;
+.fade-enter, .fade-leave {
+  opacity: 0
 }
 .calendar{
 	&Operation{

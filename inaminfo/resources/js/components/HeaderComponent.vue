@@ -52,9 +52,9 @@ export default {
     searchEventLists: function (event) {
 		document.activeElement.blur();
         if(this.$route.path.includes('/search')){
-            this.$router.replace({ path: 'search', query: { searchWord : this.searchWord } },() =>{});
+            this.$router.replace({ path: '/search', query: { searchWord : this.searchWord } },() =>{});
         }else{
-            this.$router.push({ path: 'search', query: { searchWord : this.searchWord } },() =>{});
+            this.$router.push({ path: '/search', query: { searchWord : this.searchWord } },() =>{});
         }
         this.searchWord = "";
     },

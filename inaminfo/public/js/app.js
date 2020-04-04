@@ -2176,14 +2176,14 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.$route.path.includes('/search')) {
         this.$router.replace({
-          path: 'search',
+          path: '/search',
           query: {
             searchWord: this.searchWord
           }
         }, function () {});
       } else {
         this.$router.push({
-          path: 'search',
+          path: '/search',
           query: {
             searchWord: this.searchWord
           }
@@ -3079,7 +3079,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".fade-enter-active, .fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter, .fade-leave-to {\n  transition: opacity 0.5s;\n}\n.calendarOperation {\n  margin: 40px auto 20px;\n  display: flex;\n  justify-content: space-between;\n  line-height: 3em;\n  color: #FF5192;\n}\n.calendarOperation__year {\n  font-size: 2em;\n}\n.calendarOperation__button {\n  font-size: 3em;\n  cursor: pointer;\n}\n.calendarOperation__button:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n@media screen and (min-width: 1143px) {\n.calendarOperation {\n    width: 60%;\n}\n}\n@media screen and (max-width: 1142px) {\n.calendarOperation {\n    width: 80%;\n    font-size: 14px;\n}\n}", ""]);
+exports.push([module.i, ".fade-enter-active, .fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter, .fade-leave {\n  opacity: 0;\n}\n.calendarOperation {\n  margin: 40px auto 20px;\n  display: flex;\n  justify-content: space-between;\n  line-height: 3em;\n  color: #FF5192;\n}\n.calendarOperation__year {\n  font-size: 2em;\n}\n.calendarOperation__button {\n  font-size: 3em;\n  cursor: pointer;\n}\n.calendarOperation__button:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n@media screen and (min-width: 1143px) {\n.calendarOperation {\n    width: 60%;\n}\n}\n@media screen and (max-width: 1142px) {\n.calendarOperation {\n    width: 80%;\n    font-size: 14px;\n}\n}", ""]);
 
 // exports
 
