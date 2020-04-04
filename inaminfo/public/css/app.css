@@ -277,11 +277,13 @@ input[type=checkbox]:checked + label:before {
   }
 
   .mainparts {
-    margin-top: 20px;
+    margin: 20px auto;
+    max-width: 560px;
   }
 
   .subparts {
-    margin: 20px 0;
+    margin: 20px auto;
+    max-width: 560px;
   }
 
   .contentLinks__Item {

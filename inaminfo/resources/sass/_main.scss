@@ -262,10 +262,12 @@ input[type="checkbox"]:checked + label:before {
         margin: 20px 0;
     }
     .mainparts{
-        margin-top: 20px;
+        margin: 20px auto;
+        max-width: $sp-max-width;
     }
     .subparts{
-        margin: 20px 0;
+        margin: 20px auto;
+        max-width: $sp-max-width;
     }
     .contentLinks__Item{
         width: 50%;

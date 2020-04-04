@@ -2,22 +2,24 @@
   <div id="header-nav" class="shadow-l2">
         <div class="header-nav__content" v-bind:class="{ 'active': status }" v-on:click="toggleMenuStatus">
             <div class="header-nav__list">
-                <div class="header-nav__item" v-bind:class="(this.$route.path === '/') ? 'active' : ''" v-on:click="movePage('/')">
-                    <i class="fas fa-home header-nav__item--icon"></i>
-                    <div class="header-nav__item--text">HOME</div>
-                </div>
-                <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/events')) ? 'active' : ''" v-on:click="movePage('/events')">
-                    <i class="fas fa-search header-nav__item--icon"></i>
-                    <div class="header-nav__item--text">EVENTS</div>
-                </div>
-                <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/calendar')) ? 'active' : ''" v-on:click="movePage('/calendar')">
-                    <i class="fas fa-calendar-alt header-nav__item--icon"></i>
-                    <div class="header-nav__item--text">CALENDAR</div>
-                </div>
-                <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/profile')) ? 'active' : ''" v-on:click="movePage('/profile')">
-                    <i class="fas fa-user-circle header-nav__item--icon"></i>
-                    <div class="header-nav__item--text">PROFILE</div>
-                </div>
+                <div class="header-nav__listInner">
+                    <div class="header-nav__item" v-bind:class="(this.$route.path === '/') ? 'active' : ''" v-on:click="movePage('/')">
+                        <i class="fas fa-home header-nav__item--icon"></i>
+                        <div class="header-nav__item--text">HOME</div>
+                    </div>
+                    <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/events')) ? 'active' : ''" v-on:click="movePage('/events')">
+                        <i class="fas fa-search header-nav__item--icon"></i>
+                        <div class="header-nav__item--text">EVENTS</div>
+                    </div>
+                    <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/calendar')) ? 'active' : ''" v-on:click="movePage('/calendar')">
+                        <i class="fas fa-calendar-alt header-nav__item--icon"></i>
+                        <div class="header-nav__item--text">CALENDAR</div>
+                    </div>
+                    <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/profile')) ? 'active' : ''" v-on:click="movePage('/profile')">
+                        <i class="fas fa-user-circle header-nav__item--icon"></i>
+                        <div class="header-nav__item--text">PROFILE</div>
+                    </div>
+                </div>  
             </div>  
             <div class="header-nav__search">
                 <form @submit.prevent="searchEventLists">
@@ -122,7 +124,11 @@ export default {
             width:992px;
         }
         .header-nav__list{
-            display:flex;
+            display:block;
+        }
+        .header-nav__listInner{
+            display: flex;
+            justify-content: space-between;
         }
         .header-nav__item{
             color:#fff;
@@ -141,10 +147,11 @@ export default {
         .header-nav__search{
             width: 80%;
             margin: 0 auto;
+            max-width: $sp-max-width;
         }
         .header-nav__list{
             position: fixed;
-            display: flex;
+            //display: flex;
             bottom: 0;
             background-color: #fff;
             width: 100%;
@@ -154,6 +161,12 @@ export default {
             -webkit-backface-visibility:hidden;
             backface-visibility:hidden;
         }
+        .header-nav__listInner{
+            display: flex;
+            justify-content: space-between;
+            max-width: $sp-max-width;
+            margin: 0 auto;
+        }
         .header-nav__item{
             color:#FF5192;
             font-size:10px;
@@ -162,6 +175,7 @@ export default {
             height: 56px;
             width:56px;
             opacity: 0.5;
+            cursor: pointer;
             &.active{
                 opacity: 1.0;
             }
