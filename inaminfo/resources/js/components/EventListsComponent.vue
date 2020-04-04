@@ -31,7 +31,7 @@ export default {
   },
   methods:{
 	  routerLink : function(event_id){
-		// スクロール停止
+		// スクロール開始
 		let body = document.getElementById('body');
 		body.style.overflow = 'auto';
 		window.removeEventListener( 'touchmove' , this.getMoveFun() , { passive: false } );

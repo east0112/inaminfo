@@ -2077,7 +2077,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     routerLink: function routerLink(event_id) {
-      // スクロール停止
+      // スクロール開始
       var body = document.getElementById('body');
       body.style.overflow = 'auto';
       window.removeEventListener('touchmove', this.getMoveFun(), {
@@ -3102,7 +3102,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".modal {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 19;\n  overflow: hidden;\n  height: 100%;\n  width: 100%;\n}\n.modalBg {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  height: 100vh;\n  width: 100%;\n  z-index: 18;\n  background: rgba(0, 0, 0, 0.3);\n}\n.modalInner {\n  height: 100vh;\n  position: relative;\n  width: 100%;\n  z-index: 21;\n}\n.modalContent {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  z-index: 22;\n}\n.modal-enter {\n  transform: translate(0, 100px);\n  opacity: 0;\n}\n.modal-enter-to {\n  opacity: 1;\n}\n.modal-enter-active {\n  transition: all 0.3s 0s ease;\n}\n.modal-leave {\n  transform: translate(0, 0);\n  opacity: 1;\n}\n.modal-leave-to {\n  transform: translate(0, 100px);\n  opacity: 0;\n}\n.modal-leave-active {\n  transition: all 0.3s 0s ease;\n}\n.calendar {\n  margin-bottom: 40px;\n}\n.calendarContent {\n  display: flex;\n  flex-wrap: wrap;\n}\n.calendarContent__day {\n  width: 14.2%;\n  height: 100px;\n  border-bottom: 1px solid #ccc;\n  box-sizing: border-box;\n  color: #ccc;\n}\n.calendarContent__dayWrap {\n  height: 100%;\n}\n.calendarContent__dayWrap:hover {\n  opacity: 0.5;\n  cursor: pointer;\n}\n.calendarContent__day.current {\n  color: #000;\n  cursor: pointer;\n}\n.calendarContent__day.header {\n  color: #fff;\n  background-color: #FF5192;\n  height: 2em;\n  line-height: 2em;\n  padding-left: 0.5em;\n}\n.calendarContent__dayItem {\n  display: block;\n  color: #fff;\n  border-radius: 5px;\n  text-align: center;\n}\n.calendarContent__dayItem--Event {\n  background-color: #FF5192;\n}\n.calendarContent__dayItem--Radio {\n  background-color: #FF9933;\n}\n.calendarContent__dayItem--Magazine {\n  background-color: #008080;\n}\n.calendarContent__dayItem--Program {\n  background-color: #FF3300;\n}\n.calendarContent__dayItem--Stage {\n  background-color: #0366D6;\n}\n@media screen and (min-width: 1143px) {\n.calendarContent__dayItem {\n    font-size: 0.7em;\n    width: 50%;\n    margin: 0.2em 0;\n}\n}\n@media screen and (max-width: 1142px) {\n.calendarContent__day {\n    height: 60px;\n    font-size: 10px;\n}\n}", ""]);
+exports.push([module.i, ".modal {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 19;\n  overflow: hidden;\n  height: 100%;\n  width: 100%;\n}\n.modalBg {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  height: 100vh;\n  width: 100%;\n  z-index: 18;\n  background: rgba(0, 0, 0, 0.3);\n}\n.modalInner {\n  height: 100vh;\n  position: relative;\n  width: 100%;\n  z-index: 21;\n}\n.modalContent {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  z-index: 22;\n}\n.modal-enter {\n  transform: translate(0, 100px);\n  opacity: 0;\n}\n.modal-enter-to {\n  opacity: 1;\n}\n.modal-enter-active {\n  transition: all 0.3s 0s ease;\n}\n.modal-leave {\n  transform: translate(0, 0);\n  opacity: 1;\n}\n.modal-leave-to {\n  transform: translate(0, 100px);\n  opacity: 0;\n}\n.modal-leave-active {\n  transition: all 0.3s 0s ease;\n}\n.calendar {\n  margin-bottom: 40px;\n}\n.calendarContent {\n  display: flex;\n  flex-wrap: wrap;\n}\n.calendarContent__day {\n  width: 14.2%;\n  height: 100px;\n  border-bottom: 1px solid #ccc;\n  box-sizing: border-box;\n  color: #ccc;\n}\n.calendarContent__dayWrap {\n  height: 100%;\n}\n.calendarContent__dayWrap:hover {\n  opacity: 0.5;\n  cursor: pointer;\n}\n.calendarContent__day.current {\n  color: #000;\n  cursor: pointer;\n}\n.calendarContent__day.header {\n  color: #fff;\n  background-color: #FF5192;\n  height: 2em;\n  line-height: 2em;\n  padding-left: 0.5em;\n}\n.calendarContent__dayItem {\n  display: block;\n  color: #fff;\n  border-radius: 5px;\n  text-align: center;\n}\n.calendarContent__dayItem--Event {\n  background-color: #FF5192;\n}\n.calendarContent__dayItem--Radio {\n  background-color: #FF9933;\n}\n.calendarContent__dayItem--Magazine {\n  background-color: #008080;\n}\n.calendarContent__dayItem--Program {\n  background-color: #FF3300;\n}\n.calendarContent__dayItem--Stage {\n  background-color: #0366D6;\n}\n@media screen and (min-width: 1143px) {\n.calendarContent__dayItem {\n    font-size: 0.7em;\n    width: 50%;\n    margin: 0.2em 0;\n}\n}\n@media screen and (max-width: 1142px) {\n.calendarContent__day {\n    height: 60px;\n    font-size: 10px;\n}\n.modalContent {\n    max-width: 560px;\n    width: 100%;\n}\n}", ""]);
 
 // exports
 
@@ -3121,7 +3121,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".dateContent[data-v-1d019ce1] {\n  background-color: #fff;\n  z-index: 22;\n  position: relative;\n  border-radius: 5px;\n  text-align: right;\n}\n.dateContent__closeButton[data-v-1d019ce1] {\n  display: inline-block;\n  font-size: 1.5rem;\n  padding-right: 1.5rem;\n  color: #0366D6;\n  cursor: pointer;\n}\n.dateContent__closeButton[data-v-1d019ce1]:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n@media screen and (min-width: 1143px) {\n.dateContent[data-v-1d019ce1] {\n    width: 800px;\n    padding: 25px;\n}\n}\n@media screen and (max-width: 1142px) {\n.dateContent[data-v-1d019ce1] {\n    width: 100vw;\n    padding: 25px 0;\n}\n}", ""]);
+exports.push([module.i, ".dateContent[data-v-1d019ce1] {\n  background-color: #fff;\n  z-index: 22;\n  position: relative;\n  border-radius: 5px;\n  text-align: right;\n}\n.dateContent__closeButton[data-v-1d019ce1] {\n  display: inline-block;\n  font-size: 1.5rem;\n  padding-right: 1.5rem;\n  color: #0366D6;\n  cursor: pointer;\n}\n.dateContent__closeButton[data-v-1d019ce1]:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n@media screen and (min-width: 1143px) {\n.dateContent[data-v-1d019ce1] {\n    width: 800px;\n    padding: 25px;\n}\n}\n@media screen and (max-width: 1142px) {\n.dateContent[data-v-1d019ce1] {\n    width: 100%;\n    padding: 25px 0;\n}\n}", ""]);
 
 // exports
 
@@ -45107,19 +45107,20 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  created: function created() {},
+  created: function created() {
+    this.movefun = function (event) {
+      event.preventDefault();
+    };
+  },
   data: function data() {
     return {
-      url: "/vue/load_api"
+      url: "/vue/load_api",
+      movefun: ""
     };
   },
   methods: {
     getMoveFun: function getMoveFun() {
-      var movefun = function movefun(event) {
-        event.preventDefault();
-      };
-
-      return movefun;
+      return this.movefun;
     }
   }
 });

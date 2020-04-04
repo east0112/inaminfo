@@ -67,8 +67,8 @@ export default {
 }
 @media screen and (max-width:$sp-width) { 
 	.dateContent{
-		width: 100vw; 
-		padding: 25px 0;
+		width: 100%; 
+		padding: 25px 0
 	}
 }
 </style>

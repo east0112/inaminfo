@@ -1,17 +1,19 @@
 export default {
     created() {
+        this.movefun = function(event){
+            event.preventDefault();
+        }
     },
     data() {
         return {
-            url:"/vue/load_api"
+            url:"/vue/load_api",
+            movefun: ""
+            
         }
     },
     methods: {
         getMoveFun() {
-            const movefun = function(event){
-                event.preventDefault();
-            }
-            return movefun;
+            return this.movefun;
         }
     }
  }

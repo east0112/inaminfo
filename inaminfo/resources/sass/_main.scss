@@ -247,7 +247,7 @@ input[type="checkbox"]:checked + label:before {
   transform: rotate(45deg);
 }
 
-// SPサイズ
+// SP・タブレットサイズ
 @media screen and (max-width:$sp-width) { 
     .footer{
         padding-bottom: 56px;

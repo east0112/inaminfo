@@ -207,5 +207,11 @@ export default {
 			}
 		}
 	}
+	.modal{
+		&Content{
+			max-width: $sp-max-width;
+			width: 100%;
+		}
+	}
 }
 </style>
