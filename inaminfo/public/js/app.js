@@ -1961,7 +1961,7 @@ var movefun = function movefun(event) {
         // スクロール停止
         var body = document.getElementById('body');
         body.style.overflow = 'hidden';
-        window.addEventListener('touchmove', movefun, {
+        window.addEventListener('touchmove', this.getMoveFun(), {
           passive: false
         });
         this.eventModal = true;
@@ -1974,7 +1974,7 @@ var movefun = function movefun(event) {
 
       var body = document.getElementById('body');
       body.style.overflow = 'auto';
-      window.removeEventListener('touchmove', movefun, {
+      window.removeEventListener('touchmove', this.getMoveFun(), {
         passive: false
       });
     }
@@ -2077,6 +2077,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     routerLink: function routerLink(event_id) {
+      // スクロール停止
+      var body = document.getElementById('body');
+      body.style.overflow = 'auto';
+      window.removeEventListener('touchmove', this.getMoveFun(), {
+        passive: false
+      });
       this.$router.push({
         path: "/events/".concat(event_id)
       });
@@ -44022,6 +44028,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
+/* harmony import */ var _mixins_Utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mixins/Utils */ "./resources/js/mixins/Utils.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -44034,7 +44041,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  //Load for router
 
 
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.mixin(_mixins_Utils__WEBPACK_IMPORTED_MODULE_4__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /**
  * The following block of code may be used to automatically register your
@@ -45070,6 +45079,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TweetComponent_vue_vue_type_template_id_17a36ab7_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/mixins/Utils.js":
+/*!**************************************!*\
+  !*** ./resources/js/mixins/Utils.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  created: function created() {},
+  data: function data() {
+    return {
+      url: "/vue/load_api"
+    };
+  },
+  methods: {
+    getMoveFun: function getMoveFun() {
+      var movefun = function movefun(event) {
+        event.preventDefault();
+      };
+
+      return movefun;
+    }
+  }
+});
 
 /***/ }),
 

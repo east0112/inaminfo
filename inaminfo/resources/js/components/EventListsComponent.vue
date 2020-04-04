@@ -31,7 +31,11 @@ export default {
   },
   methods:{
 	  routerLink : function(event_id){
-		  this.$router.push({ path: `/events/${event_id}`});
+		// スクロール停止
+		let body = document.getElementById('body');
+		body.style.overflow = 'auto';
+		window.removeEventListener( 'touchmove' , this.getMoveFun() , { passive: false } );
+		this.$router.push({ path: `/events/${event_id}`});
 	  }
   }
 }

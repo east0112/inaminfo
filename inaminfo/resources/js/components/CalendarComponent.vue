@@ -51,7 +51,7 @@ export default {
 			// スクロール停止
 			let body = document.getElementById('body');
 			body.style.overflow = 'hidden';
-			window.addEventListener( 'touchmove' , movefun , { passive: false } );
+			window.addEventListener( 'touchmove' , this.getMoveFun() , { passive: false } );
 
 			this.eventModal = true;
 			this.date = dayItem.date;
@@ -63,7 +63,7 @@ export default {
 			// スクロール停止
 			let body = document.getElementById('body');
 			body.style.overflow = 'auto';
-			window.removeEventListener( 'touchmove' , movefun , { passive: false } );
+			window.removeEventListener( 'touchmove' , this.getMoveFun() , { passive: false } );
 	  }
   }
 }

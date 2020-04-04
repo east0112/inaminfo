@@ -9,8 +9,10 @@ import VueRouter from 'vue-router';
 import axios from 'axios';
 //Load for router
 import router from './router'
+import utils from './mixins/Utils' 
 
 window.Vue = require('vue');
+Vue.mixin(utils);
 Vue.use(VueRouter);
 
 /**
