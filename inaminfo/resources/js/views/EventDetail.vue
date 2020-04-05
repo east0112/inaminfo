@@ -41,14 +41,18 @@
 				<loading-component :loading="loading"></loading-component>
 				</div>
 			</div>
-			<template v-if="urls">
+			<template v-if="urls.length">
 				<div v-for="(link,index) in urls" :key="index">
-					<link-card-component :link="link"></link-card-component>
+					<div class="eventLink">
+						<div class="eventLink__card">
+							<link-card-component :link="link"></link-card-component>
+						</div>
+					</div>
 				</div>
 			</template>
 		</div>
 		<div class="subparts">
-			<template v-if="tweets">
+			<template v-if="tweets.length">
 				<div v-for="(tweet,index) in tweets" :key="index">
 					<tweet-component :tweet="tweet"></tweet-component>
 				</div>
@@ -126,6 +130,14 @@ export default {
 					width: 90%;
 					padding:10px 0;
 				}
+			}
+		}
+		&Link{
+			display: flex;
+			flex-wrap: wrap;
+			&__card{
+				width:48%;
+				margin: 0 1%;
 			}
 		}
 	}

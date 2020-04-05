@@ -2722,6 +2722,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3273,7 +3277,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".eventDetail[data-v-45b5fdbc] {\n  text-align: left;\n  border-collapse: collapse;\n  margin: 0 auto;\n}\n.eventDetail__setlist[data-v-45b5fdbc] {\n  margin-top: 30px;\n}\n.eventDetail tr[data-v-45b5fdbc] {\n  border-bottom: 1px solid #ccc;\n}\n.eventDetail tr[data-v-45b5fdbc]:last-child {\n  border: none;\n}\n@media screen and (min-width: 1143px) {\n.eventDetail[data-v-45b5fdbc] {\n    width: 85%;\n}\n.eventDetail__itemName[data-v-45b5fdbc] {\n    width: 10%;\n    padding: 10px 0;\n}\n.eventDetail__itemData[data-v-45b5fdbc] {\n    width: 90%;\n    padding: 10px 0;\n}\n}\n@media screen and (max-width: 1142px) {\n.eventDetail[data-v-45b5fdbc] {\n    width: 90%;\n}\n.eventDetail__itemName[data-v-45b5fdbc] {\n    width: 20%;\n    padding: 10px 0;\n}\n.eventDetail__itemData[data-v-45b5fdbc] {\n    width: 80%;\n    padding: 10px 0;\n}\n}", ""]);
+exports.push([module.i, ".eventDetail[data-v-45b5fdbc] {\n  text-align: left;\n  border-collapse: collapse;\n  margin: 0 auto;\n}\n.eventDetail__setlist[data-v-45b5fdbc] {\n  margin-top: 30px;\n}\n.eventDetail tr[data-v-45b5fdbc] {\n  border-bottom: 1px solid #ccc;\n}\n.eventDetail tr[data-v-45b5fdbc]:last-child {\n  border: none;\n}\n@media screen and (min-width: 1143px) {\n.eventDetail[data-v-45b5fdbc] {\n    width: 85%;\n}\n.eventDetail__itemName[data-v-45b5fdbc] {\n    width: 10%;\n    padding: 10px 0;\n}\n.eventDetail__itemData[data-v-45b5fdbc] {\n    width: 90%;\n    padding: 10px 0;\n}\n.eventLink[data-v-45b5fdbc] {\n    display: flex;\n    flex-wrap: wrap;\n}\n.eventLink__card[data-v-45b5fdbc] {\n    width: 48%;\n    margin: 0 1%;\n}\n}\n@media screen and (max-width: 1142px) {\n.eventDetail[data-v-45b5fdbc] {\n    width: 90%;\n}\n.eventDetail__itemName[data-v-45b5fdbc] {\n    width: 20%;\n    padding: 10px 0;\n}\n.eventDetail__itemData[data-v-45b5fdbc] {\n    width: 80%;\n    padding: 10px 0;\n}\n}", ""]);
 
 // exports
 
@@ -23138,14 +23142,18 @@ var render = function() {
               )
         ]),
         _vm._v(" "),
-        _vm.urls
+        _vm.urls.length
           ? _vm._l(_vm.urls, function(link, index) {
-              return _c(
-                "div",
-                { key: index },
-                [_c("link-card-component", { attrs: { link: link } })],
-                1
-              )
+              return _c("div", { key: index }, [
+                _c("div", { staticClass: "eventLink" }, [
+                  _c(
+                    "div",
+                    { staticClass: "eventLink__card" },
+                    [_c("link-card-component", { attrs: { link: link } })],
+                    1
+                  )
+                ])
+              ])
             })
           : _vm._e()
       ],
@@ -23156,7 +23164,7 @@ var render = function() {
       "div",
       { staticClass: "subparts" },
       [
-        _vm.tweets
+        _vm.tweets.length
           ? _vm._l(_vm.tweets, function(tweet, index) {
               return _c(
                 "div",
