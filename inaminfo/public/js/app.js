@@ -2371,6 +2371,16 @@ __webpack_require__.r(__webpack_exports__);
     return {};
   },
   methods: {
+    movePagePrev: function movePagePrev(page) {
+      if (page >= 1) {
+        this.movePage(page);
+      }
+    },
+    movePageNext: function movePageNext(page) {
+      if (page <= this.paginate.max_page) {
+        this.movePage(page);
+      }
+    },
     movePage: function movePage(page) {
       var paginateParam = this.paginate.paginateParam;
       paginateParam.page = page;
@@ -3220,7 +3230,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".paginate[data-v-5cc156e8] {\n  margin-top: 40px;\n}\n.paginateControl[data-v-5cc156e8] {\n  margin-top: 15px;\n  display: flex;\n  padding: 0;\n}\n.paginateControl__Box[data-v-5cc156e8] {\n  min-width: 1.7rem;\n  height: 1.5rem;\n  font-size: 0.9rem;\n  line-height: 1.5rem;\n  text-align: center;\n  border: 1px solid #ccc;\n  color: #FF5192;\n  margin-left: -1px;\n  list-style: none;\n  cursor: pointer;\n}\n.paginateControl__Box.active[data-v-5cc156e8] {\n  background-color: #FF5192;\n  border-color: #FF5192;\n  color: #fff;\n}\n.paginateControl__Box[data-v-5cc156e8]:first-child {\n  border-radius: 5px 0 0 5px;\n}\n.paginateControl__Box[data-v-5cc156e8]:last-child {\n  border-radius: 0 5px 5px 0;\n}", ""]);
+exports.push([module.i, ".paginate[data-v-5cc156e8] {\n  margin-top: 40px;\n}\n.paginateControl[data-v-5cc156e8] {\n  margin-top: 15px;\n  display: flex;\n  padding: 0;\n}\n.paginateControl__Box[data-v-5cc156e8] {\n  min-width: 1.7rem;\n  height: 1.5rem;\n  font-size: 0.9rem;\n  line-height: 1.5rem;\n  text-align: center;\n  border: 1px solid #ccc;\n  color: #FF5192;\n  margin-left: -1px;\n  list-style: none;\n  cursor: pointer;\n}\n.paginateControl__Box.active[data-v-5cc156e8] {\n  background-color: #FF5192;\n  border-color: #FF5192;\n  color: #fff;\n}\n.paginateControl__Box.disabled[data-v-5cc156e8] {\n  color: #ccc;\n}\n.paginateControl__Box[data-v-5cc156e8]:first-child {\n  border-radius: 5px 0 0 5px;\n}\n.paginateControl__Box[data-v-5cc156e8]:last-child {\n  border-radius: 0 5px 5px 0;\n}", ""]);
 
 // exports
 
@@ -22514,21 +22524,22 @@ var render = function() {
               "ul",
               { staticClass: "paginateControl" },
               [
-                _vm.paginate.current_page != 1
-                  ? _c(
-                      "li",
-                      {
-                        staticClass: "paginateControl__Box",
-                        staticStyle: { "font-size": "0.9em" },
-                        on: {
-                          click: function($event) {
-                            return _vm.movePage(_vm.paginate.current_page - 1)
-                          }
-                        }
-                      },
-                      [_c("i", { staticClass: "fas fa-angle-double-left" })]
-                    )
-                  : _vm._e(),
+                _c(
+                  "li",
+                  {
+                    staticClass: "paginateControl__Box",
+                    class: [
+                      _vm.paginate.current_page != 1 ? "abled" : "disabled"
+                    ],
+                    staticStyle: { "font-size": "0.9em" },
+                    on: {
+                      click: function($event) {
+                        return _vm.movePagePrev(_vm.paginate.current_page - 1)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-angle-double-left" })]
+                ),
                 _vm._v(" "),
                 _vm._l(_vm.paginate.paginate, function(page, index) {
                   return _c(
@@ -22551,21 +22562,24 @@ var render = function() {
                   )
                 }),
                 _vm._v(" "),
-                _vm.paginate.current_page != _vm.paginate.max_page
-                  ? _c(
-                      "li",
-                      {
-                        staticClass: "paginateControl__Box",
-                        staticStyle: { "font-size": "0.9em" },
-                        on: {
-                          click: function($event) {
-                            return _vm.movePage(_vm.paginate.current_page + 1)
-                          }
-                        }
-                      },
-                      [_c("i", { staticClass: "fas fa-angle-double-right" })]
-                    )
-                  : _vm._e()
+                _c(
+                  "li",
+                  {
+                    staticClass: "paginateControl__Box",
+                    class: [
+                      _vm.paginate.current_page != _vm.paginate.max_page
+                        ? "abled"
+                        : "disabled"
+                    ],
+                    staticStyle: { "font-size": "0.9em" },
+                    on: {
+                      click: function($event) {
+                        return _vm.movePageNext(_vm.paginate.current_page + 1)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-angle-double-right" })]
+                )
               ],
               2
             )
