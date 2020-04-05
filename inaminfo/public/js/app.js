@@ -2714,11 +2714,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       url: "/vue/load_api",
       event: [],
+      songs: [],
       urls: [],
       tweets: [],
       loading: true
@@ -2732,11 +2741,21 @@ __webpack_require__.r(__webpack_exports__);
     }).then(function (res) {
       var responce = res.data;
       self.event = responce.event;
+      self.songs = self.rankFormat(responce.song);
       self.urls = responce.url;
       self.tweets = responce.tweet; // ローディング表示終了
 
       self.loading = false;
     });
+  },
+  methods: {
+    rankFormat: function rankFormat(songs) {
+      for (var i = 0; i < songs.length; i++) {
+        songs[i].rank = ('00' + songs[i].rank).slice(-2);
+      }
+
+      return songs;
+    }
   }
 });
 
@@ -3254,7 +3273,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".eventDetail[data-v-45b5fdbc] {\n  width: 100%;\n  text-align: left;\n}\n@media screen and (min-width: 1143px) {\n.eventDetail__itemName[data-v-45b5fdbc] {\n    width: 10%;\n    padding: 5px 0;\n}\n.eventDetail__itemData[data-v-45b5fdbc] {\n    width: 90%;\n    padding: 5px 0;\n}\n}\n@media screen and (max-width: 1142px) {\n.eventDetail__itemName[data-v-45b5fdbc] {\n    width: 20%;\n}\n.eventDetail__itemData[data-v-45b5fdbc] {\n    width: 80%;\n}\n}", ""]);
+exports.push([module.i, ".eventDetail[data-v-45b5fdbc] {\n  text-align: left;\n  border-collapse: collapse;\n  margin: 0 auto;\n}\n.eventDetail__setlist[data-v-45b5fdbc] {\n  margin-top: 30px;\n}\n.eventDetail tr[data-v-45b5fdbc] {\n  border-bottom: 1px solid #ccc;\n}\n.eventDetail tr[data-v-45b5fdbc]:last-child {\n  border: none;\n}\n@media screen and (min-width: 1143px) {\n.eventDetail[data-v-45b5fdbc] {\n    width: 85%;\n}\n.eventDetail__itemName[data-v-45b5fdbc] {\n    width: 10%;\n    padding: 10px 0;\n}\n.eventDetail__itemData[data-v-45b5fdbc] {\n    width: 90%;\n    padding: 10px 0;\n}\n}\n@media screen and (max-width: 1142px) {\n.eventDetail[data-v-45b5fdbc] {\n    width: 90%;\n}\n.eventDetail__itemName[data-v-45b5fdbc] {\n    width: 20%;\n    padding: 10px 0;\n}\n.eventDetail__itemData[data-v-45b5fdbc] {\n    width: 80%;\n    padding: 10px 0;\n}\n}", ""]);
 
 // exports
 
@@ -23055,7 +23074,49 @@ var render = function() {
                                   )
                                 ])
                               : _vm._e()
-                          ])
+                          ]),
+                          _vm._v(" "),
+                          _vm.songs.length
+                            ? _c(
+                                "div",
+                                { staticClass: "eventDetail__setlist" },
+                                [
+                                  _c("h4", { staticClass: "heading" }, [
+                                    _vm._v("セットリスト")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "table",
+                                    { staticClass: "eventDetail" },
+                                    _vm._l(_vm.songs, function(song, index) {
+                                      return _c("tr", { key: index }, [
+                                        _c(
+                                          "th",
+                                          {
+                                            staticClass: "eventDetail__itemName"
+                                          },
+                                          [
+                                            _vm._v(
+                                              _vm._s(song.part_name) +
+                                                " - " +
+                                                _vm._s(song.rank)
+                                            )
+                                          ]
+                                        ),
+                                        _c(
+                                          "td",
+                                          {
+                                            staticClass: "eventDetail__itemData"
+                                          },
+                                          [_vm._v(_vm._s(song.song_name))]
+                                        )
+                                      ])
+                                    }),
+                                    0
+                                  )
+                                ]
+                              )
+                            : _vm._e()
                         ])
                       ]
                     : [

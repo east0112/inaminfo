@@ -20,6 +20,14 @@
 										<th class="eventDetail__itemName">役名</th><td class="eventDetail__itemData">{{event.act_name}}</td>
 									</tr>
 							</table>
+							<div v-if="songs.length" class="eventDetail__setlist">
+								<h4 class="heading">セットリスト</h4>
+								<table class="eventDetail">
+										<tr v-for="(song,index) in songs" :key="index">
+											<th class="eventDetail__itemName">{{song.part_name}} - {{song.rank}}</th><td class="eventDetail__itemData">{{song.song_name}}</td>
+										</tr>
+								</table>
+							</div>
 						</div>
 					</template>
 					<template v-else>
@@ -56,6 +64,7 @@ export default {
     return{
 		 url:"/vue/load_api",
 		 event:[],
+		 songs:[],
 		 urls:[],
 		 tweets:[],
 		 loading:true
@@ -67,11 +76,20 @@ export default {
           .then(function(res){
 			const responce = res.data;
 			self.event = responce.event;
+			self.songs = self.rankFormat(responce.song);
 			self.urls = responce.url;
 			self.tweets = responce.tweet;
 			// ローディング表示終了
 			self.loading = false;
           })
+  },
+  methods:{
+	  rankFormat(songs){
+		  for(let i = 0 ; i < songs.length ; i++){
+			  songs[i].rank = ( '00' + songs[i].rank ).slice( -2 );
+		  }
+		  return songs;
+	  }
   }
 }
 </script>
@@ -80,22 +98,33 @@ export default {
 @import '../../sass/variables';
 .event{
 	&Detail{
-		width: 100%;
 		text-align: left;
+		border-collapse:collapse;
+		margin:0 auto;
+		&__setlist{
+			margin-top:30px;
+		}
+		tr{
+			border-bottom: 1px solid $color-border;
+		}
+		tr:last-child{
+			border:none;
+		}
 	}
 }
 
 @media screen and (min-width:$pc-width) { 
 	.event{
 		&Detail{
+			width: 85%;
 			&__item{
 				&Name{
 					width: 10%;
-					padding:5px 0;
+					padding:10px 0;
 				}
 				&Data{
 					width: 90%;
-					padding:5px 0;
+					padding:10px 0;
 				}
 			}
 		}
@@ -104,12 +133,15 @@ export default {
 @media screen and (max-width:$sp-width) { 
 	.event{
 		&Detail{
+			width: 90%;
 			&__item{
 				&Name{
 					width: 20%;
+					padding:10px 0;
 				}
 				&Data{
 					width: 80%;
+					padding:10px 0;
 				}
 			}
 		}
