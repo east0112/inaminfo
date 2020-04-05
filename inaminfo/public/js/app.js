@@ -2598,6 +2598,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2606,7 +2624,8 @@ __webpack_require__.r(__webpack_exports__);
       loading: true,
       error: false,
       year: "",
-      month: ""
+      month: "",
+      radio: "month"
     };
   },
   created: function created() {
@@ -3268,7 +3287,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".fade-enter-active, .fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter, .fade-leave {\n  opacity: 0;\n}\n.calendarOperation {\n  margin: 40px auto 20px;\n  display: flex;\n  justify-content: space-between;\n  line-height: 3em;\n  color: #FF5192;\n}\n.calendarOperation__year {\n  font-size: 2em;\n}\n.calendarOperation__button {\n  font-size: 3em;\n  cursor: pointer;\n}\n.calendarOperation__button:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n@media screen and (min-width: 1143px) {\n.calendarOperation {\n    width: 60%;\n}\n}\n@media screen and (max-width: 1142px) {\n.calendarOperation {\n    width: 80%;\n    font-size: 14px;\n}\n}", ""]);
+exports.push([module.i, ".fade-enter-active, .fade-leave-active {\n  transition: opacity 0.15s;\n}\n.fade-enter {\n  opacity: 0;\n}\n.fade-leave-to {\n  opacity: 0;\n}\n.calendarOperation {\n  margin: 40px auto 20px;\n  display: flex;\n  justify-content: space-between;\n  line-height: 2em;\n  color: #FF5192;\n}\n.calendarOperation__left {\n  display: flex;\n}\n.calendarOperation__right {\n  display: flex;\n}\n.calendarOperation__year {\n  font-size: 2em;\n  padding: 0 15px;\n}\n.calendarOperation__button {\n  font-size: 2em;\n  cursor: pointer;\n  padding: 0 15px;\n}\n.calendarOperation__button:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n.calendarRadio {\n  text-align: right;\n}\n.calendarRadio__inner {\n  display: inline-block;\n  padding: 0 40px;\n  font-size: 0;\n}\n.calendarRadio__inner input {\n  display: none;\n}\n.calendarRadio__inner input:checked + label {\n  color: #fff;\n  background-color: #FF5192;\n  transition-duration: 0.3s;\n}\n.calendarRadio__inner label {\n  border: 1px solid #FF5192;\n  color: #FF5192;\n  font-size: 1rem;\n  padding: 7.5px 20px;\n  margin-left: -1px;\n  cursor: pointer;\n}\n.calendarRadio__inner label:first-of-type {\n  border-radius: 5px 0 0 5px;\n}\n.calendarRadio__inner label:last-of-type {\n  border-radius: 0 5px 5px 0;\n}\n.calendarRadio__inner label:hover {\n  background-color: #FFEAF2;\n  transition-duration: 0.3s;\n}\n@media screen and (max-width: 1142px) {\n.calendarOperation {\n    font-size: 14px;\n}\n.calendarRadio__inner {\n    padding: 0 20px;\n}\n.calendarRadio__inner label {\n    padding: 5px 15px;\n}\n}", ""]);
 
 // exports
 
@@ -22922,36 +22941,162 @@ var render = function() {
                             _c("div", { staticClass: "calendarOperation" }, [
                               _c(
                                 "div",
-                                {
-                                  staticClass: "calendarOperation__button",
-                                  on: { click: _vm.movePrev }
-                                },
-                                [_c("i", { staticClass: "fas fa-angle-left" })]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "calendarOperation__year" },
+                                { staticClass: "calendarOperation__left" },
                                 [
-                                  _vm._v(
-                                    _vm._s(_vm.year) + " . " + _vm._s(_vm.month)
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "calendarOperation__button",
+                                      on: { click: _vm.movePrev }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fas fa-angle-left"
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "calendarOperation__button",
+                                      on: { click: _vm.moveNext }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fas fa-angle-right"
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "calendarOperation__year" },
+                                    [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t\t" +
+                                          _vm._s(_vm.year) +
+                                          " "
+                                      ),
+                                      _c(
+                                        "transition",
+                                        { attrs: { name: "fade" } },
+                                        [
+                                          _vm.radio == "month"
+                                            ? _c("span", [
+                                                _vm._v(". " + _vm._s(_vm.month))
+                                              ])
+                                            : _vm._e()
+                                        ]
+                                      )
+                                    ],
+                                    1
                                   )
                                 ]
                               ),
                               _vm._v(" "),
                               _c(
                                 "div",
-                                {
-                                  staticClass: "calendarOperation__button",
-                                  on: { click: _vm.moveNext }
-                                },
-                                [_c("i", { staticClass: "fas fa-angle-right" })]
+                                { staticClass: "calendarOperation__right" },
+                                [
+                                  _c("div", { staticClass: "calendarRadio" }, [
+                                    _c(
+                                      "div",
+                                      { staticClass: "calendarRadio__inner" },
+                                      [
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.radio,
+                                              expression: "radio"
+                                            }
+                                          ],
+                                          attrs: {
+                                            type: "radio",
+                                            id: "month",
+                                            value: "month"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(_vm.radio, "month")
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              _vm.radio = "month"
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "calendarRadio__left",
+                                            attrs: { for: "month" }
+                                          },
+                                          [_vm._v("月")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.radio,
+                                              expression: "radio"
+                                            }
+                                          ],
+                                          attrs: {
+                                            type: "radio",
+                                            id: "year",
+                                            value: "year"
+                                          },
+                                          domProps: {
+                                            checked: _vm._q(_vm.radio, "year")
+                                          },
+                                          on: {
+                                            change: function($event) {
+                                              _vm.radio = "year"
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "calendarRadio__right",
+                                            attrs: { for: "year" }
+                                          },
+                                          [_vm._v("年")]
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
                               )
                             ]),
                             _vm._v(" "),
-                            _c("calendar-component", {
-                              attrs: { dayItems: _vm.dayItems }
-                            })
+                            _c("transition", { attrs: { name: "fade" } }, [
+                              _c(
+                                "div",
+                                {
+                                  directives: [
+                                    {
+                                      name: "show",
+                                      rawName: "v-show",
+                                      value: _vm.radio == "month",
+                                      expression: "radio == 'month'"
+                                    }
+                                  ]
+                                },
+                                [
+                                  _c("calendar-component", {
+                                    attrs: { dayItems: _vm.dayItems }
+                                  })
+                                ],
+                                1
+                              )
+                            ])
                           ],
                           1
                         )
