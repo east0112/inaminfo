@@ -245,7 +245,6 @@ data: function(){
 				border-top:1px solid $color-main-thin;
 				cursor:pointer;
 				&Inner{
-					//padding:10px 0 15px;
 					border-radius: 50%;
 					width: 70px;
 					height: 70px;
@@ -280,7 +279,6 @@ data: function(){
 		}
 	}
 	&Radio{
-		//margin: 20px auto;
 		text-align: right;
 		&__inner{
 			display: inline-block;
@@ -330,18 +328,36 @@ data: function(){
 	.calendar{
 		&Operation{
 			font-size: 14px;
+			&__button{
+				padding:0 10px;
+			}
+			&__year{
+				font-size:1.8em;
+				padding: 0 0 0 15px;
+			}
 			&__month{
 				&El{
 					width: 25%;
 					font-size:0.8em;
 				}
 			}
+		&__month{
+			&El{
+				&Inner{
+					border-radius: 50%;
+					width: 50px;
+					height: 50px;
+					margin: 5px auto;
+				}
+			}
+		}
+
 		}
 		&Radio{
 			&__inner{
-				padding: 0 20px;
+				padding: 0;
 				label{
-					padding: 5px 15px;
+					padding: 5px 12px;
 				}
 			}
 		}
