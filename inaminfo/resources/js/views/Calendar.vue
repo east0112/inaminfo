@@ -33,11 +33,12 @@
 									</div>
 								</div>
 							</div>
-								<transition name="fade">
-									<div v-show="radio == 'month'">
-										<calendar-component :dayItems="dayItems"></calendar-component>
+								<transition name="js-accordion" @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
+									<div v-show="radio == 'year'">
+										<div style="height:150px;background-color:#eee;"></div>
 									</div>
 								</transition>
+								<calendar-component :dayItems="dayItems"></calendar-component>
 							</div>
 							<div v-else>
 								<div class="body__text">
@@ -113,6 +114,18 @@ data: function(){
 			}
 			self.loading = false;
           })
+	},
+	beforeEnter: function(el) {
+		el.style.height = '0';
+	},
+	enter: function(el) {
+		el.style.height = el.scrollHeight + 'px';
+	},
+	beforeLeave: function(el) {
+		el.style.height = el.scrollHeight + 'px';
+	},
+	leave: function(el) {
+		el.style.height = '0';
 	}
   }
 }
@@ -120,6 +133,44 @@ data: function(){
 
 <style lang="scss">
 @import '../../sass/variables';
+.js-accordion{
+  &--target{
+    transition: height 0.4s ease-in-out;
+  }
+  // (略)
+  &-enter-active{
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+    animation-name: js-accordion--anime__opend;
+  }
+  &-leave-active{
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-name: js-accordion--anime__closed;
+  }
+}
+
+@keyframes js-accordion--anime__opend {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+   }
+}
+@keyframes js-accordion--anime__closed {
+  0% {
+   opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .15s
 }
