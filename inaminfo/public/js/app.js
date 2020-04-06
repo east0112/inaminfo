@@ -2617,6 +2617,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2626,7 +2635,44 @@ __webpack_require__.r(__webpack_exports__);
       error: false,
       year: "",
       month: "",
-      radio: "month"
+      calendarControl: "month",
+      monthDefine: [{
+        jp: 1,
+        en: 'Jan.'
+      }, {
+        jp: 2,
+        en: 'Feb.'
+      }, {
+        jp: 3,
+        en: 'Mar.'
+      }, {
+        jp: 4,
+        en: 'Apr.'
+      }, {
+        jp: 5,
+        en: 'May.'
+      }, {
+        jp: 6,
+        en: 'Jun.'
+      }, {
+        jp: 7,
+        en: 'Jul.'
+      }, {
+        jp: 8,
+        en: 'Aug.'
+      }, {
+        jp: 9,
+        en: 'Sep.'
+      }, {
+        jp: 10,
+        en: 'Oct.'
+      }, {
+        jp: 11,
+        en: 'Nov.'
+      }, {
+        jp: 12,
+        en: 'Dec.'
+      }]
     };
   },
   created: function created() {
@@ -2638,23 +2684,36 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     moveNext: function moveNext() {
-      if (this.month < 12) {
-        this.month++;
-      } else {
-        this.month = 1;
+      if (this.calendarControl === 'year') {
         this.year++;
+      } else {
+        if (this.month < 12) {
+          this.month++;
+        } else {
+          this.month = 1;
+          this.year++;
+        }
       }
 
       this.loadCalendar();
     },
     movePrev: function movePrev() {
-      if (this.month > 1) {
-        this.month--;
-      } else {
+      if (this.calendarControl === 'year') {
         this.year--;
-        this.month = 12;
+      } else {
+        if (this.month > 1) {
+          this.month--;
+        } else {
+          this.year--;
+          this.month = 12;
+        }
       }
 
+      this.loadCalendar();
+    },
+    moveMonth: function moveMonth(month) {
+      if (this.calendarControl === 'month') return;
+      this.month = month;
       this.loadCalendar();
     },
     loadCalendar: function loadCalendar() {
@@ -3224,7 +3283,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#header-nav {\n  height: 56px;\n  position: fixed;\n  top: 0;\n  z-index: 11;\n  width: 100%;\n}\n.header-nav__content {\n  font-size: 0.9rem;\n  line-height: 56px;\n  margin: 0 auto;\n  z-index: 10;\n}\n.header-nav__search input[type=text] {\n  width: 100%;\n  border-top: none;\n  border-right: none;\n  border-left: none;\n  font-size: 16px;\n  padding: 0.4em 0;\n  border: none;\n  border-radius: 4px;\n  box-shadow: inset 0 1px 2px #ccc;\n  opacity: 0.5;\n}\n.header-nav__search input[type=text]:focus {\n  opacity: 1;\n  transition-duration: 0.3s;\n}\n.rnd-container {\n  margin-top: 12px;\n  margin-bottom: 12px;\n  height: 32px;\n}\n.rnd-input-container {\n  height: 32px;\n}\n.rnd-text {\n  line-height: 32px;\n}\n.header-nav__searchBox input[type=submit] {\n  display: none;\n}\n@media screen and (min-width: 1143px) {\n.header-nav__search {\n    margin-left: 200px;\n    width: 250px;\n}\n.header-nav__content {\n    display: flex;\n    width: 992px;\n}\n.header-nav__list {\n    display: block;\n}\n.header-nav__listInner {\n    display: flex;\n    justify-content: space-between;\n}\n.header-nav__item {\n    color: #fff;\n    padding: 0 20px;\n    cursor: pointer;\n}\n.header-nav__item:hover {\n    opacity: 0.5;\n    transition-duration: 0.3s;\n}\n.header-nav__item--icon {\n    display: none;\n}\n}\n@media screen and (max-width: 1142px) {\n.header-nav__search {\n    width: 80%;\n    margin: 0 auto;\n    max-width: 560px;\n}\n.header-nav__list {\n    position: fixed;\n    bottom: 0;\n    background-color: #fff;\n    width: 100%;\n    justify-content: space-between;\n    border: 1px solid #ccc;\n    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 -1px 3px 1px rgba(60, 64, 67, 0.15);\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n}\n.header-nav__listInner {\n    display: flex;\n    justify-content: space-between;\n    max-width: 560px;\n    margin: 0 auto;\n}\n.header-nav__item {\n    color: #FF5192;\n    font-size: 10px;\n    margin: 0 15px 0 10px;\n    position: relative;\n    height: 56px;\n    width: 56px;\n    opacity: 0.5;\n    cursor: pointer;\n}\n.header-nav__item.active {\n    opacity: 1;\n}\n.header-nav__item--icon {\n    display: block;\n    font-size: 2rem;\n    padding-top: 5px;\n    text-align: center;\n}\n.header-nav__item--text {\n    position: absolute;\n    top: 1.8em;\n    width: 100%;\n    text-align: center;\n}\na:hover {\n    opacity: 1;\n}\n}", ""]);
+exports.push([module.i, "#header-nav {\n  height: 56px;\n  position: fixed;\n  top: 0;\n  z-index: 11;\n  width: 100%;\n}\n.header-nav__content {\n  font-size: 0.9rem;\n  line-height: 56px;\n  margin: 0 auto;\n  z-index: 10;\n}\n.header-nav__search input[type=text] {\n  width: 100%;\n  border-top: none;\n  border-right: none;\n  border-left: none;\n  font-size: 16px;\n  padding: 0.4em 0;\n  border: none;\n  border-radius: 4px;\n  box-shadow: inset 0 1px 2px #ccc;\n  opacity: 0.5;\n}\n.header-nav__search input[type=text]:focus {\n  opacity: 1;\n  transition-duration: 0.3s;\n}\n.rnd-container {\n  margin-top: 12px;\n  margin-bottom: 12px;\n  height: 32px;\n}\n.rnd-input-container {\n  height: 32px;\n}\n.rnd-text {\n  line-height: 32px;\n}\n.header-nav__searchBox input[type=submit] {\n  display: none;\n}\n@media screen and (min-width: 1143px) {\n.header-nav__search {\n    margin-left: 200px;\n    width: 250px;\n}\n.header-nav__content {\n    display: flex;\n    width: 992px;\n}\n.header-nav__list {\n    display: block;\n}\n.header-nav__listInner {\n    display: flex;\n    justify-content: space-between;\n}\n.header-nav__item {\n    color: #fff;\n    padding: 0 20px;\n    cursor: pointer;\n}\n.header-nav__item:hover {\n    opacity: 0.5;\n    transition-duration: 0.3s;\n}\n.header-nav__item--icon {\n    display: none;\n}\n}\n@media screen and (max-width: 1142px) {\n.header-nav__search {\n    width: 80%;\n    margin: 0 auto;\n    max-width: 560px;\n}\n.header-nav__list {\n    position: fixed;\n    bottom: 0;\n    background-color: #fff;\n    width: 100%;\n    justify-content: space-between;\n    border: 1px solid #ccc;\n    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 -1px 3px 1px rgba(60, 64, 67, 0.15);\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    overflow: hidden;\n    z-index: 10;\n}\n.header-nav__listInner {\n    display: flex;\n    justify-content: space-between;\n    max-width: 560px;\n    margin: 0 auto;\n}\n.header-nav__item {\n    color: #FF5192;\n    font-size: 10px;\n    margin: 0 15px 0 10px;\n    position: relative;\n    height: 56px;\n    width: 56px;\n    opacity: 0.5;\n    cursor: pointer;\n}\n.header-nav__item.active {\n    opacity: 1;\n}\n.header-nav__item--icon {\n    display: block;\n    font-size: 2rem;\n    padding-top: 5px;\n    text-align: center;\n}\n.header-nav__item--text {\n    position: absolute;\n    top: 1.8em;\n    width: 100%;\n    text-align: center;\n}\na:hover {\n    opacity: 1;\n}\n}", ""]);
 
 // exports
 
@@ -3300,7 +3359,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".js-accordion--target {\n  transition: height 0.4s ease-in-out;\n}\n.js-accordion-enter-active {\n  -webkit-animation-duration: 0.6s;\n          animation-duration: 0.6s;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  -webkit-animation-name: js-accordion--anime__opend;\n          animation-name: js-accordion--anime__opend;\n}\n.js-accordion-leave-active {\n  -webkit-animation-duration: 0.3s;\n          animation-duration: 0.3s;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  -webkit-animation-name: js-accordion--anime__closed;\n          animation-name: js-accordion--anime__closed;\n}\n@-webkit-keyframes js-accordion--anime__opend {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@keyframes js-accordion--anime__opend {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@-webkit-keyframes js-accordion--anime__closed {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n@keyframes js-accordion--anime__closed {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n.fade-enter-active, .fade-leave-active {\n  transition: opacity 0.15s;\n}\n.fade-enter {\n  opacity: 0;\n}\n.fade-leave-to {\n  opacity: 0;\n}\n.calendarOperation {\n  margin: 40px auto 20px;\n  display: flex;\n  justify-content: space-between;\n  line-height: 2em;\n  color: #FF5192;\n}\n.calendarOperation__left {\n  display: flex;\n}\n.calendarOperation__right {\n  display: flex;\n}\n.calendarOperation__year {\n  font-size: 2em;\n  padding: 0 15px;\n}\n.calendarOperation__button {\n  font-size: 2em;\n  cursor: pointer;\n  padding: 0 15px;\n}\n.calendarOperation__button:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n.calendarRadio {\n  text-align: right;\n}\n.calendarRadio__inner {\n  display: inline-block;\n  padding: 0 40px;\n  font-size: 0;\n}\n.calendarRadio__inner input {\n  display: none;\n}\n.calendarRadio__inner input:checked + label {\n  color: #fff;\n  background-color: #FF5192;\n  transition-duration: 0.3s;\n}\n.calendarRadio__inner label {\n  border: 1px solid #FF5192;\n  color: #FF5192;\n  font-size: 1rem;\n  padding: 7.5px 20px;\n  margin-left: -1px;\n  cursor: pointer;\n}\n.calendarRadio__inner label:first-of-type {\n  border-radius: 5px 0 0 5px;\n}\n.calendarRadio__inner label:last-of-type {\n  border-radius: 0 5px 5px 0;\n}\n.calendarRadio__inner label:hover {\n  background-color: #FFEAF2;\n  transition-duration: 0.3s;\n}\n@media screen and (max-width: 1142px) {\n.calendarOperation {\n    font-size: 14px;\n}\n.calendarRadio__inner {\n    padding: 0 20px;\n}\n.calendarRadio__inner label {\n    padding: 5px 15px;\n}\n}", ""]);
+exports.push([module.i, ".js-accordion--target {\n  transition: height 0.2s ease-in-out;\n}\n.js-accordion-enter-active {\n  -webkit-animation-duration: 0.3s;\n          animation-duration: 0.3s;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  -webkit-animation-name: js-accordion--anime__opend;\n          animation-name: js-accordion--anime__opend;\n}\n.js-accordion-leave-active {\n  -webkit-animation-duration: 0.15s;\n          animation-duration: 0.15s;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  -webkit-animation-name: js-accordion--anime__closed;\n          animation-name: js-accordion--anime__closed;\n}\n@-webkit-keyframes js-accordion--anime__opend {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@keyframes js-accordion--anime__opend {\n0% {\n    opacity: 0;\n}\n100% {\n    opacity: 1;\n}\n}\n@-webkit-keyframes js-accordion--anime__closed {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n@keyframes js-accordion--anime__closed {\n0% {\n    opacity: 1;\n}\n100% {\n    opacity: 0;\n}\n}\n.fade-enter-active, .fade-leave-active {\n  transition: opacity 0.15s;\n}\n.fade-enter {\n  opacity: 0;\n}\n.fade-leave-to {\n  opacity: 0;\n}\n.calendarOperation {\n  margin: 40px auto 20px;\n  display: flex;\n  justify-content: space-between;\n  line-height: 2em;\n  color: #FF5192;\n}\n.calendarOperation__left {\n  display: flex;\n}\n.calendarOperation__right {\n  display: flex;\n}\n.calendarOperation__year {\n  font-size: 2em;\n  padding: 0 15px;\n}\n.calendarOperation__button {\n  font-size: 2em;\n  cursor: pointer;\n  padding: 0 15px;\n}\n.calendarOperation__button:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n.calendarOperation__month {\n  display: flex;\n  flex-wrap: wrap;\n}\n.calendarOperation__monthEl {\n  text-align: center;\n  border-top: 1px solid #FFEAF2;\n  cursor: pointer;\n}\n.calendarOperation__monthElInner {\n  border-radius: 50%;\n  width: 70px;\n  height: 70px;\n  margin: 5px auto;\n  color: #FF5192;\n  position: relative;\n}\n.calendarOperation__monthElInner:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n.calendarOperation__monthElInner.active {\n  background-color: #FF84B3;\n  color: #fff;\n}\n.calendarOperation__monthElInner--JP {\n  position: absolute;\n  top: 40%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  white-space: nowrap;\n}\n.calendarOperation__monthElInner--EN {\n  position: absolute;\n  opacity: 0.5;\n  font-size: 0.8em;\n  top: 70%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.calendarRadio {\n  text-align: right;\n}\n.calendarRadio__inner {\n  display: inline-block;\n  padding: 0 40px;\n  font-size: 0;\n}\n.calendarRadio__inner input {\n  display: none;\n}\n.calendarRadio__inner input:checked + label {\n  color: #fff;\n  background-color: #FF5192;\n  transition-duration: 0.3s;\n}\n.calendarRadio__inner label {\n  border: 1px solid #FF5192;\n  color: #FF5192;\n  font-size: 1rem;\n  padding: 7.5px 20px;\n  margin-left: -1px;\n  cursor: pointer;\n}\n.calendarRadio__inner label:first-of-type {\n  border-radius: 5px 0 0 5px;\n}\n.calendarRadio__inner label:last-of-type {\n  border-radius: 0 5px 5px 0;\n}\n.calendarRadio__inner label:hover {\n  background-color: #FFEAF2;\n  transition-duration: 0.3s;\n}\n@media screen and (min-width: 1143px) {\n.calendarOperation__monthEl {\n    width: 16.6%;\n}\n}\n@media screen and (max-width: 1142px) {\n.calendarOperation {\n    font-size: 14px;\n}\n.calendarOperation__monthEl {\n    width: 25%;\n    font-size: 0.8em;\n}\n.calendarRadio__inner {\n    padding: 0 20px;\n}\n.calendarRadio__inner label {\n    padding: 5px 15px;\n}\n}", ""]);
 
 // exports
 
@@ -22995,7 +23054,7 @@ var render = function() {
                                         "transition",
                                         { attrs: { name: "fade" } },
                                         [
-                                          _vm.radio == "month"
+                                          _vm.calendarControl == "month"
                                             ? _c("span", [
                                                 _vm._v(". " + _vm._s(_vm.month))
                                               ])
@@ -23022,8 +23081,8 @@ var render = function() {
                                             {
                                               name: "model",
                                               rawName: "v-model",
-                                              value: _vm.radio,
-                                              expression: "radio"
+                                              value: _vm.calendarControl,
+                                              expression: "calendarControl"
                                             }
                                           ],
                                           attrs: {
@@ -23032,11 +23091,14 @@ var render = function() {
                                             value: "month"
                                           },
                                           domProps: {
-                                            checked: _vm._q(_vm.radio, "month")
+                                            checked: _vm._q(
+                                              _vm.calendarControl,
+                                              "month"
+                                            )
                                           },
                                           on: {
                                             change: function($event) {
-                                              _vm.radio = "month"
+                                              _vm.calendarControl = "month"
                                             }
                                           }
                                         }),
@@ -23055,8 +23117,8 @@ var render = function() {
                                             {
                                               name: "model",
                                               rawName: "v-model",
-                                              value: _vm.radio,
-                                              expression: "radio"
+                                              value: _vm.calendarControl,
+                                              expression: "calendarControl"
                                             }
                                           ],
                                           attrs: {
@@ -23065,11 +23127,14 @@ var render = function() {
                                             value: "year"
                                           },
                                           domProps: {
-                                            checked: _vm._q(_vm.radio, "year")
+                                            checked: _vm._q(
+                                              _vm.calendarControl,
+                                              "year"
+                                            )
                                           },
                                           on: {
                                             change: function($event) {
-                                              _vm.radio = "year"
+                                              _vm.calendarControl = "year"
                                             }
                                           }
                                         }),
@@ -23108,19 +23173,79 @@ var render = function() {
                                       {
                                         name: "show",
                                         rawName: "v-show",
-                                        value: _vm.radio == "year",
-                                        expression: "radio == 'year'"
+                                        value: _vm.calendarControl == "year",
+                                        expression: "calendarControl == 'year'"
                                       }
-                                    ]
+                                    ],
+                                    staticClass: "calendarOperation__month"
                                   },
-                                  [
-                                    _c("div", {
-                                      staticStyle: {
-                                        height: "150px",
-                                        "background-color": "#eee"
-                                      }
-                                    })
-                                  ]
+                                  _vm._l(_vm.monthDefine, function(mon, index) {
+                                    return _c(
+                                      "div",
+                                      {
+                                        key: index,
+                                        staticClass:
+                                          "calendarOperation__monthEl"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "calendarOperation__monthElInner",
+                                            class:
+                                              mon.jp == parseInt(_vm.month)
+                                                ? "active"
+                                                : "inactive",
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.moveMonth(mon.jp)
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "calendarOperation__monthElInner--JP"
+                                              },
+                                              [
+                                                _c(
+                                                  "span",
+                                                  {
+                                                    staticStyle: {
+                                                      "font-size": "1.5em"
+                                                    }
+                                                  },
+                                                  [_vm._v(_vm._s(mon.jp))]
+                                                ),
+                                                _vm._v(
+                                                  "月\n\t\t\t\t\t\t\t\t\t\t\t"
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "calendarOperation__monthElInner--EN"
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\t\t" +
+                                                    _vm._s(mon.en) +
+                                                    "\n\t\t\t\t\t\t\t\t\t\t\t"
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  }),
+                                  0
                                 )
                               ]
                             ),
@@ -46007,8 +46132,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/toshimadaichi/selfwork/inaminfo/inaminfo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/toshimadaichi/selfwork/inaminfo/inaminfo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/toyoshimadaichi/work/inaminfo/inaminfo/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/toyoshimadaichi/work/inaminfo/inaminfo/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

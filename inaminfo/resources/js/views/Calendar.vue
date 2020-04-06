@@ -19,23 +19,32 @@
 										<i class="fas fa-angle-right"></i>
 									</div>
 									<div class="calendarOperation__year">
-										{{year}} <transition name="fade"><span v-if="radio == 'month'">. {{month}}</span></transition>
+										{{year}} <transition name="fade"><span v-if="calendarControl == 'month'">. {{month}}</span></transition>
 									</div>
 								</div>
 								<div class="calendarOperation__right">
 									<div class="calendarRadio">
 										<div class="calendarRadio__inner">
-											<input type="radio" id="month" value="month" v-model="radio">
+											<input type="radio" id="month" value="month" v-model="calendarControl">
 											<label for="month" class="calendarRadio__left">月</label>
-											<input type="radio" id="year" value="year" v-model="radio">
+											<input type="radio" id="year" value="year" v-model="calendarControl">
 											<label for="year" class="calendarRadio__right">年</label>
 										</div>
 									</div>
 								</div>
 							</div>
 								<transition name="js-accordion" @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
-									<div v-show="radio == 'year'">
-										<div style="height:150px;background-color:#eee;"></div>
+									<div v-show="calendarControl == 'year'" class="calendarOperation__month">
+										<div class="calendarOperation__monthEl" v-for="(mon,index) in monthDefine" :key="index">
+											<div class="calendarOperation__monthElInner" v-on:click="moveMonth(mon.jp)" v-bind:class="(mon.jp == parseInt(month)) ? 'active' : 'inactive' ">
+												<div class="calendarOperation__monthElInner--JP">
+													<span style="font-size:1.5em">{{mon.jp}}</span>月
+												</div>
+												<div class="calendarOperation__monthElInner--EN">
+													{{mon.en}}
+												</div>
+											</div>
+										</div>
 									</div>
 								</transition>
 								<calendar-component :dayItems="dayItems"></calendar-component>
@@ -70,7 +79,20 @@ data: function(){
 		 error:false,
 		 year:"",
 		 month:"",
-		 radio:"month"
+		 calendarControl:"month",
+		 monthDefine:[{ jp : 1 , en : 'Jan.'},
+		 			  { jp : 2 , en : 'Feb.'},
+		 			  { jp : 3 , en : 'Mar.'},
+		 			  { jp : 4 , en : 'Apr.'},
+		 			  { jp : 5 , en : 'May.'},
+		 			  { jp : 6 , en : 'Jun.'},
+		 			  { jp : 7 , en : 'Jul.'},
+		 			  { jp : 8 , en : 'Aug.'},
+		 			  { jp : 9 , en : 'Sep.'},
+		 			  { jp : 10 , en : 'Oct.'},
+		 			  { jp : 11 , en : 'Nov.'},
+		 			  { jp : 12 , en : 'Dec.'},
+		 			 ]
         }
   },
   created: function () {
@@ -82,21 +104,34 @@ data: function(){
   },
   methods: {
     moveNext: function () {
-		if(this.month < 12){
-			this.month++;
-		}else{
-			this.month = 1;
+		if(this.calendarControl === 'year'){
 			this.year++;
+		}else{
+			if(this.month < 12){
+				this.month++;
+			}else{
+				this.month = 1;
+				this.year++;
+			}
 		}
 		this.loadCalendar();
 	},
     movePrev: function () {
-		if(this.month > 1){
-			this.month--;
-		}else{
+		if(this.calendarControl === 'year'){
 			this.year--;
-			this.month = 12;
+		}else{
+			if(this.month > 1){
+				this.month--;
+			}else{
+				this.year--;
+				this.month = 12;
+			}
 		}
+		this.loadCalendar();
+	},
+    moveMonth: function (month) {
+		if(this.calendarControl === 'month') return;
+		this.month = month;
 		this.loadCalendar();
 	},
 	loadCalendar :function () {
@@ -135,16 +170,15 @@ data: function(){
 @import '../../sass/variables';
 .js-accordion{
   &--target{
-    transition: height 0.4s ease-in-out;
+    transition: height 0.2s ease-in-out;
   }
-  // (略)
   &-enter-active{
-    animation-duration: 0.6s;
+    animation-duration: 0.3s;
     animation-fill-mode: both;
     animation-name: js-accordion--anime__opend;
   }
   &-leave-active{
-    animation-duration: 0.3s;
+    animation-duration: 0.15s;
     animation-fill-mode: both;
     animation-name: js-accordion--anime__closed;
   }
@@ -167,9 +201,6 @@ data: function(){
     opacity: 0;
   }
 }
-
-
-
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .15s
@@ -204,6 +235,47 @@ data: function(){
 			&:hover{
 				opacity: 0.5;
 				transition-duration: 0.3s;
+			}
+		}
+		&__month{
+			display: flex;
+			flex-wrap: wrap;
+			&El{
+				text-align:center;
+				border-top:1px solid $color-main-thin;
+				cursor:pointer;
+				&Inner{
+					//padding:10px 0 15px;
+					border-radius: 50%;
+					width: 70px;
+					height: 70px;
+					margin: 5px auto;
+					color:$color-main;
+					position: relative;
+					&:hover{
+						opacity:0.5;
+						transition-duration: 0.3s;
+					}
+					&.active{
+						background-color:$color-main-weak;
+						color:$white;
+					}
+					&--JP{
+						position: absolute;
+						top:40%;
+						left:50%;
+						transform:translate(-50%,-50%); 
+						white-space: nowrap;
+					}
+					&--EN{
+						position: absolute;
+						opacity:0.5;
+						font-size:0.8em;
+						top:70%;
+						left:50%;
+						transform:translate(-50%,-50%); 
+					}
+				}
 			}
 		}
 	}
@@ -246,14 +318,24 @@ data: function(){
 @media screen and (min-width:1143px) { 
 	.calendar{
 		&Operation{
+			&__month{
+				&El{
+					width: 16.6%;
+				}
+			}
 		}
 	}
 }
 @media screen and (max-width:1142px) { 
 	.calendar{
 		&Operation{
-			//width: 80%;
 			font-size: 14px;
+			&__month{
+				&El{
+					width: 25%;
+					font-size:0.8em;
+				}
+			}
 		}
 		&Radio{
 			&__inner{
