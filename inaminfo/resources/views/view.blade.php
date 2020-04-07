@@ -18,6 +18,11 @@
     <meta charset="UTF-8">
     <title>inaminfo</title>
 </head>
+<script type="text/javascript">
+const movefun = function(event){
+    event.preventDefault();
+}
+</script>
 <body id="body">
 <div id="app">
     <header-component></header-component>

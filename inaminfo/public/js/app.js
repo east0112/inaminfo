@@ -45504,7 +45504,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getMoveFun: function getMoveFun() {
-      return this.movefun;
+      return movefun;
     }
   }
 });

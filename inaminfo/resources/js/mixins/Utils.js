@@ -7,13 +7,12 @@ export default {
     data() {
         return {
             url:"/vue/load_api",
-            movefun: ""
-            
+            movefun: "",
         }
     },
     methods: {
         getMoveFun() {
-            return this.movefun;
+            return movefun;
         }
     }
  }
