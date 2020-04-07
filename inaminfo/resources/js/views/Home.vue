@@ -24,12 +24,14 @@
 					</div>
 				</div>
 				<h4 class="heading">今月の開催予定イベント</h4>
-				<div class="body__subtext" v-if="!loading">
-					<event-lists-component :eventLists="eventLists"></event-lists-component>
+					<transition name="fade">
+						<div class="body__subtext" v-if="!loading">
+							<event-lists-component :eventLists="eventLists"></event-lists-component>
+						</div>
+					</transition>
+					<div v-if="loading">
+						<loading-component :loading="loading"></loading-component>
 					</div>
-				<div v-else>
-				<loading-component :loading="loading"></loading-component>
-				</div>
 			</div>
 		</div>
 		<div class="subparts">

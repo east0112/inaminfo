@@ -38,12 +38,14 @@
 						</div>
 					</div>
 				</form>
-				<div class="body__subtext" v-if="!loading">
-					<pagination-component :paginate="paginate"></pagination-component>
-					<event-lists-component :eventLists="eventLists"></event-lists-component>
+				<transition name="fade">
+					<div class="body__subtext" v-if="!loading">
+						<pagination-component :paginate="paginate"></pagination-component>
+						<event-lists-component :eventLists="eventLists"></event-lists-component>
 					</div>
-				<div v-else>
-				<loading-component :loading="loading"></loading-component>
+				</transition>
+				<div v-if="loading">
+					<loading-component :loading="loading"></loading-component>
 				</div>
 			</div>
 		</div>

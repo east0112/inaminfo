@@ -268,6 +268,22 @@ input[type=checkbox]:checked + label:before {
   transform: rotate(45deg);
 }
 
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 0.15s;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-leave-active {
+  transition: opacity 0.15s;
+}
+
 @media screen and (max-width: 1142px) {
   .footer {
     padding-bottom: 56px;

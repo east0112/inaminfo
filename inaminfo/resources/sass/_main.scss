@@ -255,6 +255,24 @@ input[type=checkbox] {
     transform: rotate(45deg);
   }
 
+// Vue アニメーション
+.fade{
+    &-enter{
+        opacity: 0;
+        &-active{
+            transition: opacity .15s;
+        }
+    }
+    &-leave{
+        &-to{
+            opacity: 0;
+        }
+        &-active{
+            transition: opacity .15s;
+        }
+    }
+}
+
 // SP・タブレットサイズ
 @media screen and (max-width:$sp-width) { 
     .footer{

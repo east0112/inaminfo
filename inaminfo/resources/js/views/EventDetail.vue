@@ -2,43 +2,45 @@
 	<div class="content">
 		<div class="mainparts">
 			<div class="container shadow-l1">
-				<div v-if="!loading">
-					<template v-if="event">
-						<h4 class="heading">{{event.event_name}}</h4>
-						<div class="body__text">
-							<table class="eventDetail">
-									<tr v-if="event.date">
-										<th class="eventDetail__itemName">日時</th><td class="eventDetail__itemData">{{event.date}}</td>
-									</tr>
-									<tr v-if="event.type_name">
-										<th class="eventDetail__itemName">種類</th><td class="eventDetail__itemData">{{event.type_name}}</td>
-									</tr>
-									<tr v-if="event.place_name">
-										<th class="eventDetail__itemName">会場</th><td class="eventDetail__itemData">{{event.place_name}}</td>
-									</tr>
-									<tr v-if="event.act_name">
-										<th class="eventDetail__itemName">役名</th><td class="eventDetail__itemData">{{event.act_name}}</td>
-									</tr>
-							</table>
-							<div v-if="songs.length" class="eventDetail__setlist">
-								<h4 class="heading">セットリスト</h4>
+				<transition name="fade">
+					<div v-if="!loading">
+						<template v-if="event">
+							<h4 class="heading">{{event.event_name}}</h4>
+							<div class="body__text">
 								<table class="eventDetail">
-										<tr v-for="(song,index) in songs" :key="index">
-											<th class="eventDetail__itemName">{{song.part_name}} - {{song.rank}}</th><td class="eventDetail__itemData">{{song.song_name}}</td>
+										<tr v-if="event.date">
+											<th class="eventDetail__itemName">日時</th><td class="eventDetail__itemData">{{event.date}}</td>
+										</tr>
+										<tr v-if="event.type_name">
+											<th class="eventDetail__itemName">種類</th><td class="eventDetail__itemData">{{event.type_name}}</td>
+										</tr>
+										<tr v-if="event.place_name">
+											<th class="eventDetail__itemName">会場</th><td class="eventDetail__itemData">{{event.place_name}}</td>
+										</tr>
+										<tr v-if="event.act_name">
+											<th class="eventDetail__itemName">役名</th><td class="eventDetail__itemData">{{event.act_name}}</td>
 										</tr>
 								</table>
+								<div v-if="songs.length" class="eventDetail__setlist">
+									<h4 class="heading">セットリスト</h4>
+									<table class="eventDetail">
+											<tr v-for="(song,index) in songs" :key="index">
+												<th class="eventDetail__itemName">{{song.part_name}} - {{song.rank}}</th><td class="eventDetail__itemData">{{song.song_name}}</td>
+											</tr>
+									</table>
+								</div>
 							</div>
-						</div>
-					</template>
-					<template v-else>
-						<h4 class="heading">Error</h4>
-						<div class="body__text">
-							該当するイベントが見つかりませんでした。
-						</div>
-					</template>
-				</div>
-				<div v-else>
-				<loading-component :loading="loading"></loading-component>
+						</template>
+						<template v-else>
+							<h4 class="heading">Error</h4>
+							<div class="body__text">
+								該当するイベントが見つかりませんでした。
+							</div>
+						</template>
+					</div>
+				</transition>
+				<div v-if="loading">
+					<loading-component :loading="loading"></loading-component>
 				</div>
 			</div>
 			<template v-if="urls.length">
