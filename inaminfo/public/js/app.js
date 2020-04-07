@@ -3253,7 +3253,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".dateContent[data-v-1d019ce1] {\n  background-color: #fff;\n  z-index: 22;\n  position: relative;\n  border-radius: 5px;\n  text-align: right;\n}\n.dateContent__closeButton[data-v-1d019ce1] {\n  display: inline-block;\n  font-size: 1.5rem;\n  padding-right: 1.5rem;\n  color: #0366D6;\n  cursor: pointer;\n}\n.dateContent__closeButton[data-v-1d019ce1]:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n@media screen and (min-width: 1143px) {\n.dateContent[data-v-1d019ce1] {\n    width: 800px;\n    padding: 25px;\n}\n}\n@media screen and (max-width: 1142px) {\n.dateContent[data-v-1d019ce1] {\n    width: 100%;\n    padding: 25px 0;\n}\n}", ""]);
+exports.push([module.i, ".dateContent[data-v-1d019ce1] {\n  background-color: #fff;\n  z-index: 22;\n  position: relative;\n  border-radius: 5px;\n  text-align: right;\n}\n.dateContent__closeButton[data-v-1d019ce1] {\n  display: inline-block;\n  font-size: 1.5rem;\n  padding-right: 1.5rem;\n  color: #0366D6;\n  cursor: pointer;\n}\n.dateContent__closeButton[data-v-1d019ce1]:hover {\n  opacity: 0.5;\n  transition-duration: 0.3s;\n}\n@media screen and (min-width: 1143px) {\n.dateContent[data-v-1d019ce1] {\n    width: 800px;\n    padding: 25px;\n}\n}\n@media screen and (max-width: 1142px) {\n.dateContent[data-v-1d019ce1] {\n    padding: 25px 10px;\n}\n}", ""]);
 
 // exports
 
