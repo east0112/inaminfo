@@ -1,8 +1,5 @@
 export default {
     created() {
-        this.movefun = function(event){
-            event.preventDefault();
-        }
     },
     data() {
         return {

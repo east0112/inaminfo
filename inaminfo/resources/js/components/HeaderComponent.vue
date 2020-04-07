@@ -94,6 +94,7 @@ export default {
         border-radius: 4px;
         box-shadow:inset 0 1px 2px #ccc;
         opacity: 0.5;
+        margin :0;
     }
     .header-nav__search input[type="text"]:focus{
         opacity: 1.0;
