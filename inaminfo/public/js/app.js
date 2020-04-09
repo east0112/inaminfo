@@ -2169,6 +2169,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'header-nav',
   data: function data() {
@@ -3291,7 +3313,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#header-nav {\n  height: 56px;\n  position: fixed;\n  top: 0;\n  z-index: 11;\n  width: 100%;\n}\n.header-nav__content {\n  font-size: 0.9rem;\n  line-height: 56px;\n  margin: 0 auto;\n  z-index: 10;\n}\n.header-nav__search input[type=text] {\n  width: 100%;\n  border-top: none;\n  border-right: none;\n  border-left: none;\n  font-size: 16px;\n  padding: 0.4em 0;\n  border: none;\n  border-radius: 4px;\n  box-shadow: inset 0 1px 2px #ccc;\n  opacity: 0.5;\n  margin: 0;\n}\n.header-nav__search input[type=text]:focus {\n  opacity: 1;\n  transition-duration: 0.3s;\n}\n.rnd-container {\n  margin-top: 12px;\n  margin-bottom: 12px;\n  height: 32px;\n}\n.rnd-input-container {\n  height: 32px;\n}\n.rnd-text {\n  line-height: 32px;\n}\n.header-nav__searchBox input[type=submit] {\n  display: none;\n}\n@media screen and (min-width: 1143px) {\n.header-nav__search {\n    margin-left: 200px;\n    width: 250px;\n}\n.header-nav__content {\n    display: flex;\n    width: 992px;\n}\n.header-nav__list {\n    display: block;\n}\n.header-nav__listInner {\n    display: flex;\n    justify-content: space-between;\n}\n.header-nav__item {\n    color: #fff;\n    padding: 0 20px;\n    cursor: pointer;\n}\n.header-nav__item:hover {\n    opacity: 0.5;\n    transition-duration: 0.3s;\n}\n.header-nav__item--icon {\n    display: none;\n}\n}\n@media screen and (max-width: 1142px) {\n.header-nav__search {\n    width: 80%;\n    margin: 0 auto;\n    max-width: 560px;\n}\n.header-nav__list {\n    position: fixed;\n    bottom: 0;\n    background-color: #fff;\n    width: 100%;\n    justify-content: space-between;\n    border: 1px solid #ccc;\n    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 -1px 3px 1px rgba(60, 64, 67, 0.15);\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    overflow: hidden;\n    z-index: 10;\n}\n.header-nav__listInner {\n    display: flex;\n    justify-content: space-between;\n    max-width: 560px;\n    margin: 0 auto;\n}\n.header-nav__item {\n    color: #FF5192;\n    font-size: 10px;\n    margin: 0 15px 0 10px;\n    position: relative;\n    height: 56px;\n    width: 56px;\n    opacity: 0.5;\n    cursor: pointer;\n}\n.header-nav__item.active {\n    opacity: 1;\n}\n.header-nav__item--icon {\n    display: block;\n    font-size: 2rem;\n    padding-top: 5px;\n    text-align: center;\n}\n.header-nav__item--text {\n    position: absolute;\n    top: 1.8em;\n    width: 100%;\n    text-align: center;\n}\na:hover {\n    opacity: 1;\n}\n}", ""]);
+exports.push([module.i, ".header-nav {\n  height: 56px;\n  position: fixed;\n  top: 0;\n  z-index: 11;\n  width: 100%;\n  background-color: #FF5192;\n}\n.header-nav__content {\n  font-size: 0.9rem;\n  line-height: 56px;\n  margin: 0 auto;\n  z-index: 10;\n}\n.header-nav__search input[type=text] {\n  width: 100%;\n  border-top: none;\n  border-right: none;\n  border-left: none;\n  font-size: 16px;\n  padding: 0.4em 0;\n  border: none;\n  border-radius: 4px;\n  box-shadow: inset 0 1px 2px #ccc;\n  opacity: 0.5;\n  margin: 0;\n}\n.header-nav__search input[type=text]:focus {\n  opacity: 1;\n  transition-duration: 0.3s;\n}\n.header-nav__searchBox input[type=submit] {\n  display: none;\n}\n.rnd-container {\n  margin-top: 12px;\n  margin-bottom: 12px;\n  height: 32px;\n}\n.rnd-input-container {\n  height: 32px;\n}\n.rnd-text {\n  line-height: 32px;\n}\n@media screen and (min-width: 1143px) {\n.contentSP {\n    display: none;\n}\n.header-nav__search {\n    margin-left: 200px;\n    width: 250px;\n}\n.header-nav__content {\n    display: flex;\n    width: 992px;\n}\n.header-nav__list {\n    display: block;\n}\n.header-nav__listInner {\n    display: flex;\n    justify-content: space-between;\n}\n.header-nav__item {\n    color: #fff;\n    padding: 0 20px;\n    cursor: pointer;\n}\n.header-nav__item:hover {\n    opacity: 0.5;\n    transition-duration: 0.3s;\n}\n.header-nav__item--icon {\n    display: none;\n}\n}\n@media screen and (max-width: 1142px) {\n.contentPC {\n    display: none;\n}\n.header-nav__search {\n    width: 80%;\n    margin: 0 auto;\n    max-width: 560px;\n}\n.header-nav__list {\n    position: fixed;\n    bottom: 0;\n    background-color: #fff;\n    width: 100%;\n    justify-content: space-between;\n    border: 1px solid #ccc;\n    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 -1px 3px 1px rgba(60, 64, 67, 0.15);\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    overflow: hidden;\n    z-index: 10;\n}\n.header-nav__listInner {\n    display: flex;\n    justify-content: space-between;\n    max-width: 560px;\n    margin: 0 auto;\n}\n.header-nav__item {\n    color: #FF5192;\n    font-size: 10px;\n    margin: 0 15px 0 10px;\n    position: relative;\n    height: 56px;\n    width: 56px;\n    opacity: 0.5;\n    cursor: pointer;\n}\n.header-nav__item.active {\n    opacity: 1;\n}\n.header-nav__item--icon {\n    display: block;\n    font-size: 2rem;\n    padding-top: 5px;\n    text-align: center;\n}\n.header-nav__item--text {\n    padding-top: 3px;\n    text-align: center;\n}\na:hover {\n    opacity: 1;\n}\n}", ""]);
 
 // exports
 
@@ -22334,135 +22356,227 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "shadow-l2", attrs: { id: "header-nav" } }, [
-    _c(
-      "div",
-      {
-        staticClass: "header-nav__content",
-        class: { active: _vm.status },
-        on: { click: _vm.toggleMenuStatus }
-      },
-      [
-        _c("div", { staticClass: "header-nav__list" }, [
-          _c("div", { staticClass: "header-nav__listInner" }, [
+  return _c("div", [
+    _c("div", { staticClass: "header-nav shadow-l2" }, [
+      _c(
+        "div",
+        {
+          staticClass: "header-nav__content",
+          class: { active: _vm.status },
+          on: { click: _vm.toggleMenuStatus }
+        },
+        [
+          _c("div", { staticClass: "header-nav__list contentPC" }, [
+            _c("div", { staticClass: "header-nav__listInner" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "header-nav__item",
+                  class: this.$route.path === "/" ? "active" : "",
+                  on: {
+                    click: function($event) {
+                      return _vm.movePage("/")
+                    }
+                  }
+                },
+                [
+                  _c("i", {
+                    staticClass: "fas fa-home header-nav__item--icon"
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "header-nav__item--text" }, [
+                    _vm._v("HOME")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "header-nav__item",
+                  class: this.$route.path.includes("/events") ? "active" : "",
+                  on: {
+                    click: function($event) {
+                      return _vm.movePage("/events")
+                    }
+                  }
+                },
+                [
+                  _c("i", {
+                    staticClass: "fas fa-search header-nav__item--icon"
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "header-nav__item--text" }, [
+                    _vm._v("EVENTS")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "header-nav__item",
+                  class: this.$route.path.includes("/calendar") ? "active" : "",
+                  on: {
+                    click: function($event) {
+                      return _vm.movePage("/calendar")
+                    }
+                  }
+                },
+                [
+                  _c("i", {
+                    staticClass: "fas fa-calendar-alt header-nav__item--icon"
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "header-nav__item--text" }, [
+                    _vm._v("CALENDAR")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "header-nav__item",
+                  class: this.$route.path.includes("/profile") ? "active" : "",
+                  on: {
+                    click: function($event) {
+                      return _vm.movePage("/profile")
+                    }
+                  }
+                },
+                [
+                  _c("i", {
+                    staticClass: "fas fa-user-circle header-nav__item--icon"
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "header-nav__item--text" }, [
+                    _vm._v("PROFILE")
+                  ])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "header-nav__search" }, [
             _c(
-              "div",
+              "form",
               {
-                staticClass: "header-nav__item",
-                class: this.$route.path === "/" ? "active" : "",
                 on: {
-                  click: function($event) {
-                    return _vm.movePage("/")
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.searchEventLists($event)
                   }
                 }
               },
               [
-                _c("i", { staticClass: "fas fa-home header-nav__item--icon" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "header-nav__item--text" }, [
-                  _vm._v("HOME")
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "header-nav__item",
-                class: this.$route.path.includes("/events") ? "active" : "",
-                on: {
-                  click: function($event) {
-                    return _vm.movePage("/events")
-                  }
-                }
-              },
-              [
-                _c("i", {
-                  staticClass: "fas fa-search header-nav__item--icon"
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "header-nav__item--text" }, [
-                  _vm._v("EVENTS")
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "header-nav__item",
-                class: this.$route.path.includes("/calendar") ? "active" : "",
-                on: {
-                  click: function($event) {
-                    return _vm.movePage("/calendar")
-                  }
-                }
-              },
-              [
-                _c("i", {
-                  staticClass: "fas fa-calendar-alt header-nav__item--icon"
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "header-nav__item--text" }, [
-                  _vm._v("CALENDAR")
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "header-nav__item",
-                class: this.$route.path.includes("/profile") ? "active" : "",
-                on: {
-                  click: function($event) {
-                    return _vm.movePage("/profile")
-                  }
-                }
-              },
-              [
-                _c("i", {
-                  staticClass: "fas fa-user-circle header-nav__item--icon"
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "header-nav__item--text" }, [
-                  _vm._v("PROFILE")
-                ])
+                _c(
+                  "div",
+                  { staticClass: "header-nav__searchBox" },
+                  [
+                    _c("input-suggest-component", {
+                      attrs: { searchWord: _vm.searchWord },
+                      on: { change: _vm.wordUpdate }
+                    }),
+                    _vm._v(" "),
+                    _c("input", { attrs: { type: "submit", value: "" } })
+                  ],
+                  1
+                )
               ]
             )
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "header-nav__search" }, [
-          _c(
-            "form",
-            {
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.searchEventLists($event)
-                }
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "header-nav__list contentSP" }, [
+      _c("div", { staticClass: "header-nav__listInner" }, [
+        _c(
+          "div",
+          {
+            staticClass: "header-nav__item",
+            class: this.$route.path === "/" ? "active" : "",
+            on: {
+              click: function($event) {
+                return _vm.movePage("/")
               }
-            },
-            [
-              _c(
-                "div",
-                { staticClass: "header-nav__searchBox" },
-                [
-                  _c("input-suggest-component", {
-                    attrs: { searchWord: _vm.searchWord },
-                    on: { change: _vm.wordUpdate }
-                  }),
-                  _vm._v(" "),
-                  _c("input", { attrs: { type: "submit", value: "" } })
-                ],
-                1
-              )
-            ]
-          )
-        ])
-      ]
-    )
+            }
+          },
+          [
+            _c("i", { staticClass: "fas fa-home header-nav__item--icon" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "header-nav__item--text" }, [
+              _vm._v("HOME")
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "header-nav__item",
+            class: this.$route.path.includes("/events") ? "active" : "",
+            on: {
+              click: function($event) {
+                return _vm.movePage("/events")
+              }
+            }
+          },
+          [
+            _c("i", { staticClass: "fas fa-search header-nav__item--icon" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "header-nav__item--text" }, [
+              _vm._v("EVENTS")
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "header-nav__item",
+            class: this.$route.path.includes("/calendar") ? "active" : "",
+            on: {
+              click: function($event) {
+                return _vm.movePage("/calendar")
+              }
+            }
+          },
+          [
+            _c("i", {
+              staticClass: "fas fa-calendar-alt header-nav__item--icon"
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "header-nav__item--text" }, [
+              _vm._v("CALENDAR")
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "header-nav__item",
+            class: this.$route.path.includes("/profile") ? "active" : "",
+            on: {
+              click: function($event) {
+                return _vm.movePage("/profile")
+              }
+            }
+          },
+          [
+            _c("i", {
+              staticClass: "fas fa-user-circle header-nav__item--icon"
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "header-nav__item--text" }, [
+              _vm._v("PROFILE")
+            ])
+          ]
+        )
+      ])
+    ])
   ])
 }
 var staticRenderFns = []

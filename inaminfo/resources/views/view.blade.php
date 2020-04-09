@@ -23,18 +23,7 @@ const movefun = function(event){
     event.preventDefault();
 }
 </script>
-<style type="text/css">
-.testFooter{
-    position:fixed;
-    bottom:0;
-    width:100%;
-    z-index:100;
-    background-color: red;
-    height:56px;
-}
-</style>
 <body id="body">
-<div class="testFooter">test</div>
 <div id="app">
     <header-component></header-component>
     <router-view></router-view>
