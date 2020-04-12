@@ -143,42 +143,6 @@ export default {
             line-height: 32px;
         }
     }
-    @media screen and (min-width:$pc-width) { 
-        .content{
-            &SP{
-                display:none;
-            }
-        }
-        .header-nav{
-            &__search{
-                margin-left: 200px;
-                width: 250px;
-            }
-            &__content{
-                display: flex;
-                width:992px;
-            }
-            &__list{
-                display:block;
-                &Inner{
-                    display: flex;
-                    justify-content: space-between;
-                }
-            }
-            &__item{
-                color:#fff;
-                padding:0 20px;
-                cursor: pointer;
-                &:hover{
-                    opacity: 0.5;
-                    transition-duration: 0.3s;
-                }
-                &--icon{
-                display: none;
-                }
-            }
-        }
-    }
     @media screen and (max-width:$sp-width) { 
         .content{
             &PC{
@@ -236,6 +200,41 @@ export default {
         }
         a:hover{
             opacity:1.0;
+        }
+    }
+    @media screen and (min-width:$pc-width) { 
+        .content{
+            &SP{
+                display:none;
+            }
+        }
+        .header-nav{
+            &__search{
+                margin-left: 200px;
+                width: 250px;
+            }
+            &__content{
+                display: flex;
+                width:992px;
+            }
+            &__list{
+                &Inner{
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+            &__item{
+                color:#fff;
+                padding:0 20px;
+                cursor: pointer;
+                &:hover{
+                    opacity: 0.5;
+                    transition-duration: 0.3s;
+                }
+                &--icon{
+                display: none;
+                }
+            }
         }
     }
 
