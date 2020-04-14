@@ -51,6 +51,10 @@ class VueApiController extends Controller
             $returnData = LoadCalendarController::loadCalendar($requestParameter);
             break;
 
+          case 'cast':
+          $returnData = LoadCastListController::loadCastList($requestParameter);
+          break;
+
           case 'suggest_tags':
             $requestParameter->setParam('search_word',$request->input('search_word'));
             $returnData = LoadSuggestTagsController::loadSuggestTags($requestParameter);
