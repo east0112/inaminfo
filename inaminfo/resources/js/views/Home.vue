@@ -18,8 +18,8 @@
 						</router-link>
 					</div>
 					<div class="contentLinks__Item">
-						<router-link to="/tickets">
-							<div class="contentLinks__ItemText contentLinks__ItemText--ticket">チケット検索</div>
+						<router-link to="/cast">
+							<div class="contentLinks__ItemText contentLinks__ItemText--cast">出演情報検索</div>
 						</router-link>
 					</div>
 				</div>
