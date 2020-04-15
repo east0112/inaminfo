@@ -37,12 +37,12 @@ class Cast
    * @return array $Castlist
    */
   public function loadCastListSearch($cast_type,$search_word){
-    $param = array($cast_type,$search_word,$search_word);
-    $sql = "SELECT * FROM cast 
-            INNER JOIN acts ON cast.act_id = acts.act_id 
-            WHERE cast.cast_type = ? 
-            AND ( cast.cast_name LIKE ? OR acts.name LIKE ?)
-            ORDER BY year ASC, cast_id ASC";
+    $param = array($cast_type,"%$search_word%","%$search_word%");
+    $sql = 'SELECT * FROM cast 
+            INNER JOIN "acts" ON "cast"."act_id" = "acts"."act_id" 
+            WHERE "cast"."cast_type" = ? 
+            AND ( "cast"."cast_name" LIKE ? OR "acts"."act_name" LIKE ?)
+            ORDER BY "year" ASC, "cast_id" ASC';
 
     $items = DB::select($sql,$param);
     return $items;

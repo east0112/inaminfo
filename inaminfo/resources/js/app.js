@@ -34,6 +34,7 @@ Vue.component('date-event-modal-component', require('./components/DateEventModal
 Vue.component('pagination-component', require('./components/PaginationComponent.vue').default);
 Vue.component('tweet-component', require('./components/TweetComponent.vue').default);
 Vue.component('event-lists-component', require('./components/EventListsComponent.vue').default);
+Vue.component('cast-lists-component', require('./components/CastListsComponent.vue').default);
 Vue.component('input-suggest-component', require('./components/InputSuggestComponent.vue').default);
 Vue.component('calendar-component', require('./components/CalendarComponent.vue').default);
 

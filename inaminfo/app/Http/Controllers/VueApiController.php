@@ -57,8 +57,7 @@ class VueApiController extends Controller
 
           case 'search':
             $requestParameter->setParam('search_word',$request->input('search_word'));
-
-
+            $returnData = LoadSearchController::loadSearchLists($requestParameter);
             break;
 
           case 'suggest_tags':
