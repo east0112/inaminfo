@@ -16,9 +16,9 @@
                             <i class="fas fa-calendar-alt header-nav__item--icon"></i>
                             <div class="header-nav__item--text">CALENDAR</div>
                         </div>
-                        <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/profile')) ? 'active' : ''" v-on:click="movePage('/profile')">
-                            <i class="fas fa-user-circle header-nav__item--icon"></i>
-                            <div class="header-nav__item--text">PROFILE</div>
+                        <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/cast')) ? 'active' : ''" v-on:click="movePage('/cast')">
+                            <i class="fas fa-microphone-alt header-nav__item--icon"></i>
+                            <div class="header-nav__item--text">CAST</div>
                         </div>
                     </div>  
                 </div>  
@@ -46,9 +46,9 @@
                     <i class="fas fa-calendar-alt header-nav__item--icon"></i>
                     <div class="header-nav__item--text">CALENDAR</div>
                 </div>
-                <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/profile')) ? 'active' : ''" v-on:click="movePage('/profile')">
-                    <i class="fas fa-user-circle header-nav__item--icon"></i>
-                    <div class="header-nav__item--text">PROFILE</div>
+                <div class="header-nav__item" v-bind:class="(this.$route.path.includes('/cast')) ? 'active' : ''" v-on:click="movePage('/cast')">
+                    <i class="fas fa-microphone-alt header-nav__item--icon"></i>
+                    <div class="header-nav__item--text">CAST</div>
                 </div>
             </div>  
         </div>  

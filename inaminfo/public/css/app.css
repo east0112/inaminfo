@@ -223,6 +223,15 @@ border .subpartsTicket__title {
   left: -0.3em;
 }
 
+.contentLinks__ItemText--cast:before {
+  position: absolute;
+  content: "\F3C9";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 2em;
+  left: -0.3em;
+}
+
 input[type=checkbox] {
   display: none;
 }

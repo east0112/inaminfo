@@ -52,8 +52,14 @@ class VueApiController extends Controller
             break;
 
           case 'cast':
-          $returnData = LoadCastListController::loadCastList($requestParameter);
-          break;
+            $returnData = LoadCastListController::loadCastList($requestParameter);
+            break;
+
+          case 'search':
+            $requestParameter->setParam('search_word',$request->input('search_word'));
+
+
+            break;
 
           case 'suggest_tags':
             $requestParameter->setParam('search_word',$request->input('search_word'));

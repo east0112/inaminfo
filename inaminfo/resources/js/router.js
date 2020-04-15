@@ -4,7 +4,7 @@ import About from './views/About.vue'
 import Events from './views/Events.vue'
 import EventDetail from './views/EventDetail.vue'
 import Calendar from './views/Calendar.vue'
-import Profile from './views/Profile.vue'
+import Cast from './views/Cast.vue'
 import Search from './views/Search.vue'
 
 export default new Router({
@@ -41,9 +41,9 @@ export default new Router({
         component: Calendar
       },
       {
-        path: '/profile',
-        name: 'profile',
-        component: Profile
+        path: '/cast',
+        name: 'cast',
+        component: Cast
       },
       {
         path: '/search',

@@ -12,7 +12,7 @@ class LoadCastListController extends Controller
 {
 
     /**
-     * イベント取得
+     * 出演情報取得
      *
      * @param requestParameter $requestParameter
      * @return Array
@@ -21,11 +21,11 @@ class LoadCastListController extends Controller
         $responceParameter = new responceParameter();
         $castLoader = new Cast();
         $articleLoader = new Article();
-
-        $animeTvLists = $castLoader->loadCastList(config('const.CAST_TYPE_ANIME_TV'));
-        $gameLists = $castLoader->loadCastList(config('const.CAST_TYPE_GAME'));
-        $animeMovieLists = $castLoader->loadCastList(config('const.CAST_TYPE_ANIME_MOVIE'));
-        $article = $articleLoader->loadArticle();
+        
+        $animeTvLists = LoadCastListController::formatListForYear($castLoader->loadCastList(config('const.CAST_TYPE_ANIME_TV')));
+        $gameLists = LoadCastListController::formatListForYear($castLoader->loadCastList(config('const.CAST_TYPE_GAME')));
+        $animeMovieLists = LoadCastListController::formatListForYear($castLoader->loadCastList(config('const.CAST_TYPE_ANIME_MOVIE')));
+        $article = LoadCastListController::formatListForYear($articleLoader->loadArticle());
 
         $responceParameter->setParam('anime_tv',$animeTvLists);
         $responceParameter->setParam('game',$gameLists);
@@ -35,4 +35,26 @@ class LoadCastListController extends Controller
         return $responceParameter->getReturnData();
     }
 
+    /**
+     * 出演情報を年単位に分割する
+     *
+     * @param Array $castList
+     * @return Array
+     */
+    private static function formatListForYear($castList){
+        $pre_year = false;
+        $returnList = array();
+        foreach($castList as $cast){
+            if($pre_year !== $cast->year){
+                if($pre_year){
+                    $returnList[$pre_year] = $tmpArray;
+                }
+                $tmpArray = array();
+            }
+            $tmpArray[] = $cast;
+            $pre_year = $cast->year;
+        }
+        $returnList[$pre_year] = $tmpArray;
+        return $returnList;
+    }
   }

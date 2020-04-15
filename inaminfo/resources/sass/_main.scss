@@ -205,6 +205,15 @@ a{
                 font-size:2em;
                 left:-0.3em;
             }
+
+            &--cast:before{
+                position: absolute;
+                content:'\f3c9';
+                font-family:'Font Awesome 5 Free';
+                font-weight:900;
+                font-size:2em;
+                left:-0.3em;
+            }
         }
     }
 }
