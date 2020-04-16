@@ -2360,6 +2360,11 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.doInput();
   },
+  watch: {
+    innerSearchWord: function innerSearchWord() {
+      this.doInput();
+    }
+  },
   methods: {
     doInput: function doInput() {
       var self = this;
@@ -23092,11 +23097,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("vue-suggest-input", {
     attrs: { items: _vm.items, "max-suggest": 5 },
-    on: {
-      input: function($event) {
-        return _vm.doInput()
-      }
-    },
     model: {
       value: _vm.innerSearchWord,
       callback: function($$v) {

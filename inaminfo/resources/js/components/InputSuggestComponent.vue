@@ -1,5 +1,5 @@
 <template>
-	<vue-suggest-input v-model="innerSearchWord" :items="items" :max-suggest="5" @input="doInput()"/>
+	<vue-suggest-input v-model="innerSearchWord" :items="items" :max-suggest="5"/>
 </template>
 
 <script>
@@ -12,10 +12,10 @@ export default {
   computed: {
     innerSearchWord: {
       get () {
-        return this.$props.searchWord
+        return this.$props.searchWord;
 	  },
 	  set (value) {
-        this.$emit('change', value)
+        this.$emit('change', value);
       }	
     }
   },
@@ -26,7 +26,12 @@ export default {
     }
   },
   mounted: function(){
-    this.doInput()
+    this.doInput();
+  },
+  watch: {
+      innerSearchWord: function(){
+        this.doInput();
+      }
   },
   methods: {
     doInput: function () {
