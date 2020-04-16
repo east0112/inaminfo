@@ -42,6 +42,7 @@ export default {
 .linkCard{
 	overflow:hidden;
 	position: relative;
+	border-radius: 15px;
 	&Inner{
 		width:100%;
 		height:100%;

@@ -43,5 +43,7 @@ export default {
 .eventTweet{
 	background-color: $white;
 	margin-bottom: 20px;
+	border-radius: 15px;
+	overflow: hidden;
 }
 </style>
