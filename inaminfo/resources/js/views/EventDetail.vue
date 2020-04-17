@@ -9,7 +9,7 @@
 							<div class="body__text">
 								<table class="eventDetail">
 										<tr v-if="event.date">
-											<th class="eventDetail__itemName">日時</th><td class="eventDetail__itemData">{{event.date}}</td>
+											<th class="eventDetail__itemName">日時</th><td class="eventDetail__itemData">{{event.date}} {{event.start_time}}</td>
 										</tr>
 										<tr v-if="event.type_name">
 											<th class="eventDetail__itemName">種類</th><td class="eventDetail__itemData">{{event.type_name}}</td>

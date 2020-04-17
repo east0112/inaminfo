@@ -24217,7 +24217,13 @@ var render = function() {
                                         {
                                           staticClass: "eventDetail__itemData"
                                         },
-                                        [_vm._v(_vm._s(_vm.event.date))]
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.event.date) +
+                                              " " +
+                                              _vm._s(_vm.event.start_time)
+                                          )
+                                        ]
                                       )
                                     ])
                                   : _vm._e(),
