@@ -24836,7 +24836,7 @@ var render = function() {
                       staticClass:
                         "contentLinks__ItemText contentLinks__ItemText--cast"
                     },
-                    [_vm._v("出演情報検索")]
+                    [_vm._v("出演情報一覧")]
                   )
                 ])
               ],

@@ -19,7 +19,7 @@
 					</div>
 					<div class="contentLinks__Item">
 						<router-link to="/cast">
-							<div class="contentLinks__ItemText contentLinks__ItemText--cast">出演情報検索</div>
+							<div class="contentLinks__ItemText contentLinks__ItemText--cast">出演情報一覧</div>
 						</router-link>
 					</div>
 				</div>
