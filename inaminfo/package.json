@@ -24,6 +24,7 @@
         "dayjs": "^1.8.22",
         "vue-loading-template": "^1.3.2",
         "vue-router": "^3.1.6",
-        "vue-suggest-input": "^0.1.4"
+        "vue-suggest-input": "^0.1.4",
+        "vuex": "^3.1.3"
     }
 }

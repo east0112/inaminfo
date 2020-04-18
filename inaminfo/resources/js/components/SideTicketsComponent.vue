@@ -38,13 +38,19 @@ export default {
   },
   mounted: function () {
 	let self = this
-	axios.post(this.url,{mode : 'tickets'})
-          .then(function(res){
-			const responce = res.data;
-			self.ticketLists = responce.ticketLists;
-			// ローディング表示終了
-			self.loading = false;
-          })
+	if(this.$store.state.cache.tickets.cache){
+		this.ticketLists = this.$store.state.cache.tickets.data;
+		this.loading = false;
+	}else{
+		axios.post(this.url,{mode : 'tickets'})
+			.then(function(res){
+				const responce = res.data;
+				self.ticketLists = responce.ticketLists;
+				self.loading = false;
+				self.$store.state.cache.tickets.cache = true;
+				self.$store.state.cache.tickets.data = responce.ticketLists;
+			})
+	}
   }
 }
 </script>

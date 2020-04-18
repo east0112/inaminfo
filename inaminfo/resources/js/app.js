@@ -6,9 +6,11 @@
 require('./bootstrap');
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Vuex from 'vuex';
 import axios from 'axios';
 //Load for router
 import router from './router'
+import store from './store'
 import utils from './mixins/Utils' 
 
 window.Vue = require('vue');
@@ -46,5 +48,6 @@ Vue.component('calendar-component', require('./components/CalendarComponent.vue'
 
 const app = new Vue({
     el: '#app',
+    store: new Vuex.Store(store),
     router
 });
